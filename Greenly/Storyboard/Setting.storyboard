@@ -1,30 +1,754 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gd4-bS-tqJ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Privacy Policy-->
+        <scene sceneID="fPa-St-Rt7">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController title="Privacy Policy" id="bIE-PT-wwM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="9rH-Ve-tcu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5v-kl-2CP">
+                                <rect key="frame" x="0.0" y="103" width="393" height="614"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CEE-eR-HaF">
+                                        <rect key="frame" x="0.0" y="-8" width="393" height="614"/>
+                                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <string key="text">When you use Greenly, you trust us with your personal data. We’re committed to keeping this trust. This starts with helping you understand our privacy practices. This Privacy Policy explains Greenly rules regarding the collection, use, and disclosure of personal data when using our Service and options regarding that data from users of both the site and the application available for free on the App Store.
+
+Effective Date: 1 November 2024.
+
+Overview
+
+A. Scope
+
+This announcement applies to users of Greenly services anywhere in Kingdom of Bahrain, including users of Greenly apps, websites, features, or other services. We use your data to provide and improve the Service. By using the Service, you agree to grant Greenly the right of the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+
+ 
+
+B. Data collections and uses
+
+Data provided by users. 
+
+This includes User profile: We collect data when users create or update their Greenly accounts. This may include their name, email, phone/mobile number, login name and password, address, profile picture, payment or banking information (including related payment verification information), birthdate. For more information, please see the section titled “How we use personal data”. Demographic data: We may collect demographic data about users, including through user surveys. User Content: We collect the information users submit when they contact Greenly customer support, provide ratings or compliments or complaints. This may include feedback, photographs or other recordings collected by users.
+
+Data created during use of our services
+
+This includes Location data: We collect precise or approximate location data from a user’s mobile device if enabled by the user to do so. For drivers and delivery partners, Greenly collects this data when the Greenly app is running in the foreground (app open and on-screen) or background (app open but not on-screen) of their mobile device.
+
+Transaction information: We collect transaction information related to the use of our services, including the type of services requested or provided, order details, delivery information, date and time the service was provided, amount charged, distance traveled, and payment method. Additionally, if someone uses your promotion code, we may associate your name with that person.
+
+Usage data: We collect data about how users interact with our services. This includes data such as access dates and times, app features or pages viewed, app crashes and other system activity, type of browser, and third-party sites or services used before interacting with our services. In some cases, we collect this data through cookies, pixels, tags, and similar tracking technologies that create and maintain unique identifiers.
+Device data: We may collect data about the devices used to access our services, including the hardware models, device IP address, operating systems and versions, software, preferred languages, unique device identifiers, advertising identifiers, serial numbers, device motion data, and mobile network data.
+
+ 
+
+C. How we use personal data
+
+Greenly uses the collected data for various purposes:
+
+To provide and maintain the Service
+To notify you about changes to our Service
+To allow you to participate in interactive features of our Service when you choose to do so
+To provide customer care and support
+To provide analysis or valuable information so that we can improve the Service
+To monitor the usage of the Service
+To detect, prevent and address technical issues
+Enabling accessibility features that make it easier for users with special needs to use our services, such as those that enable deaf people with hearing impairment to alert them, allow text messages only from drivers, and enable the request to be received with special notices instead of voice notices on their mobile devices.
+Perform internal operations necessary to provide our services, including troubleshooting software bugs and operational problems; to conduct data analysis, testing, and research; and to monitor and analyze usage and activity trends.
+Legal proceedings and requirements. We may use the personal data we collect to investigate or address claims or disputes relating to use of Greenly services, or as otherwise allowed by applicable law, or as requested by regulators, government entities, and official inquiries.
+
+ 
+
+Cookies and Usage Data
+
+We do not currently use cookies, but if we do use them, it will be for the purpose of improving the site's experience. The browser usually places cookies on the user’s device in order to save some usage information from them, but users can refuse to store cookies or alert them when sending information through them. If this is enabled, some pages or features of the site may be affected.
+
+Data sharing and disclosure
+
+Greenly may share a user’s personal data other than as described in this notice if we notify the user and they consent to the sharing only.
+
+How we save information
+
+We use the internationally approved safe methods to collect data, store and analyze it, in order to prevent access to it from unauthorized parties, as well as to prevent its amendment or destruction, or to disclose its methods of preservation. This data includes the name and the mobile number, as well as the exchange of data with the server.
+
+ 
+
+D. Amendments to the Privacy Policy
+
+Ready International has the right to amend the privacy policy at any time if necessary, and the date will be updated to the last amendment at the bottom of this page. We invite our users to follow this page periodically to stay abreast of the latest changes and how we protect their personal data. By reading this section, reviewing the amendments and updates here is part of your responsibility.
+
+ 
+
+E. Agree to the mentioned conditions
+
+By using Ready site and application, you agree to the terms mentioned here. If you do not agree with it, you can stop using the site and the application. Also, your continued use in the event of an amendment to the Privacy Policy is tacit approval of what is in it.
+
+ 
+
+F. Communicate with us
+
+If you have any questions or suggestions about our privacy policy, please contact us through www.Greenly.com (This page was updated on 1 November 2024).</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CEE-eR-HaF" firstAttribute="top" secondItem="Z5v-kl-2CP" secondAttribute="top" constant="-8" id="ZQX-F3-HgK"/>
+                                    <constraint firstAttribute="width" secondItem="Z5v-kl-2CP" secondAttribute="height" multiplier="393:614" id="agU-JP-PUa"/>
+                                    <constraint firstItem="CEE-eR-HaF" firstAttribute="centerX" secondItem="Z5v-kl-2CP" secondAttribute="centerX" id="cu7-ob-k18"/>
+                                    <constraint firstItem="Ced-E1-Ihw" firstAttribute="bottom" secondItem="CEE-eR-HaF" secondAttribute="bottom" constant="8" id="jLs-2k-Pe1"/>
+                                    <constraint firstAttribute="trailing" secondItem="CEE-eR-HaF" secondAttribute="trailing" id="oEt-TI-vcz"/>
+                                    <constraint firstItem="CEE-eR-HaF" firstAttribute="bottom" secondItem="Z5v-kl-2CP" secondAttribute="bottomMargin" id="q3W-H4-F04"/>
+                                    <constraint firstItem="CEE-eR-HaF" firstAttribute="leading" secondItem="Z5v-kl-2CP" secondAttribute="leading" id="rR1-ub-h5n"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="bnu-Tz-0DL"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ced-E1-Ihw"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9e2-yl-NI7"/>
+                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="leading" secondItem="9e2-yl-NI7" secondAttribute="leading" id="5wQ-Zr-PMR"/>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="top" secondItem="9e2-yl-NI7" secondAttribute="top" id="616-Ra-gc7"/>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="bottom" secondItem="9e2-yl-NI7" secondAttribute="bottom" id="IBB-8j-XnI"/>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="top" secondItem="9e2-yl-NI7" secondAttribute="top" id="f9c-Wr-LnL"/>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="trailing" secondItem="9e2-yl-NI7" secondAttribute="trailing" id="iLp-S1-DLF"/>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="centerX" secondItem="9rH-Ve-tcu" secondAttribute="centerX" id="oI4-nu-0DF"/>
+                            <constraint firstItem="Z5v-kl-2CP" firstAttribute="bottom" secondItem="9e2-yl-NI7" secondAttribute="bottom" id="tAf-Kl-2WJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Privacy Policy" id="Y4I-Od-JhE"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oph-lE-0a6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="1515"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="ZfK-CF-iBH">
+            <objects>
+                <viewController title="About" id="2KD-kr-XcM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="PUI-Jn-Gr1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="65e-u5-d9n">
+                                <rect key="frame" x="0.0" y="103" width="393" height="614"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-W9-MIO">
+                                        <rect key="frame" x="0.0" y="-8" width="393" height="663"/>
+                                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="s2n-O5-sfO"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="0vk-5R-1qy"/>
+                                        <string key="text">Greenly is an online ordering and delivery platform. The cloud-based fulfilment platform with its integrated engagement and management systems offers easy to use stores browsing, ordering convenience and fast delivery experience. Through Greenly app, customers can browse through hundreds of stores menus and conveniently place their order. Once an order is accepted by the store’s partner of choice through Greenly POS, Greenly logistics manages the rest from pickup assignment to fully navigated order pickup and delivery to customer. The entire process is fully automated, and customers can track their orders from their order placement until it is delivered to their location of choice.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jgu-W9-MIO" firstAttribute="bottom" secondItem="65e-u5-d9n" secondAttribute="bottomMargin" id="ICL-Mr-Hsa"/>
+                                    <constraint firstItem="jgu-W9-MIO" firstAttribute="leading" secondItem="65e-u5-d9n" secondAttribute="leading" id="K8D-D2-dKb"/>
+                                    <constraint firstItem="Aes-CX-9zr" firstAttribute="bottom" secondItem="jgu-W9-MIO" secondAttribute="bottom" constant="8" id="M36-g5-vHV"/>
+                                    <constraint firstItem="jgu-W9-MIO" firstAttribute="centerX" secondItem="65e-u5-d9n" secondAttribute="centerX" id="S58-4E-vQU"/>
+                                    <constraint firstItem="jgu-W9-MIO" firstAttribute="top" secondItem="65e-u5-d9n" secondAttribute="top" constant="-8" id="aCU-hS-bwW"/>
+                                    <constraint firstAttribute="width" secondItem="65e-u5-d9n" secondAttribute="height" multiplier="393:614" id="gbc-UG-BZr"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgu-W9-MIO" secondAttribute="trailing" id="rRA-4V-bYU"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ZLW-FO-Tui"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Aes-CX-9zr"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hFX-A6-yzN"/>
+                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="65e-u5-d9n" firstAttribute="leading" secondItem="hFX-A6-yzN" secondAttribute="leading" id="KOz-aQ-JfL"/>
+                            <constraint firstItem="65e-u5-d9n" firstAttribute="centerX" secondItem="PUI-Jn-Gr1" secondAttribute="centerX" id="L3I-xq-UyW"/>
+                            <constraint firstItem="65e-u5-d9n" firstAttribute="top" secondItem="hFX-A6-yzN" secondAttribute="top" id="PAT-ol-BQG"/>
+                            <constraint firstItem="65e-u5-d9n" firstAttribute="trailing" secondItem="hFX-A6-yzN" secondAttribute="trailing" id="hb4-bP-xw2"/>
+                            <constraint firstItem="65e-u5-d9n" firstAttribute="top" secondItem="hFX-A6-yzN" secondAttribute="top" id="pik-ID-jZb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="Xga-K0-TRO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MeK-jN-dzA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-443.51145038167937" y="1514.7887323943662"/>
+        </scene>
+        <!--GreenlySetting-->
+        <scene sceneID="p8o-27-auD">
+            <objects>
+                <tableViewController title="GreenlySetting" id="VAE-Qc-eVA" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="5Tr-ph-3tc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <sections>
+                            <tableViewSection id="kU5-BR-Ssn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vP3-Lb-FZl">
+                                        <rect key="frame" x="0.0" y="18" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vP3-Lb-FZl" id="8vW-61-lcj">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fF8-wN-5A3">
+                                                    <rect key="frame" x="20" y="14" width="82" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GC9-XI-pfY">
+                                                    <rect key="frame" x="349" y="6" width="44" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" title=""/>
+                                                    <connections>
+                                                        <segue destination="hdg-da-KAY" kind="show" id="ujl-Xm-mEv"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutCell" id="Mwh-RF-k72">
+                                        <rect key="frame" x="0.0" y="61.666667938232422" width="393" height="45.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mwh-RF-k72" id="OrR-dI-YLr">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-Z5-GOq">
+                                                    <rect key="frame" x="20" y="5" width="376.66666666666669" height="35.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="gyE-tP-0Gr"/>
+                                                        <constraint firstAttribute="width" secondItem="g6d-Z5-GOq" secondAttribute="height" multiplier="113:10" constant="-22.5" id="nea-tG-fyO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlX-ft-dcU">
+                                                    <rect key="frame" x="354.66666666666669" y="5" width="38.333333333333314" height="35.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="IlX-ft-dcU" secondAttribute="height" multiplier="38:35" id="Exa-58-gfS"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button" image="greaterthan" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" imagePlacement="leading" cornerStyle="fixed"/>
+                                                    <connections>
+                                                        <segue destination="2KD-kr-XcM" kind="show" id="klx-cd-7jj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="g6d-Z5-GOq" secondAttribute="bottom" constant="5" id="LgT-1Q-nL4"/>
+                                                <constraint firstItem="IlX-ft-dcU" firstAttribute="centerY" secondItem="g6d-Z5-GOq" secondAttribute="centerY" id="O0a-Ni-9mi"/>
+                                                <constraint firstAttribute="trailing" secondItem="IlX-ft-dcU" secondAttribute="trailing" id="SgY-Hc-ECn"/>
+                                                <constraint firstItem="g6d-Z5-GOq" firstAttribute="top" secondItem="OrR-dI-YLr" secondAttribute="top" constant="5" id="TFD-yk-a5O"/>
+                                                <constraint firstItem="g6d-Z5-GOq" firstAttribute="leading" secondItem="OrR-dI-YLr" secondAttribute="leading" constant="20" id="gxi-lN-wZx"/>
+                                                <constraint firstItem="IlX-ft-dcU" firstAttribute="top" secondItem="g6d-Z5-GOq" secondAttribute="top" id="hg1-Es-0Uq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TermsAndConditionsCell" id="Yth-Ab-D82">
+                                        <rect key="frame" x="0.0" y="107" width="393" height="45.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yth-Ab-D82" id="w5F-m0-Qnu">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8U-8v-FTt">
+                                                    <rect key="frame" x="20" y="5" width="376.66666666666669" height="35.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="gmm-Ip-avJ"/>
+                                                        <constraint firstAttribute="width" secondItem="l8U-8v-FTt" secondAttribute="height" multiplier="113:10" constant="-22.5" id="vsp-RA-Uil"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-jJ-Ie0">
+                                                    <rect key="frame" x="354.66666666666669" y="5" width="38.333333333333314" height="35.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="4Ce-jJ-Ie0" secondAttribute="height" multiplier="38:35" id="FXD-jK-1Eq"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button" image="greaterthan" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" imagePlacement="leading" cornerStyle="fixed"/>
+                                                    <connections>
+                                                        <segue destination="158-VR-8xt" kind="show" id="AwZ-jp-rMq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="4Ce-jJ-Ie0" secondAttribute="trailing" id="AGt-uV-VqX"/>
+                                                <constraint firstItem="4Ce-jJ-Ie0" firstAttribute="top" secondItem="l8U-8v-FTt" secondAttribute="top" id="Bge-nW-AmX"/>
+                                                <constraint firstItem="4Ce-jJ-Ie0" firstAttribute="centerY" secondItem="l8U-8v-FTt" secondAttribute="centerY" id="EWo-Jp-V24"/>
+                                                <constraint firstAttribute="bottom" secondItem="l8U-8v-FTt" secondAttribute="bottom" constant="5" id="N3j-30-fmN"/>
+                                                <constraint firstItem="l8U-8v-FTt" firstAttribute="leading" secondItem="w5F-m0-Qnu" secondAttribute="leading" constant="20" id="p5K-K0-kKN"/>
+                                                <constraint firstItem="l8U-8v-FTt" firstAttribute="top" secondItem="w5F-m0-Qnu" secondAttribute="top" constant="5" id="pDl-yj-Qql"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrivacyPolicyCell" id="q0B-ZW-UJv">
+                                        <rect key="frame" x="0.0" y="152.33333206176758" width="393" height="45.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0B-ZW-UJv" id="gHc-WK-kll">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvn-zB-JW9">
+                                                    <rect key="frame" x="20" y="5" width="376.66666666666669" height="35.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="Bc6-Gh-vGa"/>
+                                                        <constraint firstAttribute="width" secondItem="xvn-zB-JW9" secondAttribute="height" multiplier="113:10" constant="-22.5" id="dPW-T8-AcR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJU-Cg-Tml">
+                                                    <rect key="frame" x="354.66666666666669" y="5" width="38.333333333333314" height="35.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yJU-Cg-Tml" secondAttribute="height" multiplier="38:35" id="A3T-TV-DkY"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button" image="greaterthan" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" imagePlacement="leading" cornerStyle="fixed"/>
+                                                    <connections>
+                                                        <segue destination="bIE-PT-wwM" kind="show" id="5kI-Ok-Nwd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xvn-zB-JW9" firstAttribute="top" secondItem="gHc-WK-kll" secondAttribute="top" constant="5" id="1Gp-8x-YRg"/>
+                                                <constraint firstItem="yJU-Cg-Tml" firstAttribute="centerY" secondItem="xvn-zB-JW9" secondAttribute="centerY" id="hnC-ge-RiV"/>
+                                                <constraint firstAttribute="trailing" secondItem="yJU-Cg-Tml" secondAttribute="trailing" id="loC-ET-PMd"/>
+                                                <constraint firstAttribute="bottom" secondItem="xvn-zB-JW9" secondAttribute="bottom" constant="5" id="nTP-WL-TOX"/>
+                                                <constraint firstItem="xvn-zB-JW9" firstAttribute="leading" secondItem="gHc-WK-kll" secondAttribute="leading" constant="20" id="rCs-NY-GaT"/>
+                                                <constraint firstItem="yJU-Cg-Tml" firstAttribute="top" secondItem="xvn-zB-JW9" secondAttribute="top" id="z0N-Mh-R0I"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogOutCell" id="kAx-rN-dtu">
+                                        <rect key="frame" x="0.0" y="197.66666412353516" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kAx-rN-dtu" id="iax-0z-f4N">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-DI-btG">
+                                                    <rect key="frame" x="349" y="4" width="44" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" title=""/>
+                                                    <connections>
+                                                        <action selector="logoutBut:" destination="VAE-Qc-eVA" eventType="touchUpInside" id="wEF-te-94e"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krm-Yu-pVR">
+                                                    <rect key="frame" x="27" y="12" width="54" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zu3-o2-2h6">
+                                        <rect key="frame" x="0.0" y="241.33333206176758" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zu3-o2-2h6" id="KHF-qw-OZr">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delete account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1F-Pg-snK">
+                                                    <rect key="frame" x="27" y="12" width="116" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2i-7b-o02">
+                                                    <rect key="frame" x="349" y="7" width="44" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" title=""/>
+                                                    <connections>
+                                                        <action selector="deleteBut:" destination="VAE-Qc-eVA" eventType="touchUpInside" id="NUw-L0-TYo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="VAE-Qc-eVA" id="0Zm-ku-2kT"/>
+                            <outlet property="delegate" destination="VAE-Qc-eVA" id="TuV-sG-iJK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="ig9-DL-DUq"/>
+                    <connections>
+                        <outlet property="delete" destination="z2i-7b-o02" id="clB-be-VXC"/>
+                        <outlet property="logout" destination="L5f-DI-btG" id="2Zz-pm-BMd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgU-qt-XMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275.57251908396944" y="694.36619718309862"/>
+        </scene>
+        <!--Terms and Conditions-->
+        <scene sceneID="TGz-MD-rYX">
+            <objects>
+                <viewController title="Terms and Conditions" id="158-VR-8xt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="Y4J-dz-btB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPN-TP-rXu">
+                                <rect key="frame" x="0.0" y="103" width="393" height="614"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="AAK-kC-a9K">
+                                        <rect key="frame" x="0.0" y="-8" width="393" height="614"/>
+                                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <string key="text">Our Terms and Conditions were last updated on 5 November 2023.Please read these terms and conditions carefully before using Our Service.
+
+Interpretation and Definitions
+Interpretation
+The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+
+Definitions
+For the purposes of these Terms and Conditions:
+“Application” means the software program provided by the Company downloaded by You on any electronic device, named “LabLinkup”.
+
+“Application Store” means the digital distribution service operated and developed by Apple Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application has been downloaded.
+
+“Affiliate” means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+
+“Account” means a unique account created for You to access our Service or parts of our Service.
+
+“Company” (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to LabLinkup.
+
+“Country” refers to Bahrain.
+
+“Content” refers to content such as text, images, or other information that can be posted, uploaded, linked to or otherwise made available by You, regardless of the form of that content.
+
+“Device” means any device that can access the Service such as a computer, a cell phone or a digital tablet.
+
+“Feedback” means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.
+
+“Terms and Conditions” (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions Agreement was generated by TermsFeed Mobile App Terms and Conditions Generator.
+
+LabLinkup
+Bahrain
+
+“Third-party Social Media Service” means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+
+“You” means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable. 
+
+Acknowledgment
+These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+
+Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+
+By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+
+You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.
+
+Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+
+User Accounts
+When You create an account with Us, You must provide Us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of Your account on Our Service.
+
+You are responsible for safeguarding the password that You use to access the Service and for any activities or actions under Your password, whether Your password is with Our Service or a Third-Party Social Media Service.
+
+You agree not to disclose Your password to any third party. You must notify Us immediately upon becoming aware of any breach of security or unauthorized use of Your account.
+
+You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than You without appropriate authorization, or a name that is otherwise offensive, vulgar or obscene.
+
+Content
+Your Right to Post Content
+Our Service allows You to post Content. You are responsible for the Content that You post to the Service, including its legality, reliability, and appropriateness.
+
+By posting Content to the Service, You grant Us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service. You retain any and all of Your rights to any Content You submit, post or display on or through the Service and You are responsible for protecting those rights. You agree that this license includes the right for Us to make Your Content available to other users of the Service, who may also use Your Content subject to these Terms.
+
+You represent and warrant that: (i) the Content is Yours (You own it) or You have the right to use it and grant Us the rights and license as provided in these Terms, and (ii) the posting of Your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person.
+
+Content Restrictions
+The Company is not responsible for the content of the Service's users. You expressly understand and agree that You are solely responsible for the Content and for all activity that occurs under your account, whether done so by You or any third person using Your account.
+
+You may not transmit any Content that is unlawful, offensive, upsetting, intended to disgust, threatening, libelous, defamatory, obscene or otherwise objectionable. 
+
+Examples of such objectionable Content include, but are not limited to, the following:
+Unlawful or promoting unlawful activity.
+
+Defamatory, discriminatory, or mean-spirited content, including references or commentary about religion, race, sexual orientation, gender, national/ethnic origin, or other targeted groups.
+
+Spam, machine – or randomly – generated, constituting unauthorized or unsolicited advertising, chain letters, any other form of unauthorized solicitation, or any form of lottery or gambling.
+
+Containing or installing any viruses, worms, malware, trojan horses, or other content that is designed or intended to disrupt, damage, or limit the functioning of any software, hardware or telecommunications equipment or to damage or obtain unauthorized access to any data or other information of a third person.
+
+Infringing on any proprietary rights of any party, including patent, trademark, trade secret, copyright, right of publicity or other rights.
+
+Impersonating any person or entity including the Company and its employees or representatives.
+
+Violating the privacy of any third person.
+
+False information and features.
+
+The Company reserves the right, but not the obligation, to, in its sole discretion, determine whether or not any Content is appropriate and complies with this Terms, refuse or remove this Content. The Company further reserves the right to make formatting and edits and change the manner of any Content. The Company can also limit or revoke the use of the Service if You post such objectionable Content. As the Company cannot control all content posted by users and/or third parties on the Service, you agree to use the Service at your own risk. You understand that by using the Service You may be exposed to content that You may find offensive, indecent, incorrect or objectionable, and You agree that under no circumstances will the Company be liable in any way for any content, including any errors or omissions in any content, or any loss or damage of any kind incurred as a result of your use of any content.
+
+Content Backups
+Although regular backups of Content are performed, the Company does not guarantee there will be no loss or corruption of data.
+
+Corrupt or invalid backup points may be caused by, without limitation, Content that is corrupted prior to being backed up or that changes during the time a backup is performed.
+The Company will provide support and attempt to troubleshoot any known or discovered issues that may affect the backups of Content. But You acknowledge that the Company has no liability related to the integrity of Content or the failure to successfully restore Content to a usable state.
+
+You agree to maintain a complete and accurate copy of any Content in a location independent of the Service.
+
+Copyright Policy
+
+Intellectual Property Infringement
+We respect the intellectual property rights of others. It is Our policy to respond to any claim that Content posted on the Service infringes a copyright or other intellectual property infringement of any person.
+
+If You are a copyright owner, or authorized on behalf of one, and You believe that the copyrighted work has been copied in a way that constitutes copyright infringement that is taking place through the Service, You must submit Your notice in writing to the attention of our copyright agent via email copyrightAgent@gmail.com and include in Your notice a detailed description of the alleged infringement.
+
+You may be held accountable for damages (including costs and attorneys' fees) for misrepresenting that any Content is infringing Your copyright.
+DMCA Notice and DMCA Procedure for Copyright Infringement Claims
+
+You may submit a notification pursuant to the Digital Millennium Copyright Act (DMCA) by providing our Copyright Agent with the following information in writing (see 17 U.S.C 512(c)(3) for further detail):
+
+An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright's interest.
+
+A description of the copyrighted work that You claim has been infringed, including the URL (i.e., web page address) of the location where the copyrighted work exists or a copy of the copyrighted work.
+
+Identification of the URL or other specific location on the Service where the material that You claim is infringing is located.
+
+Your address, telephone number, and email address.
+
+A statement by You that You have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law.
+
+A statement by You, made under penalty of perjury, that the above information in Your notice is accurate and that You are the copyright owner or authorized to act on the copyright owner's behalf.
+
+You can contact our copyright agent via email copyrightAgent@gmail.com. Upon receipt of a notification, the Company will take whatever action, in its sole discretion, it deems appropriate, including removal of the challenged content from the Service.
+
+Intellectual Property
+The Service and its original content (excluding Content provided by You or other users), features and functionality are and will remain the exclusive property of the Company and its licensors.
+
+The Service is protected by copyright, trademark, and other laws of both the Country and foreign countries.
+
+Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of the Company.
+
+Your Feedback to Us
+You assign all rights, title and interest in any Feedback You provide the Company. If for any reason such assignment is ineffective, You agree to grant the Company a non-exclusive, perpetual, irrevocable, royalty free, worldwide right and license to use, reproduce, disclose, sub-license, distribute, modify and exploit such Feedback without restriction.
+
+Links to Other Websites
+Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
+
+The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+
+We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+
+Termination
+We may terminate or suspend Your Account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+
+Upon termination, Your right to use the Service will cease immediately. If You wish to terminate Your Account, You may simply discontinue using the Service.
+
+Limitation of Liability
+Not withstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+
+To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+
+Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+
+"AS IS" and "AS AVAILABLE" Disclaimer
+The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
+
+Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+
+Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+
+Governing Law
+The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+
+Disputes Resolution
+If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+
+For European Union (EU) Users
+If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+
+United States Legal Compliance
+You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+
+Severability and Waiver
+Severability
+If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+
+Waiver
+Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+
+Changes to These Terms and Conditions
+We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
+By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AAK-kC-a9K" secondAttribute="trailing" id="0SJ-SW-qqm"/>
+                                    <constraint firstItem="AAK-kC-a9K" firstAttribute="centerX" secondItem="gPN-TP-rXu" secondAttribute="centerX" id="0bi-cG-khW"/>
+                                    <constraint firstAttribute="width" secondItem="gPN-TP-rXu" secondAttribute="height" multiplier="393:614" id="3sD-Wb-fWV"/>
+                                    <constraint firstItem="rus-Fn-uSW" firstAttribute="bottom" secondItem="AAK-kC-a9K" secondAttribute="bottom" constant="8" id="TAs-aL-9iD"/>
+                                    <constraint firstItem="AAK-kC-a9K" firstAttribute="bottom" secondItem="gPN-TP-rXu" secondAttribute="bottomMargin" id="eMR-uk-9LS"/>
+                                    <constraint firstItem="AAK-kC-a9K" firstAttribute="leading" secondItem="gPN-TP-rXu" secondAttribute="leading" id="j0s-zM-XLc"/>
+                                    <constraint firstItem="AAK-kC-a9K" firstAttribute="top" secondItem="gPN-TP-rXu" secondAttribute="top" constant="-8" id="j4k-Os-YGe"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Qif-oT-zhD"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rus-Fn-uSW"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bI8-BO-Mvf"/>
+                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="leading" secondItem="bI8-BO-Mvf" secondAttribute="leading" id="1Zf-Pe-4D7"/>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="bottom" secondItem="bI8-BO-Mvf" secondAttribute="bottom" id="BRk-4Y-mlq"/>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="top" secondItem="bI8-BO-Mvf" secondAttribute="top" id="Jw1-ra-zO2"/>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="bottom" secondItem="bI8-BO-Mvf" secondAttribute="bottom" id="LEF-Tk-IJQ"/>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="trailing" secondItem="bI8-BO-Mvf" secondAttribute="trailing" id="LOF-je-04O"/>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="top" secondItem="bI8-BO-Mvf" secondAttribute="top" id="Xt7-oJ-oej"/>
+                            <constraint firstItem="gPN-TP-rXu" firstAttribute="centerX" secondItem="Y4J-dz-btB" secondAttribute="centerX" id="d6a-mG-Ivl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms and Conditions" id="GFy-CX-X6u"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tv7-1F-ndy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="1515"/>
+        </scene>
+        <!--Edit profile-->
+        <scene sceneID="Cdd-em-yhS">
+            <objects>
+                <viewController id="hdg-da-KAY" userLabel="Edit profile" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fli-Lw-Ltk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-b2-ezF">
+                                <rect key="frame" x="33" y="93" width="106" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DfW-uT-EvT">
+                                <rect key="frame" x="42" y="174" width="309" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="v8I-rk-RiN">
+                                    <rect key="frame" x="0.0" y="0.0" width="309" height="425"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOT-db-t5c">
+                                            <rect key="frame" x="29" y="36" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKx-oq-3x5">
+                                            <rect key="frame" x="29" y="140" width="79" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTt-LQ-V0k">
+                                            <rect key="frame" x="30" y="247" width="41" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpM-8b-xo4">
+                                            <rect key="frame" x="29" y="77" width="244" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="textColor" systemColor="systemGray3Color"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Atc-Hw-Z8f">
+                                            <rect key="frame" x="29" y="176" width="244" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="textColor" systemColor="systemGray3Color"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9t-x1-XpZ">
+                                            <rect key="frame" x="29" y="288" width="244" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="textColor" systemColor="systemGray3Color"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YOM-k2-ldz"/>
+                        <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="F8c-4E-Wfy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhV-7l-Uzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1315.2671755725191" y="1514.7887323943662"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xES-Zs-vLk">
+            <objects>
+                <navigationController title="Navigation Controller" id="gd4-bS-tqJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s6p-qD-fSc">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VAE-Qc-eVA" kind="relationship" relationship="rootViewController" id="uC2-gl-FSN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1h-vx-ekW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-943" y="694"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="greaterthan" catalog="system" width="128" height="108"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

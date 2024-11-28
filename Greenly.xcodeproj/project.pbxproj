@@ -23,6 +23,7 @@
 		CF67476A2CF8BC8C00E9A704 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747692CF8BC8C00E9A704 /* Cart.storyboard */; };
 		CF67476C2CF8BCA100E9A704 /* StoreOrders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */; };
 		CF67476E2CF8BCAE00E9A704 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */; };
+		CF6747702CF8BE6A00E9A704 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67476F2CF8BE6A00E9A704 /* SettingController.swift */; };
 		CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */; };
 		CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D786F2CF5ED6400A59136 /* SceneDelegate.swift */; };
 		CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78712CF5ED6400A59136 /* ViewController.swift */; };
@@ -63,6 +64,7 @@
 		CF6747692CF8BC8C00E9A704 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOrders.storyboard; sourceTree = "<group>"; };
 		CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
+		CF67476F2CF8BE6A00E9A704 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		CF8D786A2CF5ED6400A59136 /* Greenly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF8D786F2CF5ED6400A59136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				CF6747492CF8A3FC00E9A704 /* AddTableViewController.swift */,
 				CF8D78712CF5ED6400A59136 /* ViewController.swift */,
+				CF67476F2CF8BE6A00E9A704 /* SettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6747702CF8BE6A00E9A704 /* SettingController.swift in Sources */,
 				CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
