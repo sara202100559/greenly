@@ -16,6 +16,13 @@
 		CF6747592CF8A8BB00E9A704 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CF6747582CF8A8BB00E9A704 /* FirebaseStorage */; };
 		CF67475C2CF8AE2500E9A704 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CF67475B2CF8AE2500E9A704 /* FirebaseFirestore */; };
 		CF67475E2CF8B0A700E9A704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF67475D2CF8B0A700E9A704 /* GoogleService-Info.plist */; };
+		CF6747602CF8B61000E9A704 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67475F2CF8B61000E9A704 /* Setting.storyboard */; };
+		CF6747622CF8BC2600E9A704 /* CustomerHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747612CF8BC2600E9A704 /* CustomerHome.storyboard */; };
+		CF6747642CF8BC3E00E9A704 /* OrderHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747632CF8BC3E00E9A704 /* OrderHistory.storyboard */; };
+		CF6747682CF8BC7F00E9A704 /* ImpactTracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */; };
+		CF67476A2CF8BC8C00E9A704 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747692CF8BC8C00E9A704 /* Cart.storyboard */; };
+		CF67476C2CF8BCA100E9A704 /* StoreOrders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */; };
+		CF67476E2CF8BCAE00E9A704 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */; };
 		CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */; };
 		CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D786F2CF5ED6400A59136 /* SceneDelegate.swift */; };
 		CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78712CF5ED6400A59136 /* ViewController.swift */; };
@@ -49,6 +56,13 @@
 		CF67474A2CF8A3FC00E9A704 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		CF67474D2CF8A44B00E9A704 /* StoreOwner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoreOwner.storyboard; sourceTree = "<group>"; };
 		CF67475D2CF8B0A700E9A704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF67475F2CF8B61000E9A704 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		CF6747612CF8BC2600E9A704 /* CustomerHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerHome.storyboard; sourceTree = "<group>"; };
+		CF6747632CF8BC3E00E9A704 /* OrderHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderHistory.storyboard; sourceTree = "<group>"; };
+		CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImpactTracker.storyboard; sourceTree = "<group>"; };
+		CF6747692CF8BC8C00E9A704 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOrders.storyboard; sourceTree = "<group>"; };
+		CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
 		CF8D786A2CF5ED6400A59136 /* Greenly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF8D786F2CF5ED6400A59136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,14 +124,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CF6747422CF89F9300E9A704 /* View */ = {
+		CF6747422CF89F9300E9A704 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				CF67474D2CF8A44B00E9A704 /* StoreOwner.storyboard */,
 				CF67474A2CF8A3FC00E9A704 /* Admin.storyboard */,
 				CF8D78732CF5ED6400A59136 /* Main.storyboard */,
+				CF67475F2CF8B61000E9A704 /* Setting.storyboard */,
+				CF6747612CF8BC2600E9A704 /* CustomerHome.storyboard */,
+				CF6747632CF8BC3E00E9A704 /* OrderHistory.storyboard */,
+				CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */,
+				CF6747692CF8BC8C00E9A704 /* Cart.storyboard */,
+				CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */,
+				CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		CF67475A2CF8AE2500E9A704 /* Frameworks */ = {
@@ -152,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CF67475D2CF8B0A700E9A704 /* GoogleService-Info.plist */,
-				CF6747422CF89F9300E9A704 /* View */,
+				CF6747422CF89F9300E9A704 /* Storyboard */,
 				CF6747412CF89F8100E9A704 /* Model */,
 				CF6747402CF89F6E00E9A704 /* Controller */,
 				CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */,
@@ -296,11 +317,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF8D787A2CF5ED6600A59136 /* LaunchScreen.storyboard in Resources */,
+				CF67476C2CF8BCA100E9A704 /* StoreOrders.storyboard in Resources */,
+				CF6747622CF8BC2600E9A704 /* CustomerHome.storyboard in Resources */,
+				CF67476E2CF8BCAE00E9A704 /* ProductDetails.storyboard in Resources */,
 				CF8D78772CF5ED6600A59136 /* Assets.xcassets in Resources */,
+				CF67476A2CF8BC8C00E9A704 /* Cart.storyboard in Resources */,
+				CF6747682CF8BC7F00E9A704 /* ImpactTracker.storyboard in Resources */,
+				CF6747602CF8B61000E9A704 /* Setting.storyboard in Resources */,
 				CF8D78752CF5ED6400A59136 /* Main.storyboard in Resources */,
 				CF67474E2CF8A44B00E9A704 /* StoreOwner.storyboard in Resources */,
 				CF67474C2CF8A3FC00E9A704 /* Admin.storyboard in Resources */,
 				CF67475E2CF8B0A700E9A704 /* GoogleService-Info.plist in Resources */,
+				CF6747642CF8BC3E00E9A704 /* OrderHistory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
