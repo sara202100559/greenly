@@ -9,13 +9,32 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import Cloudinary
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var ivUploadedImage: CLDUIImageView!
+    @IBOutlet weak var ivGenerateUrl: CLDUIImageView!
+    
     let db = Firestore.firestore()
     let storage = Storage.storage()
+    
+    let cloudName: String = "dlltooaqi"
+    var uploadPreset: String = "unsigned_upload"
+    var publicId: String = "cld-sample-5"
+    
+    var cloudinary: CLDCloudinary!
+    var url: String!
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initCloudinary()
+        uploadImage()
+        generateUrl()
+  
+        
         
 //        // Create a root reference
 //        let storageRef = storage.reference()
@@ -71,7 +90,37 @@ class ViewController: UIViewController {
 //        }
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setImageView()
+    }
+    
+    private func initCloudinary() {
+        let config = CLDConfiguration(cloudName: cloudName, secure: true)
+        cloudinary = CLDCloudinary(configuration: config)
+    }
+    private func generateUrl() {
+            url = cloudinary.createUrl().setTransformation(CLDTransformation().setEffect("sepia")).generate(publicId)
+        }
+    
+    private func setImageView() {
+            ivGenerateUrl.cldSetImage(url, cloudinary: cloudinary)
+        }
 
+    private func uploadImage() {
+        guard let data = UIImage(named: "cloudinary_logo")?.pngData() else {
+            return
+        }
+        
+        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response, error in
+            DispatchQueue.main.async {
+                guard let url = response?.secureUrl else {
+                    return
+                }
+                self.ivUploadedImage.cldSetImage(url, cloudinary: self.cloudinary)
+            }
+        })
+     }
 
 }
 
