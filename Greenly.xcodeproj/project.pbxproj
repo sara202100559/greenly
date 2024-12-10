@@ -37,6 +37,7 @@
 		CF8D78852CF5ED6600A59136 /* GreenlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78842CF5ED6600A59136 /* GreenlyTests.swift */; };
 		CF8D788F2CF5ED6700A59136 /* GreenlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D788E2CF5ED6700A59136 /* GreenlyUITests.swift */; };
 		CF8D78912CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */; };
+		F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2074D6A2D085FA800C48B09 /* Feedback.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		CF8D788A2CF5ED6700A59136 /* GreenlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D788E2CF5ED6700A59136 /* GreenlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenlyUITests.swift; sourceTree = "<group>"; };
 		CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F2074D6A2D085FA800C48B09 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				CF6747692CF8BC8C00E9A704 /* Cart.storyboard */,
 				CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */,
 				CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */,
+				F2074D6A2D085FA800C48B09 /* Feedback.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF8D787A2CF5ED6600A59136 /* LaunchScreen.storyboard in Resources */,
+				F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */,
 				CF67476C2CF8BCA100E9A704 /* StoreOrders.storyboard in Resources */,
 				CF6747622CF8BC2600E9A704 /* CustomerHome.storyboard in Resources */,
 				CF67476E2CF8BCAE00E9A704 /* ProductDetails.storyboard in Resources */,
