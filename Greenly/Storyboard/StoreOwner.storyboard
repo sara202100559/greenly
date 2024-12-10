@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tib-T3-MZe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tib-T3-MZe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -96,10 +96,10 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NjH-mJ-spd">
-                                            <rect key="frame" x="104.99999999999999" y="23" width="194.66666666666663" height="60"/>
+                                            <rect key="frame" x="104.99999999999999" y="24" width="194.66666666666663" height="58"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIv-aB-DGo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="194.66666666666666" height="58"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" name="DarkBlue"/>
                                                     <nil key="highlightedColor"/>
@@ -478,7 +478,7 @@
         <image name="Deault-Logo" width="2000" height="2000"/>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
-        <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="128" height="108"/>
+        <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="128" height="109"/>
         <image name="storefront.fill" catalog="system" width="128" height="116"/>
         <namedColor name="DarkBlue">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
