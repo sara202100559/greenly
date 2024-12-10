@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initCloudinary()
-        uploadImage()
+//        uploadImage()
         generateUrl()
   
         
@@ -96,31 +96,31 @@ class ViewController: UIViewController {
     }
     
     private func initCloudinary() {
-        let config = CLDConfiguration(cloudName: cloudName, secure: true)
-        cloudinary = CLDCloudinary(configuration: config)
+//        let config = CLDConfiguration(cloudName: cloudName, secure: true)
+//        cloudinary = CLDCloudinary(configuration: config)
     }
     private func generateUrl() {
-            url = cloudinary.createUrl().setTransformation(CLDTransformation().setEffect("sepia")).generate(publicId)
+//            url = cloudinary.createUrl().setTransformation(CLDTransformation().setEffect("sepia")).generate(publicId)
         }
     
     private func setImageView() {
-            ivGenerateUrl.cldSetImage(url, cloudinary: cloudinary)
+            //ivGenerateUrl.cldSetImage(url, cloudinary: cloudinary)
         }
 
-    private func uploadImage() {
-        guard let data = UIImage(named: "cloudinary_logo")?.pngData() else {
-            return
-        }
-        
-        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response, error in
-            DispatchQueue.main.async {
-                guard let url = response?.secureUrl else {
-                    return
-                }
-                self.ivUploadedImage.cldSetImage(url, cloudinary: self.cloudinary)
-            }
-        })
-     }
+//    private func uploadImage() {
+//        guard let data = UIImage(named: "cloudinary_logo")?.pngData() else {
+//            return
+//        }
+//        
+////        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response, error in
+////            DispatchQueue.main.async {
+////                guard let url = response?.secureUrl else {
+////                    return
+////                }
+////                self.ivUploadedImage.cldSetImage(url, cloudinary: self.cloudinary)
+////            }
+//        })
+//     }
 
 }
 
