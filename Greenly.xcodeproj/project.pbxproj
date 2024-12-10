@@ -11,6 +11,7 @@
 		C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BA2CFC723400C1B4CE /* User.swift */; };
 		C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */; };
 		C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */; };
+		CF25FDAD2D085C6100485DC6 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF25FDAC2D085C6100485DC6 /* ProductCollectionViewCell.swift */; };
 		CF67474B2CF8A3FC00E9A704 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6747492CF8A3FC00E9A704 /* AddTableViewController.swift */; };
 		CF67474C2CF8A3FC00E9A704 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67474A2CF8A3FC00E9A704 /* Admin.storyboard */; };
 		CF67474E2CF8A44B00E9A704 /* StoreOwner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67474D2CF8A44B00E9A704 /* StoreOwner.storyboard */; };
@@ -60,6 +61,7 @@
 		C3DAC6BA2CFC723400C1B4CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CF25FDAC2D085C6100485DC6 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF6747492CF8A3FC00E9A704 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		CF67474A2CF8A3FC00E9A704 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		CF67474D2CF8A44B00E9A704 /* StoreOwner.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoreOwner.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				C3DAC6BA2CFC723400C1B4CE /* User.swift */,
 				C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */,
 				C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */,
+				CF25FDAC2D085C6100485DC6 /* ProductCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
+				CF25FDAD2D085C6100485DC6 /* ProductCollectionViewCell.swift in Sources */,
 				CF67474B2CF8A3FC00E9A704 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
