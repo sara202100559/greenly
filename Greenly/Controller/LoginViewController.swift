@@ -31,9 +31,9 @@ class LoginViewController: UIViewController {
                    case "admin":
                        performSegue(withIdentifier: "showAdminHomePage", sender: self)
                    case "store owner":
-                       performSegue(withIdentifier: "showStoreOwnerHomePage", sender: self)
+                                   navigateToStoreOwnerHomePage()
                    case "user":
-                       performSegue(withIdentifier: "showUserHomePage", sender: self)
+                       navigateToCustomerHomePage()
                    default:
                        break
                    }
@@ -47,6 +47,27 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    
+    
+    // Function to navigate to the Store Owner Home Page
+    func navigateToStoreOwnerHomePage() {
+        let storyboard = UIStoryboard(name: "StoreOwner", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerHomeViewController") as? StoreOwnerHomeViewController {
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            print("Failed to instantiate StoreOwnerHomeViewController.")
+        }
+    }
+    
+    func navigateToCustomerHomePage() {
+        let storyboard = UIStoryboard(name: "CustomerHome", bundle: nil) // Make sure the name is correct
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "CustomerHomeViewController") as? CustomerHomeViewController {
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            print("Failed to instantiate CustomerHomeViewController.")
+        }
+    }
+    
     
     @IBAction func showPasswordTapped(_ sender: UIButton) {
         // Toggle secure text entry

@@ -38,6 +38,8 @@
 		CF8D78852CF5ED6600A59136 /* GreenlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78842CF5ED6600A59136 /* GreenlyTests.swift */; };
 		CF8D788F2CF5ED6700A59136 /* GreenlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D788E2CF5ED6700A59136 /* GreenlyUITests.swift */; };
 		CF8D78912CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */; };
+		D1344FF62D09F674007A3915 /* StoreOwnerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344FF52D09F674007A3915 /* StoreOwnerHomeViewController.swift */; };
+		D1344FF82D09FD41007A3915 /* CustomerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1344FF72D09FD41007A3915 /* CustomerHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		CF8D788A2CF5ED6700A59136 /* GreenlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D788E2CF5ED6700A59136 /* GreenlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenlyUITests.swift; sourceTree = "<group>"; };
 		CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D1344FF52D09F674007A3915 /* StoreOwnerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOwnerHomeViewController.swift; sourceTree = "<group>"; };
+		D1344FF72D09FD41007A3915 /* CustomerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */,
 				C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */,
 				CF25FDAC2D085C6100485DC6 /* ProductCollectionViewCell.swift */,
+				D1344FF52D09F674007A3915 /* StoreOwnerHomeViewController.swift */,
+				D1344FF72D09FD41007A3915 /* CustomerHomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,7 +381,9 @@
 				C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */,
 				CF6747702CF8BE6A00E9A704 /* SettingController.swift in Sources */,
 				C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */,
+				D1344FF62D09F674007A3915 /* StoreOwnerHomeViewController.swift in Sources */,
 				CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */,
+				D1344FF82D09FD41007A3915 /* CustomerHomeViewController.swift in Sources */,
 				C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
