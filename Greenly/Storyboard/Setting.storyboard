@@ -187,7 +187,7 @@ If you have any questions or suggestions about our privacy policy, please contac
         <!--GreenlySetting-->
         <scene sceneID="p8o-27-auD">
             <objects>
-                <tableViewController title="GreenlySetting" id="VAE-Qc-eVA" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditProfileViewController" title="GreenlySetting" id="VAE-Qc-eVA" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="Greenly" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="5Tr-ph-3tc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,6 +216,7 @@ If you have any questions or suggestions about our privacy policy, please contac
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="greaterthan" catalog="system" title=""/>
                                                     <connections>
+                                                        <action selector="editProfileTapped:" destination="VAE-Qc-eVA" eventType="touchUpInside" id="gSU-Le-JWI"/>
                                                         <segue destination="hdg-da-KAY" kind="show" id="ujl-Xm-mEv"/>
                                                     </connections>
                                                 </button>
@@ -649,7 +650,7 @@ By continuing to access or use Our Service after those revisions become effectiv
         <!--Edit profile-->
         <scene sceneID="Cdd-em-yhS">
             <objects>
-                <viewController id="hdg-da-KAY" userLabel="Edit profile" sceneMemberID="viewController">
+                <viewController id="hdg-da-KAY" userLabel="Edit profile" customClass="EditProfileViewController" customModule="Greenly" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fli-Lw-Ltk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -692,21 +693,21 @@ By continuing to access or use Our Service after those revisions become effectiv
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpM-8b-xo4">
                                             <rect key="frame" x="29" y="77" width="244" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="textColor" systemColor="systemGray3Color"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Atc-Hw-Z8f">
                                             <rect key="frame" x="29" y="176" width="244" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="textColor" systemColor="systemGray3Color"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9t-x1-XpZ">
                                             <rect key="frame" x="29" y="288" width="244" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="textColor" systemColor="systemGray3Color"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -719,7 +720,14 @@ By continuing to access or use Our Service after those revisions become effectiv
                         <viewLayoutGuide key="safeArea" id="YOM-k2-ldz"/>
                         <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="F8c-4E-Wfy"/>
+                    <navigationItem key="navigationItem" id="F8c-4E-Wfy">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="RfZ-XT-dRL"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="d9t-x1-XpZ" id="nz6-Rg-YqE"/>
+                        <outlet property="firstNameTextField" destination="TpM-8b-xo4" id="0dV-qO-oEa"/>
+                        <outlet property="lastNameTextField" destination="Atc-Hw-Z8f" id="Pbz-xj-9pQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhV-7l-Uzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -746,9 +754,6 @@ By continuing to access or use Our Service after those revisions become effectiv
         <image name="greaterthan" catalog="system" width="128" height="108"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

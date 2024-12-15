@@ -16,36 +16,27 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
-    @IBOutlet weak var showPasswordButton: UIButton! // Button to toggle password visibility
-    @IBOutlet weak var showRepeatPasswordButton: UIButton! // Button to toggle repeat password visibility
-
-    
+    @IBOutlet weak var showPasswordButton: UIButton!
+    @IBOutlet weak var showRepeatPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set initial state for password fields
         passwordTextField.isSecureTextEntry = true
         repeatPasswordTextField.isSecureTextEntry = true
     }
     
     @IBAction func showPasswordTapped(_ sender: UIButton) {
-        // Toggle secure text entry for password field
         passwordTextField.isSecureTextEntry.toggle()
-
-        // Change button appearance based on password visibility
         let buttonImage = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
         showPasswordButton.setImage(UIImage(systemName: buttonImage), for: .normal)
     }
-
+    
     @IBAction func showRepeatPasswordTapped(_ sender: UIButton) {
-        // Toggle secure text entry for repeat password field
         repeatPasswordTextField.isSecureTextEntry.toggle()
-
-        // Change button appearance based on password visibility
         let buttonImage = repeatPasswordTextField.isSecureTextEntry ? "eye.slash" : "eye"
         showRepeatPasswordButton.setImage(UIImage(systemName: buttonImage), for: .normal)
     }
-
+    
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         guard let firstName = firstNameTextField.text,
               let lastName = lastNameTextField.text,
@@ -54,44 +45,30 @@ class RegistrationViewController: UIViewController {
               let repeatPassword = repeatPasswordTextField.text else { return }
 
         if password != repeatPassword {
-            // Show error message
-            let alert = UIAlertController(title: "Error", message: "Passwords do not match.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
+            showAlert(title: "Error", message: "Passwords do not match.")
             return
         }
+
+        // Save user data to UserDefaults
+        let userData: [String: String] = [
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email
+        ]
+        print("Saving User Data: \(userData)") // Debug print
+        UserDefaults.standard.set(userData, forKey: "userProfile")
         
-
-        // Register the user with Firebase Authentication
-                Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                    if let error = error {
-                        // Show error message
-                        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(alert, animated: true)
-                        return
-                    }
-
-                    // User registration successful, save additional data to Firestore
-                    guard let userId = authResult?.user.uid else { return }
-                    let userData: [String: Any] = [
-                        "firstName": firstName,
-                        "lastName": lastName,
-                        "role": "user" // Set user role as needed
-                    ]
-
-                    // Save to Firestore
-                    Firestore.firestore().collection("users").document(userId).setData(userData) { error in
-                        if let error = error {
-                            // Show error message
-                            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .default))
-                            self.present(alert, animated: true)
-                        } else {
-                            // Navigate to the home page
-                            self.performSegue(withIdentifier: "showHomePage", sender: self)
-                        }
-                    }
-                }
-    }
+        // Navigate to Edit Profile
+        if let editProfileVC = storyboard?.instantiateViewController(withIdentifier: "SettingsTableViewController") as? EditProfileViewController {
+            editProfileVC.firstName = firstName
+            editProfileVC.lastName = lastName
+            editProfileVC.email = email
+            navigationController?.pushViewController(editProfileVC, animated: true)
+        }
+    }  
+    func showAlert(title: String, message: String) {
+       let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+       alert.addAction(UIAlertAction(title: "OK", style: .default))
+       present(alert, animated: true)
+   }
 }

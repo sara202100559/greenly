@@ -30,10 +30,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initCloudinary()
-        uploadImage()
-        generateUrl()
-  
+//        initCloudinary()
+//        uploadImage()
+//        generateUrl()
+//  
         
         
 //        // Create a root reference
@@ -92,35 +92,35 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setImageView()
+        //setImageView()
     }
     
-    private func initCloudinary() {
-        let config = CLDConfiguration(cloudName: cloudName, secure: true)
-        cloudinary = CLDCloudinary(configuration: config)
-    }
-    private func generateUrl() {
-            url = cloudinary.createUrl().setTransformation(CLDTransformation().setEffect("sepia")).generate(publicId)
-        }
-    
-    private func setImageView() {
-            ivGenerateUrl.cldSetImage(url, cloudinary: cloudinary)
-        }
+//    private func initCloudinary() {
+//        let config = CLDConfiguration(cloudName: cloudName, secure: true)
+//        cloudinary = CLDCloudinary(configuration: config)
+//    }
+//    private func generateUrl() {
+//            url = cloudinary.createUrl().setTransformation(CLDTransformation().setEffect("sepia")).generate(publicId)
+//        }
+//    
+//    private func setImageView() {
+//            ivGenerateUrl.cldSetImage(url, cloudinary: cloudinary)
+//        }
 
-    private func uploadImage() {
-        guard let data = UIImage(named: "cloudinary_logo")?.pngData() else {
-            return
-        }
-        
-        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response, error in
-            DispatchQueue.main.async {
-                guard let url = response?.secureUrl else {
-                    return
-                }
-                self.ivUploadedImage.cldSetImage(url, cloudinary: self.cloudinary)
-            }
-        })
-     }
+//    private func uploadImage() {
+//        guard let data = UIImage(named: "cloudinary_logo")?.pngData() else {
+//            return
+//        }
+//        
+//        cloudinary.createUploader().upload(data: data, uploadPreset: uploadPreset, completionHandler:  { response, error in
+//            DispatchQueue.main.async {
+//                guard let url = response?.secureUrl else {
+//                    return
+//                }
+//                self.ivUploadedImage.cldSetImage(url, cloudinary: self.cloudinary)
+//            }
+//        })
+//     }
 
 }
 

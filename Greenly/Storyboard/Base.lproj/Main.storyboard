@@ -38,74 +38,6 @@
             </objects>
             <point key="canvasLocation" x="-2327" y="175"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydS-C4-nOC">
-                                <rect key="frame" x="224" y="308" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="fAn-W3-Ig4" kind="presentation" modalPresentationStyle="fullScreen" id="aYe-6f-qMY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x20-m5-KEj">
-                                <rect key="frame" x="173" y="499" width="120" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Store Owner"/>
-                                <connections>
-                                    <segue destination="jpl-3N-oWk" kind="presentation" id="C1k-b7-IZ4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDp-fC-3RF">
-                                <rect key="frame" x="157" y="162" width="79" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Setting"/>
-                                <connections>
-                                    <segue destination="m9p-2B-ijb" kind="presentation" modalPresentationStyle="fullScreen" id="1cG-aU-99X"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="0.0"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="5hn-nM-Dgg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="m9p-2B-ijb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c2N-cB-HEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="697" y="-203"/>
-        </scene>
-        <!--Admin-->
-        <scene sceneID="dAY-hp-gWI">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Admin" id="fAn-W3-Ig4" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uON-iW-6Cd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="813" y="-39"/>
-        </scene>
-        <!--StoreOwner-->
-        <scene sceneID="hhG-Kd-Ukm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="StoreOwner" id="jpl-3N-oWk" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hZe-mK-Uag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="706" y="60"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="KLu-Tw-icv">
             <objects>
@@ -181,8 +113,8 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                             <connections>
-                                                <action selector="loginButtonTapped:" destination="P9v-eh-Qjp" eventType="touchUpInside" id="8mP-Im-K7q"/>
-                                                <segue destination="nA3-KN-e4h" kind="show" identifier="showStoreOwnerHomePage" id="8fq-9Z-l2a"/>
+                                                <action selector="loginButtonTapped:" destination="P9v-eh-Qjp" eventType="touchUpInside" id="j0q-8b-Pgd"/>
+                                                <segue destination="Oxx-p5-LgA" kind="show" id="Rb7-dI-fsC"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dont have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-b0-Dwc">
@@ -248,7 +180,6 @@
                         <outlet property="emailTextField" destination="0fs-c4-epw" id="cng-la-tMo"/>
                         <outlet property="passwordTextField" destination="uEa-mT-7Ii" id="brm-D9-Omq"/>
                         <outlet property="showPasswordButton" destination="Boz-WM-wve" id="l8q-fo-WcT"/>
-                        <segue destination="X59-4Y-hV4" kind="show" identifier="showAdminHomePage" id="f5L-V2-CAJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LxG-Yn-AWl" sceneMemberID="firstResponder"/>
@@ -256,25 +187,25 @@
             </objects>
             <point key="canvasLocation" x="-390.07633587786256" y="766.90140845070425"/>
         </scene>
-        <!--Admin-->
-        <scene sceneID="ZSK-nk-AN4">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Admin" id="X59-4Y-hV4" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Mkl-Ot-BYD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0n5-oC-3LO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-689" y="1193"/>
-        </scene>
         <!--StoreOwner-->
-        <scene sceneID="utf-lX-Hum">
+        <scene sceneID="kdU-b0-Q4K">
             <objects>
-                <viewControllerPlaceholder storyboardName="StoreOwner" id="nA3-KN-e4h" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="50V-P8-DOv"/>
+                <viewControllerPlaceholder storyboardName="StoreOwner" id="LU6-Dm-o3S" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="stE-Xi-eeK"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7R0-rT-dAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYv-le-mHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="1204"/>
+            <point key="canvasLocation" x="-631" y="1185"/>
+        </scene>
+        <!--Admin-->
+        <scene sceneID="SBj-le-D4m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Admin" id="Oxx-p5-LgA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zsl-er-hgf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zg4-pF-fbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242" y="1182"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="WpI-aD-o7c">
@@ -320,6 +251,7 @@
                                             <buttonConfiguration key="configuration" style="filled" title="Register"/>
                                             <connections>
                                                 <action selector="registerButtonTapped:" destination="xwO-23-hLv" eventType="touchUpInside" id="tF1-W3-kUO"/>
+                                                <segue destination="tyl-o2-qKT" kind="show" identifier="showHomePage" id="tQc-jo-Ikl"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEi-xb-gzm">
@@ -437,15 +369,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HmQ-Cd-8kT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="BIK-D2-AIo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="453" y="767"/>
+            <point key="canvasLocation" x="437" y="767"/>
         </scene>
         <!--CustomerHome-->
         <scene sceneID="Pb3-Ct-cTR">
             <objects>
-                <viewControllerPlaceholder storyboardName="CustomerHome" id="tyl-o2-qKT" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="CustomerHome" id="tyl-o2-qKT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x8b-rZ-zyJ"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAV-JI-Cvu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="1204"/>
+            <point key="canvasLocation" x="436" y="1151"/>
         </scene>
     </scenes>
     <resources>
@@ -455,7 +389,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

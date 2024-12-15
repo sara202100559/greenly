@@ -109,6 +109,51 @@
                   endingLineNumber = "93"
                   offsetFromSymbolStart = "164">
                </Location>
+               <Location
+                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - 97a53cdb3b30ecc1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenly.AddTableViewController.init(style: __C.UITableViewStyle) -&gt; Greenly.AddTableViewController"
+                  moduleName = "Greenly"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/administrator/Desktop/greenly/Greenly/Controller/AddTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "154">
+               </Location>
+               <Location
+                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - 1e0e77cdb379275f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenly.AddTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Greenly.AddTableViewController"
+                  moduleName = "Greenly"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/administrator/Desktop/greenly/Greenly/Controller/AddTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "207">
+               </Location>
+               <Location
+                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - f607b7eeb4193854"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greenly.AddTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Greenly.AddTableViewController&gt;"
+                  moduleName = "Greenly"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/administrator/Desktop/greenly/Greenly/Controller/AddTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "164">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

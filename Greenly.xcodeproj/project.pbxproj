@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC5449142D0074C700763909 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = AC5449132D0074C700763909 /* Cloudinary */; };
+		C3D8464B2D0EC41D0015AB4E /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8464A2D0EC41D0015AB4E /* EditProfileViewController.swift */; };
 		C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BA2CFC723400C1B4CE /* User.swift */; };
 		C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */; };
 		C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3D8464A2D0EC41D0015AB4E /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BA2CFC723400C1B4CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				CF25FDAC2D085C6100485DC6 /* ProductCollectionViewCell.swift */,
 				D1344FF52D09F674007A3915 /* StoreOwnerHomeViewController.swift */,
 				D1344FF72D09FD41007A3915 /* CustomerHomeViewController.swift */,
+				C3D8464A2D0EC41D0015AB4E /* EditProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				D1344FF82D09FD41007A3915 /* CustomerHomeViewController.swift in Sources */,
 				C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
+				C3D8464B2D0EC41D0015AB4E /* EditProfileViewController.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
 				CF25FDAD2D085C6100485DC6 /* ProductCollectionViewCell.swift in Sources */,
 				CF67474B2CF8A3FC00E9A704 /* AddTableViewController.swift in Sources */,

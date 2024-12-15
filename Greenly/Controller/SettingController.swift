@@ -57,7 +57,24 @@ class SettingsTableViewController: UITableViewController {
         })
         present(alert, animated: true)
     }
-    
+    // MARK: - Edit Profile Action
+      @IBAction func editProfileTapped(_ sender: Any) {
+          if let editProfileVC = storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as? EditProfileViewController {
+              navigationController?.pushViewController(editProfileVC, animated: true)
+          }
+      }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEditProfile" {
+            if let editProfileVC = segue.destination as? EditProfileViewController {
+                // Fetch stored user data from UserDefaults
+                if let userData = UserDefaults.standard.dictionary(forKey: "userProfile") as? [String: String] {
+                    editProfileVC.firstName = userData["firstName"] ?? ""
+                    editProfileVC.lastName = userData["lastName"] ?? ""
+                    editProfileVC.email = userData["email"] ?? ""
+                }
+            }
+        }
+    }
     
     
     // MARK: - Navigation Methods
