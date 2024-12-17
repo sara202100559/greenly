@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7643AD322D0E37C100555D4B /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643AD312D0E37C100555D4B /* ProductDetailsViewController.swift */; };
 		AC5449142D0074C700763909 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = AC5449132D0074C700763909 /* Cloudinary */; };
 		C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BA2CFC723400C1B4CE /* User.swift */; };
 		C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7643AD312D0E37C100555D4B /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BA2CFC723400C1B4CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				C3DAC6BA2CFC723400C1B4CE /* User.swift */,
 				C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */,
 				C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */,
+				7643AD312D0E37C100555D4B /* ProductDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */,
 				C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
+				7643AD322D0E37C100555D4B /* ProductDetailsViewController.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
 				CF67474B2CF8A3FC00E9A704 /* AddTableViewController.swift in Sources */,
 			);
