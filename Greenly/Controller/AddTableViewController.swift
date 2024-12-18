@@ -1,108 +1,23 @@
 //
 //  AddTableViewController.swift
-//  tt
+//  Greenly
 //
 //  Created by BP-36-201-16N on 27/11/2024.
 //
 
 import UIKit
 
+protocol AddTableViewControllerDelegate: AnyObject {
+    func didSaveStore(_ store: Details, editingIndex: IndexPath?)
+}
+
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
-    //    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Uncomment the following line to preserve selection between presentations
-//        // self.clearsSelectionOnViewWillAppear = false
-//
-//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-//    }
-    
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
     // MARK: - Properties
     var details: Details?
-    
-    struct Details {
-        var name: String = ""
-        var email: String = ""
-        var num: String = ""
-        var pass: String = ""
-        var location: String = ""
-        var web: String = ""
-        var from: String = ""
-        var to: String = ""
-    }
-    
+    var editingIndex: IndexPath?
+    weak var delegate: AddTableViewControllerDelegate?
+
     // MARK: - Outlets
     @IBOutlet weak var StoreLogo: UIImageView!
     @IBOutlet weak var StoreName: UITextField!
@@ -113,22 +28,34 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     @IBOutlet weak var StoreWebsite: UITextField!
     @IBOutlet weak var StoreFrom: UITextField!
     @IBOutlet weak var StoreTo: UITextField!
-    
+
+    // Error Labels
+    @IBOutlet weak var emailErrorLabel: UILabel!
+    @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var websiteErrorLabel: UILabel!
+    @IBOutlet weak var timeErrorLabel: UILabel!
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        //setupGestureForLogo()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    
-    // MARK: - Setup UI
+
     private func setupUI() {
+        emailErrorLabel.text = ""
+        passwordErrorLabel.text = ""
+        websiteErrorLabel.text = ""
+        timeErrorLabel.text = ""
+
         if let details = details {
             title = "Edit Store Details"
             StoreName.text = details.name
             StoreEmail.text = details.email
             StoreNumber.text = details.num
             StorePassword.text = details.pass
+            StoreLogo.image = details.image
             StoreLocation.text = details.location
             StoreWebsite.text = details.web
             StoreFrom.text = details.from
@@ -137,109 +64,95 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             title = "Add New Store"
         }
     }
-    
-//    // MARK: - Gesture Setup for Logo
-//    private func setupGestureForLogo() {
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImageTapped))
-//        StoreLogo.addGestureRecognizer(tapGesture)
-//        StoreLogo.isUserInteractionEnabled = true
-//    }
-    
-    // MARK: - Select Image
-   // @objc private func selectImageTapped() {
-     //   let imagePicker = UIImagePickerController()
-       // imagePicker.delegate = self
-       // imagePicker.sourceType = .photoLibrary
-       // present(imagePicker, animated: true, completion: nil)
-   // }
-    
-    @IBAction func Logo(_ sender: Any) {
-        //showImageAlert()
-    }
-    
-//    var arrPhots = [UIImage]()
-//    // MARK: - Select Image
-//        func showImageAlert() {
-//            let alert = UIAlertController(title: "Take Photo From", message: nil, preferredStyle: .actionSheet)
-//            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {action in
-//                self.getPhoto(type: .camera)
-//            }))
-//            alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {action in
-//                self.getPhoto(type: .photoLibrary)
-//            }))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            present(alert, animated: true, completion: nil)
-//    }
-//
-//    func getPhoto(type: UIImagePickerController.SourceType){
-//        let picker = UIImagePickerController()
-//        picker.sourceType = type
-//        picker.allowsEditing = false
-//        picker.delegate = self
-//        present(picker, animated: true, completion: nil)
-//    }
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
-//        if let image = info[.originalImage] as? UIImage{
-//            StoreLogo.image = image
-//        }else{
-//            print("image not found")
-//        }
-//        func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
-//            dismiss(animated: true, completion: nil)
-//
-//        }
-//    }
 
-    
-    // MARK: - Save Button Action
+    init?(coder: NSCoder, store: Details?) {
+        self.details = store
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     @IBAction func SaveAdded(_ sender: UIBarButtonItem) {
-        let name = StoreName.text ?? ""
-        let email = StoreEmail.text ?? ""
-        let num = StoreNumber.text ?? ""
-        let pass = StorePassword.text ?? ""
-        let location = StoreLocation.text ?? ""
-        let web = StoreWebsite.text ?? ""
-        let from = StoreFrom.text ?? ""
-        let to = StoreTo.text ?? ""
-        
-        if name.isEmpty || email.isEmpty || num.isEmpty || pass.isEmpty || location.isEmpty || web.isEmpty || from.isEmpty || to.isEmpty {
-            AlertHelper.showAlert(on: self, title: "Error", message: "Please fill in all fields.")
+        // Clear all error messages
+        emailErrorLabel?.text = ""
+        passwordErrorLabel?.text = ""
+        websiteErrorLabel?.text = ""
+        timeErrorLabel?.text = ""
+
+        // Validate input fields
+        guard let name = StoreName.text, !name.isEmpty,
+              let email = StoreEmail.text, !email.isEmpty,
+              let num = StoreNumber.text, !num.isEmpty,
+              let pass = StorePassword.text, !pass.isEmpty,
+              let location = StoreLocation.text, !location.isEmpty,
+              let web = StoreWebsite.text, !web.isEmpty,
+              let from = StoreFrom.text, !from.isEmpty,
+              let to = StoreTo.text, !to.isEmpty else {
+            AlertHelper.showAlert(on: self, title: "Error", message: "Fill all the fields")
             return
         }
-        
-        let updatedDetails = Details(name: name, email: email, num: num, pass: pass, location: location, web: web, from: from, to: to)
-        
-        if details == nil {
-            print("Adding new details: \(updatedDetails)")
-        } else {
-            print("Editing existing details: \(updatedDetails)")
-        }
-        
-        navigationController?.popViewController(animated: true)
+
+        // Create the Details object
+        let store = Details(name: name, email: email, num: num, pass: pass, image: StoreLogo.image ?? UIImage(), location: location, web: web, from: from, to: to)
+
+        // Call the delegate method
+        delegate?.didSaveStore(store, editingIndex: editingIndex)
+
+        // Dismiss the view controller
+        dismiss(animated: true, completion: nil)
     }
-}
 
-// MARK: - UIImagePickerControllerDelegate
-//extension AddTableViewController {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-//        if let selectedImage = info[.originalImage] as? UIImage {
-//            StoreLogo.image = selectedImage
-//        }
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-//}
+    @IBAction func Logo(_ sender: Any) {
+        showImageAlert()
+    }
 
+    private func showImageAlert() {
+        let alert = UIAlertController(title: "Take Photo From", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+            self.getPhoto(type: .photoLibrary)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 
-// MARK: - Alert Helper
-class AlertHelper {
-    static func showAlert(on viewController: UIViewController, title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        viewController.present(alertController, animated: true, completion: nil)
+    private func getPhoto(type: UIImagePickerController.SourceType) {
+        let picker = UIImagePickerController()
+        picker.sourceType = type
+        picker.allowsEditing = false
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            StoreLogo.image = image
+        } else {
+            print("Image not found")
+        }
+        dismiss(animated: true)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    private func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegEx).evaluate(with: email)
+    }
+
+    private func isValidPassword(_ password: String) -> Bool {
+        return password.count >= 6
+    }
+
+    private func isValidURL(_ url: String) -> Bool {
+        return URL(string: url) != nil
+    }
+
+    private func isValidTime(_ time: String) -> Bool {
+        let timeRegEx = "^(0?[1-9]|1[0-2]):[0-5][0-9]\\s?(AM|PM)$"
+        return NSPredicate(format: "SELF MATCHES %@", timeRegEx).evaluate(with: time)
     }
 }

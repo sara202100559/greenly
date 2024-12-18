@@ -37,6 +37,12 @@
 		CF8D78852CF5ED6600A59136 /* GreenlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78842CF5ED6600A59136 /* GreenlyTests.swift */; };
 		CF8D788F2CF5ED6700A59136 /* GreenlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D788E2CF5ED6700A59136 /* GreenlyUITests.swift */; };
 		CF8D78912CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */; };
+		D1EFD2572D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD2562D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift */; };
+		D1EFD2592D12A3F300EFEC20 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD2582D12A3F300EFEC20 /* EditProfileViewController.swift */; };
+		D1EFD2662D12B6B800EFEC20 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD2652D12B6B800EFEC20 /* StoresTableViewController.swift */; };
+		D1EFD2692D12B6EB00EFEC20 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */; };
+		D1EFD26B2D12B70600EFEC20 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD26A2D12B70600EFEC20 /* Details.swift */; };
+		D1EFD26D2D12B72500EFEC20 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD26C2D12B72500EFEC20 /* helpers.swift */; };
 		F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2074D6A2D085FA800C48B09 /* Feedback.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +92,12 @@
 		CF8D788A2CF5ED6700A59136 /* GreenlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D788E2CF5ED6700A59136 /* GreenlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenlyUITests.swift; sourceTree = "<group>"; };
 		CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenlyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D1EFD2562D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOwnerHomeViewController.swift; sourceTree = "<group>"; };
+		D1EFD2582D12A3F300EFEC20 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		D1EFD2652D12B6B800EFEC20 /* StoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresTableViewController.swift; sourceTree = "<group>"; };
+		D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
+		D1EFD26A2D12B70600EFEC20 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		D1EFD26C2D12B72500EFEC20 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		F2074D6A2D085FA800C48B09 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +141,9 @@
 				C3DAC6BA2CFC723400C1B4CE /* User.swift */,
 				C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */,
 				C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */,
+				D1EFD2562D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift */,
+				D1EFD2582D12A3F300EFEC20 /* EditProfileViewController.swift */,
+				D1EFD2652D12B6B800EFEC20 /* StoresTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +204,7 @@
 		CF8D786C2CF5ED6400A59136 /* Greenly */ = {
 			isa = PBXGroup;
 			children = (
+				D1EFD2672D12B6D300EFEC20 /* Views */,
 				CF67475D2CF8B0A700E9A704 /* GoogleService-Info.plist */,
 				CF6747422CF89F9300E9A704 /* Storyboard */,
 				CF6747412CF89F8100E9A704 /* Model */,
@@ -217,6 +233,16 @@
 				CF8D78902CF5ED6700A59136 /* GreenlyUITestsLaunchTests.swift */,
 			);
 			path = GreenlyUITests;
+			sourceTree = "<group>";
+		};
+		D1EFD2672D12B6D300EFEC20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */,
+				D1EFD26A2D12B70600EFEC20 /* Details.swift */,
+				D1EFD26C2D12B72500EFEC20 /* helpers.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,13 +399,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1EFD2572D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift in Sources */,
+				D1EFD2662D12B6B800EFEC20 /* StoresTableViewController.swift in Sources */,
 				C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */,
+				D1EFD2692D12B6EB00EFEC20 /* StoreTableViewCell.swift in Sources */,
 				CF6747702CF8BE6A00E9A704 /* SettingController.swift in Sources */,
 				C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */,
 				CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */,
+				D1EFD26D2D12B72500EFEC20 /* helpers.swift in Sources */,
 				C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */,
+				D1EFD26B2D12B70600EFEC20 /* Details.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
+				D1EFD2592D12A3F300EFEC20 /* EditProfileViewController.swift in Sources */,
 				CF67474B2CF8A3FC00E9A704 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
