@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jbJ-j3-mUa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cRa-4Q-QKj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController title="Privacy Policy" id="8d6-UA-0Mu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="ncv-WU-fOa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQC-Mu-JaK">
-                                <rect key="frame" x="0.0" y="103" width="393" height="614"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="614"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="KDb-gI-VvT">
                                         <rect key="frame" x="0.0" y="-8" width="393" height="614"/>
@@ -136,7 +136,7 @@ If you have any questions or suggestions about our privacy policy, please contac
         <!--GreenlySetting-->
         <scene sceneID="8rF-3w-NkY">
             <objects>
-                <tableViewController storyboardIdentifier="EditProfileViewController" title="GreenlySetting" id="XWX-Gu-zSB" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="Greenly" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditProfileViewController" title="GreenlySetting" id="XWX-Gu-zSB" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="y8P-X9-X5Y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,6 +357,7 @@ If you have any questions or suggestions about our privacy policy, please contac
                             <outlet property="delegate" destination="XWX-Gu-zSB" id="2vl-7n-qCK"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape" catalog="system" selectedImage="gearshape" id="wOZ-d1-srH"/>
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="8qE-uh-EpL"/>
                     <connections>
                         <outlet property="delete" destination="Vbd-lC-x8f" id="gaA-wo-Kuu"/>
@@ -365,34 +366,18 @@ If you have any questions or suggestions about our privacy policy, please contac
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDW-mm-sxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="275.57251908396944" y="694.36619718309862"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UnB-dL-wX3">
-            <objects>
-                <navigationController title="Navigation Controller" id="jbJ-j3-mUa" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5O1-ut-h5o">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="XWX-Gu-zSB" kind="relationship" relationship="rootViewController" id="JBe-nY-Te2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EGg-FL-AJg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-943" y="694"/>
+            <point key="canvasLocation" x="1202.2900763358778" y="694.36619718309862"/>
         </scene>
         <!--Terms and Conditions-->
         <scene sceneID="Nhd-yf-hEY">
             <objects>
                 <viewController title="Terms and Conditions" id="fNW-LU-C7V" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="zTk-Rc-Cjc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQJ-rV-RD8">
-                                <rect key="frame" x="0.0" y="103" width="393" height="614"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="614"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="JH0-9T-Ea3">
                                         <rect key="frame" x="0.0" y="-8" width="393" height="614"/>
@@ -617,7 +602,7 @@ By continuing to access or use Our Service after those revisions become effectiv
             <objects>
                 <viewController id="0g6-vw-uWO" userLabel="Edit profile" customClass="EditProfileViewController" customModule="Greenly" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nK9-nc-oFt">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K17-Fv-y4q">
@@ -703,11 +688,11 @@ By continuing to access or use Our Service after those revisions become effectiv
             <objects>
                 <viewController title="About" id="72y-00-eSs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="Ego-8h-pzh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="8an-rn-orf">
-                                <rect key="frame" x="0.0" y="103" width="393" height="614"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="614"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-I0-4hF">
                                         <rect key="frame" x="0.0" y="-8" width="393" height="663"/>
@@ -749,8 +734,26 @@ By continuing to access or use Our Service after those revisions become effectiv
             </objects>
             <point key="canvasLocation" x="-443.51145038167937" y="1514.7887323943662"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ROP-2b-T5U">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cRa-4Q-QKj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bzl-P7-Bo6">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XWX-Gu-zSB" kind="relationship" relationship="viewControllers" id="wDL-dD-vNe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZ7-1O-7hQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275.57251908396944" y="694.36619718309862"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="greaterthan" catalog="system" width="128" height="108"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

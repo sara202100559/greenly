@@ -1,32 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="smf-Un-FJQ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Tab Bar Controller-->
+        <scene sceneID="K3V-s2-u0N">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <tabBarController id="smf-Un-FJQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XQQ-Yn-d6y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="iQe-98-c4P" kind="relationship" relationship="viewControllers" id="IfN-on-eth"/>
+                        <segue destination="b3z-fU-KhJ" kind="relationship" relationship="viewControllers" id="qCs-cH-aCO"/>
+                        <segue destination="FCK-80-jLd" kind="relationship" relationship="viewControllers" id="yaX-ZM-xAM"/>
+                        <segue destination="Luy-fw-AXK" kind="relationship" relationship="viewControllers" id="nD3-h4-9G4"/>
+                        <segue destination="MlD-5a-aEv" kind="relationship" relationship="viewControllers" id="K5A-Kj-5kg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHi-8b-3tL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1356" y="-764"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="HwK-5c-gJ5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="cart_ref" storyboardName="Cart" id="FCK-80-jLd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZEK-0w-So0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmx-bh-iaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-205" y="-248"/>
+        </scene>
+        <!--ImpactTracker-->
+        <scene sceneID="RQa-c2-Qsw">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="impact_ref" storyboardName="ImpactTracker" id="b3z-fU-KhJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Wqp-Cb-G7G"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnC-md-FGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-205" y="-337"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="Ebv-Gy-Dk6">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="EditProfileViewController" storyboardName="Setting" id="MlD-5a-aEv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="pPm-4w-QGW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jc2-AX-XYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1331" y="-251"/>
+        </scene>
+        <!--OrderHistory-->
+        <scene sceneID="ZXA-PM-YeW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="OrderHistory_ref" storyboardName="OrderHistory" id="Luy-fw-AXK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Y9P-1p-4bh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77U-2a-dyg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-801" y="-251"/>
+        </scene>
+        <!--Stores-->
+        <scene sceneID="FEb-Bw-T1Z">
+            <objects>
+                <tableViewController storyboardIdentifier="AdminHomeViewController" id="iQe-98-c4P" customClass="StoresTableViewController" customModule="Greenly" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="xNb-sP-RmT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.81122714279999997" green="0.83571141959999995" blue="0.80394107100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StoreCell" rowHeight="81" id="5BN-9i-SiU" customClass="StoreTableViewCell" customModule="Greenly">
+                                <rect key="frame" x="20" y="55.333332061767578" width="353" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5BN-9i-SiU" id="kf0-m6-4b9" customClass="StoreTableViewCell" customModule="Greenly">
+                                    <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="81"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3u-dn-tCv">
+                                            <rect key="frame" x="110" y="22" width="194" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F78-4z-Dwd" userLabel="store image">
+                                            <rect key="frame" x="20" y="11" width="71" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="m3u-dn-tCv" id="OmS-hf-iTB"/>
+                                    <outlet property="photo" destination="F78-4z-Dwd" id="soW-Xk-Cp1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="iQe-98-c4P" id="RTk-Jo-efA"/>
+                            <outlet property="delegate" destination="iQe-98-c4P" id="amw-FI-ds0"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="5Gz-MS-6uq"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Stores" id="PFs-Kn-Aq4">
+                        <barButtonItem key="leftBarButtonItem" image="rectangle.portrait.and.arrow.forward" catalog="system" id="PRF-Bp-bg0">
+                            <connections>
+                                <action selector="Exit:" destination="iQe-98-c4P" id="17s-eL-mWk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ul5-Qa-cR2"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLA-GZ-rfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-2"/>
+            <point key="canvasLocation" x="-140" y="-764"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="128" height="108"/>
     </resources>
 </document>
