@@ -5,118 +5,60 @@
 //  Created by BP-36-201-22 on 01/12/2024.
 //
 
-import Foundation
-
 import UIKit
+import FirebaseAuth
+import FirebaseDatabaseInternal
 
 class LoginViewController: UIViewController {
+
+    // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var showPasswordButton: UIButton! // Button to toggle password visibility
 
-    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
-            super.viewDidLoad()
-            // Set initial state for password field
-            passwordTextField.isSecureTextEntry = true
-        }
-
+        super.viewDidLoad()
+        passwordTextField.isSecureTextEntry = true // Set initial password field state
+    }
+    
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        
-        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-
-        for user in sampleUsers {
-            if user.email == email && user.password == password {
-                // Check user role and navigate to the appropriate home page
-                switch user.role {
-                case "admin":
-                    // Navigate to Admin Home Page
-                    let storyboard = UIStoryboard(name: "Admin", bundle: nil)
-                    let adminVC = storyboard.instantiateViewController(withIdentifier: "AdminHomeViewController") as! StoresTableViewController
-                    //adminVC.modalPresentationStyle = .fullScreen
-                    self.performSegue(withIdentifier: "admin", sender: nil)
-
-                case "store owner":
-                    // Navigate to Store Owner Home Page
-                    navigateToStoreOwnerHomePage()
-
-                case "user":
-                    // Navigate to Customer Home Page
-                    let storyboard = UIStoryboard(name: "CustomerHome", bundle: nil)
-                    let customerVC = storyboard.instantiateViewController(withIdentifier: "CustomerHomeViewController")
-                    customerVC.modalPresentationStyle = .fullScreen
-                    self.present(customerVC, animated: true) {
-                        self.view.window?.rootViewController = customerVC
-                    }
-
-                default:
-                    break
-                }
+    
+    // MARK: - Actions
+    
+    
+        // Validate fields
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            showAlert(title: "Error", message: "Please enter both email and password.")
+            return
+        }
+        // Firebase Authentication
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription)
                 return
             }
-        }
 
-        // Show error message
-        let alert = UIAlertController(title: "Error", message: "Invalid email or password.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-
-    
-//    @IBAction func loginButtonTapped(_ sender: UIButton) {
-//           guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-//
-//           for user in sampleUsers {
-//               if user.email == email && user.password == password {
-//                   // Check user role and navigate to the appropriate home page
-//                   switch user.role {
-//                   case "admin":
-//                       performSegue(withIdentifier: "showAdminHomePage", sender: self)
-//                   case "store owner":
-//                                   navigateToStoreOwnerHomePage()
-//                   case "user":
-//                                  // Use segue to navigate to the customer home page
-//                                  performSegue(withIdentifier: "showHomePage", sender: self)
-//                   default:
-//                       break
-//                   }
-//                   return
-//               }
-//           }
-//
-//
-//        // Show error message
-//        let alert = UIAlertController(title: "Error", message: "Invalid email or password.", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .default))
-//        present(alert, animated: true)
-//    }
-    
-    
-    // Function to navigate to the Store Owner Home Page
-    func navigateToStoreOwnerHomePage() {
-        let storyboard = UIStoryboard(name: "StoreOwner", bundle: nil)
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerHomeViewController") as? StoreOwnerHomeViewController {
-            navigationController?.pushViewController(viewController, animated: true)
-        } else {
-            print("Failed to instantiate StoreOwnerHomeViewController.")
+            
+            if email.contains("admin".lowercased()){
+                self.performSegue(withIdentifier: "admin", sender: sender)
+            }
+            else if email.contains("store".lowercased()){
+                self.performSegue(withIdentifier: "Storeowner", sender: sender)
+            }
+            else {
+                self.performSegue(withIdentifier: "CustHome", sender: sender)
+            }
         }
     }
-    
-//    func navigateToCustomerHomePage() {
-//        let storyboard = UIStoryboard(name: "CustomerHome", bundle: nil) // Make sure the name is correct
-//        if let viewController = storyboard.instantiateViewController(withIdentifier: "CustomerHomeViewController") as? CustomerHomeViewController {
-//            navigationController?.pushViewController(viewController, animated: true)
-//        } else {
-//            print("Failed to instantiate CustomerHomeViewController.")
-//        }
-//    }
-    
-    
+
     @IBAction func showPasswordTapped(_ sender: UIButton) {
         // Toggle secure text entry
         passwordTextField.isSecureTextEntry.toggle()
-        
+
         // Change button appearance based on password visibility
         let buttonImage = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
         showPasswordButton.setImage(UIImage(systemName: buttonImage), for: .normal)
@@ -125,5 +67,45 @@ class LoginViewController: UIViewController {
     @IBAction func createAccountTapped(_ sender: UIButton) {
         // Navigate to the registration page
         performSegue(withIdentifier: "showRegisterPage", sender: self)
+    }
+
+    // MARK: - Helper Functions
+    private func getUserRole(for email: String, completion: @escaping (String) -> Void) {
+        // Example method to get user role from Firebase database
+        let databaseRef = Database.database().reference()
+        let userUID = Auth.auth().currentUser?.uid ?? ""
+
+        databaseRef.child("users").child(userUID).observeSingleEvent(of: .value) { snapshot in
+            guard let userData = snapshot.value as? [String: Any],
+                  let role = userData["role"] as? String else {
+                completion("unknown")
+                return
+            }
+            completion(role)
+        }
+    }
+
+    private func navigateToStoreOwnerHomePage() {
+        let storyboard = UIStoryboard(name: "StoreOwner", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerHomeViewController") as? StoreOwnerHomeViewController {
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            print("Failed to instantiate StoreOwnerHomeViewController.")
+        }
+    }
+
+//    private func navigateToCustomerHomePage() {
+//        let storyboard = UIStoryboard(name: "CustomerHome", bundle: nil)
+//        if let viewController = storyboard.instantiateViewController(withIdentifier: "CustomerHomeViewController") {
+//            navigationController?.pushViewController(viewController, animated: true)
+//        } else {
+//            print("Failed to instantiate CustomerHomeViewController.")
+//        }
+//    }
+
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
     }
 }

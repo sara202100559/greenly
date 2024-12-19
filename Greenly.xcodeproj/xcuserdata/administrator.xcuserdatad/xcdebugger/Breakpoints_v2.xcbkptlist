@@ -7,109 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "598703AC-5683-416B-87E8-1922303DA21B"
+            uuid = "AAC46B0E-7A1A-4B49-B04C-88DD9B0FFF25"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Greenly/Controller/AddTableViewController.swift"
+            filePath = "Greenly/Controller/AddSTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "AddTableViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - d989acde6b91750b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greenly.AddTableViewController.init(style: __C.UITableViewStyle) -&gt; Greenly.AddTableViewController"
-                  moduleName = "Greenly"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/administrator/Desktop/greenlysara/Greenly/Controller/AddTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "154">
-               </Location>
-               <Location
-                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - 5022e7c8e3d8be95"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greenly.AddTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Greenly.AddTableViewController"
-                  moduleName = "Greenly"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/administrator/Desktop/greenlysara/Greenly/Controller/AddTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "207">
-               </Location>
-               <Location
-                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - b82b27ebe4b8a19e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greenly.AddTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Greenly.AddTableViewController&gt;"
-                  moduleName = "Greenly"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/administrator/Desktop/greenlysara/Greenly/Controller/AddTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - d989acde6b91752c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greenly.AddTableViewController.init(style: __C.UITableViewStyle) -&gt; Greenly.AddTableViewController"
-                  moduleName = "Greenly"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/administrator/Desktop/greenlysara/Greenly/Controller/AddTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "154">
-               </Location>
-               <Location
-                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - 5022e7c8e3d8beb2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greenly.AddTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Greenly.AddTableViewController"
-                  moduleName = "Greenly"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/administrator/Desktop/greenlysara/Greenly/Controller/AddTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "207">
-               </Location>
-               <Location
-                  uuid = "598703AC-5683-416B-87E8-1922303DA21B - b82b27ebe4b8a1b9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greenly.AddTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Greenly.AddTableViewController&gt;"
-                  moduleName = "Greenly"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/administrator/Desktop/greenlysara/Greenly/Controller/AddTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "164">
-               </Location>
-            </Locations>
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

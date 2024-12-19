@@ -59,12 +59,12 @@ class RegistrationViewController: UIViewController {
         UserDefaults.standard.set(userData, forKey: "userProfile")
         
         // Navigate to Edit Profile
-        if let editProfileVC = storyboard?.instantiateViewController(withIdentifier: "SettingsTableViewController") as? EditProfileViewController {
-            editProfileVC.firstName = firstName
-            editProfileVC.lastName = lastName
-            editProfileVC.email = email
-            navigationController?.pushViewController(editProfileVC, animated: true)
-        }
+//        if let editProfileVC = storyboard?.instantiateViewController(withIdentifier: "SettingsTableViewController") as? EditProfileViewController {
+//            editProfileVC.firstName = firstName
+//            editProfileVC.lastName = lastName
+//            editProfileVC.email = email
+//            navigationController?.pushViewController(editProfileVC, animated: true)
+//        }
     }
     func showAlert(title: String, message: String) {
        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

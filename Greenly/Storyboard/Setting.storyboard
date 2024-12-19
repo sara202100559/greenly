@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cRa-4Q-QKj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XWX-Gu-zSB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -127,7 +127,6 @@ If you have any questions or suggestions about our privacy policy, please contac
                             <constraint firstItem="hQC-Mu-JaK" firstAttribute="top" secondItem="oIk-fB-fu1" secondAttribute="top" id="tYz-V2-ct8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Privacy Policy" id="tM1-cR-91a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o52-8b-Prd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +135,7 @@ If you have any questions or suggestions about our privacy policy, please contac
         <!--GreenlySetting-->
         <scene sceneID="8rF-3w-NkY">
             <objects>
-                <tableViewController storyboardIdentifier="EditProfileViewController" title="GreenlySetting" id="XWX-Gu-zSB" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EditProfileViewController" title="GreenlySetting" id="XWX-Gu-zSB" userLabel="GreenlySetting" customClass="SettingsTableViewController" customModule="Greenly" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="y8P-X9-X5Y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,7 +356,7 @@ If you have any questions or suggestions about our privacy policy, please contac
                             <outlet property="delegate" destination="XWX-Gu-zSB" id="2vl-7n-qCK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape" catalog="system" selectedImage="gearshape" id="wOZ-d1-srH"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" selectedImage="gearshape" id="wOZ-d1-srH"/>
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="8qE-uh-EpL"/>
                     <connections>
                         <outlet property="delete" destination="Vbd-lC-x8f" id="gaA-wo-Kuu"/>
@@ -591,7 +590,6 @@ By continuing to access or use Our Service after those revisions become effectiv
                             <constraint firstItem="XQJ-rV-RD8" firstAttribute="top" secondItem="Klg-11-KuY" secondAttribute="top" id="ucB-Nx-9Rm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Terms and Conditions" id="dc7-cF-gXs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJO-zO-xNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -728,28 +726,10 @@ By continuing to access or use Our Service after those revisions become effectiv
                             <constraint firstItem="8an-rn-orf" firstAttribute="top" secondItem="5BI-Ab-pid" secondAttribute="top" id="hEZ-e8-8ZK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="8DG-WC-e1E"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuD-3q-Aui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-443.51145038167937" y="1514.7887323943662"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ROP-2b-T5U">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cRa-4Q-QKj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bzl-P7-Bo6">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="XWX-Gu-zSB" kind="relationship" relationship="viewControllers" id="wDL-dD-vNe"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fZ7-1O-7hQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="275.57251908396944" y="694.36619718309862"/>
         </scene>
     </scenes>
     <resources>

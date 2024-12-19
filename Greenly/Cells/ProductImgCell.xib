@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="productImgCell" rowHeight="298" id="g4y-gV-Equ" customClass="ProductImgCell" customModule="MyProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="298"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g4y-gV-Equ" id="5Hj-nv-QSx">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="298"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="coB-Kt-NDW">
+                        <rect key="frame" x="0.0" y="7" width="449" height="307"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="307" id="5A6-gb-54G"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="coB-Kt-NDW" secondAttribute="trailing" id="Clt-8K-mSE"/>
+                    <constraint firstItem="coB-Kt-NDW" firstAttribute="leading" secondItem="5Hj-nv-QSx" secondAttribute="leading" id="M0O-TK-rTp"/>
+                    <constraint firstItem="coB-Kt-NDW" firstAttribute="top" secondItem="5Hj-nv-QSx" secondAttribute="top" constant="7" id="qW1-Wx-Gth"/>
+                    <constraint firstAttribute="bottom" secondItem="coB-Kt-NDW" secondAttribute="bottom" constant="7" id="ssE-PL-x3U"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="imgCell"/>
+            <connections>
+                <outlet property="productImg" destination="coB-Kt-NDW" id="5rq-Zg-1Rv"/>
+            </connections>
+            <point key="canvasLocation" x="159.54198473282443" y="-67.605633802816911"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkbox" width="225" height="225"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

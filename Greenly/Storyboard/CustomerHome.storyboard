@@ -17,60 +17,64 @@
                     </tabBar>
                     <connections>
                         <segue destination="iQe-98-c4P" kind="relationship" relationship="viewControllers" id="IfN-on-eth"/>
-                        <segue destination="b3z-fU-KhJ" kind="relationship" relationship="viewControllers" id="qCs-cH-aCO"/>
-                        <segue destination="FCK-80-jLd" kind="relationship" relationship="viewControllers" id="yaX-ZM-xAM"/>
-                        <segue destination="Luy-fw-AXK" kind="relationship" relationship="viewControllers" id="nD3-h4-9G4"/>
-                        <segue destination="MlD-5a-aEv" kind="relationship" relationship="viewControllers" id="K5A-Kj-5kg"/>
+                        <segue destination="OCJ-qG-PjS" kind="relationship" relationship="viewControllers" id="BcB-bR-CYe"/>
+                        <segue destination="AHB-hQ-utt" kind="relationship" relationship="viewControllers" id="qGl-be-cKH"/>
+                        <segue destination="hDF-Pr-YHP" kind="relationship" relationship="viewControllers" id="HAG-bs-Rgu"/>
+                        <segue destination="WRT-hl-3bf" kind="relationship" relationship="viewControllers" id="1Vc-gx-JaP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHi-8b-3tL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1356" y="-764"/>
         </scene>
-        <!--Cart-->
-        <scene sceneID="HwK-5c-gJ5">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="cart_ref" storyboardName="Cart" id="FCK-80-jLd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ZEK-0w-So0"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zmx-bh-iaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-205" y="-248"/>
-        </scene>
         <!--ImpactTracker-->
-        <scene sceneID="RQa-c2-Qsw">
+        <scene sceneID="bxd-TK-QPv">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="impact_ref" storyboardName="ImpactTracker" id="b3z-fU-KhJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Wqp-Cb-G7G"/>
+                <viewControllerPlaceholder storyboardName="ImpactTracker" id="OCJ-qG-PjS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="svM-KX-kXV"/>
+                    <navigationItem key="navigationItem" id="3Fa-GY-op3"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wnC-md-FGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qO3-5b-G8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205" y="-337"/>
+            <point key="canvasLocation" x="-989" y="-208"/>
         </scene>
         <!--Setting-->
-        <scene sceneID="Ebv-Gy-Dk6">
+        <scene sceneID="IZz-xA-JWe">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="EditProfileViewController" storyboardName="Setting" id="MlD-5a-aEv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pPm-4w-QGW"/>
+                <viewControllerPlaceholder storyboardName="Setting" id="WRT-hl-3bf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Jhl-Qc-n6s"/>
+                    <navigationItem key="navigationItem" id="1EA-fX-2Um"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jc2-AX-XYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFv-Ky-7Wm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1331" y="-251"/>
+            <point key="canvasLocation" x="-1618" y="-208"/>
         </scene>
         <!--OrderHistory-->
-        <scene sceneID="ZXA-PM-YeW">
+        <scene sceneID="Lgh-LY-A30">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="OrderHistory_ref" storyboardName="OrderHistory" id="Luy-fw-AXK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Y9P-1p-4bh"/>
+                <viewControllerPlaceholder storyboardName="OrderHistory" id="hDF-Pr-YHP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="LrG-Do-hfu"/>
+                    <navigationItem key="navigationItem" id="Fkd-v6-g2v"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="77U-2a-dyg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jif-5c-YzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-801" y="-251"/>
+            <point key="canvasLocation" x="-1944" y="-208"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="d6N-hO-XOo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="AHB-hQ-utt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5TJ-ec-MVW"/>
+                    <navigationItem key="navigationItem" id="YSf-BF-leW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D42-CX-HgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1292" y="-208"/>
         </scene>
         <!--Stores-->
         <scene sceneID="FEb-Bw-T1Z">
             <objects>
-                <tableViewController storyboardIdentifier="AdminHomeViewController" id="iQe-98-c4P" customClass="StoresTableViewController" customModule="Greenly" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CustomerHome" id="iQe-98-c4P" customClass="CustomerHomeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="xNb-sP-RmT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +126,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLA-GZ-rfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="-764"/>
+            <point key="canvasLocation" x="-127" y="-764"/>
         </scene>
     </scenes>
     <resources>

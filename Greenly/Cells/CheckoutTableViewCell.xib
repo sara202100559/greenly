@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="wok-57-Tzf" customClass="CheckoutTableViewCell" customModule="MyProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="54"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wok-57-Tzf" id="Tfs-Hb-XNb">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhM-9H-Sud">
+                        <rect key="frame" x="32" y="5" width="334" height="43"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cha-KE-Hzu">
+                                <rect key="frame" x="38" y="13" width="115" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S07-nk-fjn">
+                                <rect key="frame" x="8" y="9.6666666666666643" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5pi-7u-Nxv"/>
+                                    <constraint firstAttribute="width" constant="24" id="kmP-YH-oa9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                    <color key="baseForegroundColor" red="0.34509803919999998" green="0.41594718110000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="leftButtonAction:" destination="wok-57-Tzf" eventType="touchUpInside" id="AkI-Qu-i6Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S07-nk-fjn" firstAttribute="leading" secondItem="lhM-9H-Sud" secondAttribute="leading" constant="8" id="5Cb-HS-HeN"/>
+                            <constraint firstItem="S07-nk-fjn" firstAttribute="centerY" secondItem="lhM-9H-Sud" secondAttribute="centerY" id="ZuQ-8X-ApW"/>
+                            <constraint firstItem="Cha-KE-Hzu" firstAttribute="leading" secondItem="S07-nk-fjn" secondAttribute="trailing" constant="6" id="bhq-Il-DRY"/>
+                            <constraint firstItem="Cha-KE-Hzu" firstAttribute="centerY" secondItem="lhM-9H-Sud" secondAttribute="centerY" id="gtz-dl-3vw"/>
+                            <constraint firstAttribute="height" constant="43" id="hmi-J3-OcA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lhM-9H-Sud" firstAttribute="top" secondItem="Tfs-Hb-XNb" secondAttribute="top" constant="5" id="1kA-yf-sbb"/>
+                    <constraint firstAttribute="bottom" secondItem="lhM-9H-Sud" secondAttribute="bottom" constant="5" id="PKE-7o-gEC"/>
+                    <constraint firstItem="lhM-9H-Sud" firstAttribute="leading" secondItem="Tfs-Hb-XNb" secondAttribute="leading" constant="32" id="gMh-aD-2eO"/>
+                    <constraint firstAttribute="trailing" secondItem="lhM-9H-Sud" secondAttribute="trailing" constant="32" id="yeq-gp-hfm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="cellBackgroundView" destination="lhM-9H-Sud" id="YGR-Pd-awx"/>
+                <outlet property="leftButton" destination="S07-nk-fjn" id="nKg-57-unt"/>
+                <outlet property="titleLabel" destination="Cha-KE-Hzu" id="glE-s8-lhf"/>
+            </connections>
+            <point key="canvasLocation" x="-108" y="-9"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -94,7 +94,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="337" height="557"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDq-qx-wQ9">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sara" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDq-qx-wQ9">
                                             <rect key="frame" x="20" y="60" width="296" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -103,13 +103,13 @@
                                                 <action selector="FirstName:" destination="M8E-oA-ue0" eventType="editingDidEnd" id="c95-Cw-1P5"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-MR-QQ5">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sara@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-MR-QQ5">
                                             <rect key="frame" x="20" y="231" width="296" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzK-SF-YJG">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qzK-SF-YJG">
                                             <rect key="frame" x="20" y="322" width="296" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -161,13 +161,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gdb-R6-v8v">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ali" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gdb-R6-v8v">
                                             <rect key="frame" x="20" y="144" width="296" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvt-N4-9fF">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mvt-N4-9fF">
                                             <rect key="frame" x="20" y="409" width="296" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -243,15 +243,35 @@
             </objects>
             <point key="canvasLocation" x="437" y="767"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="PFn-cR-Z2r">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="StoreOwner" id="WRq-XQ-XdU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="67g-p8-9Jr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbV-QI-VDk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="1182"/>
+        </scene>
+        <!--CustomerHome-->
+        <scene sceneID="JTt-bA-758">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CustomerHome" storyboardName="CustomerHome" id="8FN-WE-Taa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2dj-cf-wvt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROG-z0-I0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-366" y="1202"/>
+        </scene>
         <!--Admin-->
         <scene sceneID="2Hp-2j-NfV">
             <objects>
-                <viewControllerPlaceholder storyboardName="Admin" id="MlZ-b8-CX3" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="AdminHomeViewController" storyboardName="Admin" id="MlZ-b8-CX3" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="glu-du-J3Q"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJL-gF-DlK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="1182"/>
+            <point key="canvasLocation" x="-111" y="1182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2wz-Fr-gTX">
@@ -328,8 +348,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                             <connections>
-                                                <action selector="loginButtonTapped:" destination="xRp-0q-iQH" eventType="touchUpInside" id="MVN-Bg-0gh"/>
-                                                <segue destination="MlZ-b8-CX3" kind="show" identifier="admin" id="ACA-kq-q2b"/>
+                                                <action selector="loginButtonTapped:" destination="xRp-0q-iQH" eventType="touchUpInside" id="vxb-8o-B43"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dont have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIU-X5-VgG">
@@ -347,6 +366,7 @@
                                                 <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             </buttonConfiguration>
                                             <connections>
+                                                <action selector="createAccountTapped:" destination="xRp-0q-iQH" eventType="touchUpInside" id="WR4-td-kbK"/>
                                                 <segue destination="eVd-MC-brB" kind="show" identifier="showRegisterPage" id="m3M-SJ-dnU"/>
                                             </connections>
                                         </button>
@@ -395,6 +415,9 @@
                         <outlet property="emailTextField" destination="bqK-6k-eLl" id="lUp-n3-VEx"/>
                         <outlet property="passwordTextField" destination="L1Y-FW-YE2" id="3iU-QV-iSe"/>
                         <outlet property="showPasswordButton" destination="XwQ-hr-eFJ" id="ivr-Z2-euk"/>
+                        <segue destination="MlZ-b8-CX3" kind="show" identifier="admin" id="jSG-Md-Xt5"/>
+                        <segue destination="WRq-XQ-XdU" kind="show" identifier="Storeowner" id="YrR-Ip-cLk"/>
+                        <segue destination="8FN-WE-Taa" kind="show" identifier="CustHome" id="BIl-hd-tA8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5LH-Ja-vSY" sceneMemberID="firstResponder"/>
@@ -420,7 +443,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
