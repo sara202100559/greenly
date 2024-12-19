@@ -56,7 +56,6 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="plus.app" catalog="system" title="Add Logo"/>
                                                     <connections>
                                                         <action selector="Logo:" destination="jxo-Jh-KgW" eventType="touchUpInside" id="KXP-qA-F8o"/>
-                                                        <action selector="addLogoTapped:" destination="jxo-Jh-KgW" eventType="touchUpInside" id="FUB-ct-RSl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

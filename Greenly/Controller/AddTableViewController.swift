@@ -29,11 +29,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     @IBOutlet weak var StoreFrom: UITextField!
     @IBOutlet weak var StoreTo: UITextField!
 
-    // Error Labels
-    @IBOutlet weak var emailErrorLabel: UILabel!
-    @IBOutlet weak var passwordErrorLabel: UILabel!
-    @IBOutlet weak var websiteErrorLabel: UILabel!
-    @IBOutlet weak var timeErrorLabel: UILabel!
+
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -44,10 +40,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     }
 
     private func setupUI() {
-        emailErrorLabel.text = ""
-        passwordErrorLabel.text = ""
-        websiteErrorLabel.text = ""
-        timeErrorLabel.text = ""
+        
 
         if let details = details {
             title = "Edit Store Details"
@@ -75,11 +68,8 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     }
 
     @IBAction func SaveAdded(_ sender: UIBarButtonItem) {
-        // Clear all error messages
-        emailErrorLabel?.text = ""
-        passwordErrorLabel?.text = ""
-        websiteErrorLabel?.text = ""
-        timeErrorLabel?.text = ""
+  
+      
 
         // Validate input fields
         guard let name = StoreName.text, !name.isEmpty,

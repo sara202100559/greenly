@@ -40,6 +40,10 @@
 		C3ADB8822D140E75008019F2 /* CustomerHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADB8812D140E75008019F2 /* CustomerHomeTableViewController.swift */; };
 		C3ADB8842D141361008019F2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = C3ADB8832D141361008019F2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		C3ADB8862D1420A5008019F2 /* AddSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADB8852D1420A5008019F2 /* AddSTableViewController.swift */; };
+		C3ADB88A2D145ABB008019F2 /* ProcessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADB8892D145ABA008019F2 /* ProcessPaymentViewController.swift */; };
+		C3ADB88C2D145D09008019F2 /* OrderHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADB88B2D145D09008019F2 /* OrderHistoryTableViewController.swift */; };
+		C3ADB88E2D145E19008019F2 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADB88D2D145E19008019F2 /* Order.swift */; };
+		C3ADB8902D145F92008019F2 /* UserDefaults+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ADB88F2D145F92008019F2 /* UserDefaults+Order.swift */; };
 		C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BA2CFC723400C1B4CE /* User.swift */; };
 		C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */; };
 		C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */; };
@@ -127,6 +131,10 @@
 		C3ADB87F2D1404B2008019F2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C3ADB8812D140E75008019F2 /* CustomerHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeTableViewController.swift; sourceTree = "<group>"; };
 		C3ADB8852D1420A5008019F2 /* AddSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSTableViewController.swift; sourceTree = "<group>"; };
+		C3ADB8892D145ABA008019F2 /* ProcessPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessPaymentViewController.swift; sourceTree = "<group>"; };
+		C3ADB88B2D145D09008019F2 /* OrderHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewController.swift; sourceTree = "<group>"; };
+		C3ADB88D2D145E19008019F2 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		C3ADB88F2D145F92008019F2 /* UserDefaults+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Order.swift"; sourceTree = "<group>"; };
 		C3DAC6BA2CFC723400C1B4CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C3ADB87F2D1404B2008019F2 /* UIView+Extension.swift */,
+				C3ADB88F2D145F92008019F2 /* UserDefaults+Order.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			children = (
 				C3ADB8742D14044C008019F2 /* CartViewController.swift */,
 				CF6747492CF8A3FC00E9A704 /* AddTableViewController.swift */,
+				C3ADB8892D145ABA008019F2 /* ProcessPaymentViewController.swift */,
 				C3ADB8852D1420A5008019F2 /* AddSTableViewController.swift */,
 				C3ADB8762D140451008019F2 /* CheckoutViewController.swift */,
 				CF8D78712CF5ED6400A59136 /* ViewController.swift */,
@@ -252,6 +262,7 @@
 				D1EFD2652D12B6B800EFEC20 /* StoresTableViewController.swift */,
 				C3ADB8432D13EFDB008019F2 /* SettingsTableViewController.swift */,
 				C3ADB8812D140E75008019F2 /* CustomerHomeTableViewController.swift */,
+				C3ADB88B2D145D09008019F2 /* OrderHistoryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +363,7 @@
 				D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */,
 				D1EFD26A2D12B70600EFEC20 /* Details.swift */,
 				D1EFD26C2D12B72500EFEC20 /* helpers.swift */,
+				C3ADB88D2D145E19008019F2 /* Order.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +536,7 @@
 			files = (
 				C3ADB8792D140454008019F2 /* ProductInfoViewController.swift in Sources */,
 				D1EFD2572D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift in Sources */,
+				C3ADB88A2D145ABB008019F2 /* ProcessPaymentViewController.swift in Sources */,
 				D1EFD2662D12B6B800EFEC20 /* StoresTableViewController.swift in Sources */,
 				C3ADB87B2D140459008019F2 /* AddressViewController.swift in Sources */,
 				C3ADB8822D140E75008019F2 /* CustomerHomeTableViewController.swift in Sources */,
@@ -542,6 +555,7 @@
 				C3ADB8592D1403DD008019F2 /* CheckoutCell.swift in Sources */,
 				D1EFD26B2D12B70600EFEC20 /* Details.swift in Sources */,
 				C3ADB8862D1420A5008019F2 /* AddSTableViewController.swift in Sources */,
+				C3ADB88C2D145D09008019F2 /* OrderHistoryTableViewController.swift in Sources */,
 				C3ADB8802D1404B2008019F2 /* UIView+Extension.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
 				C3ADB8552D1403D5008019F2 /* SubCell.swift in Sources */,
@@ -551,7 +565,9 @@
 				C3ADB8772D140451008019F2 /* CheckoutViewController.swift in Sources */,
 				CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */,
 				D1EFD2592D12A3F300EFEC20 /* EditProfileViewController.swift in Sources */,
+				C3ADB88E2D145E19008019F2 /* Order.swift in Sources */,
 				C3ADB8692D14042D008019F2 /* ProductDescriptionCell.swift in Sources */,
+				C3ADB8902D145F92008019F2 /* UserDefaults+Order.swift in Sources */,
 				C3ADB8652D140421008019F2 /* ProductCell.swift in Sources */,
 				C3ADB85F2D1403FF008019F2 /* AddCartCell.swift in Sources */,
 				C3ADB8752D14044C008019F2 /* CartViewController.swift in Sources */,

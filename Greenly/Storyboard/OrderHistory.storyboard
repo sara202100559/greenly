@@ -9,10 +9,11 @@
         <!--Orders-->
         <scene sceneID="X9c-uz-F6s">
             <objects>
-                <tableViewController title="Orders" modalPresentationStyle="fullScreen" id="ePQ-86-6mL" userLabel="Orders" customClass="ViewDeleteTableViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Orders" modalPresentationStyle="fullScreen" id="ePQ-86-6mL" userLabel="Orders" customClass="OrderHistoryTableViewController" customModule="Greenly" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="qXw-U6-jfj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.88586115840000001" green="0.91035825010000004" blue="0.8783934712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="labViewBookingcell" rowHeight="98" id="hD5-hY-SIs" userLabel="Ordercell" customClass="BookingsHospital_LabTableViewCell" customModule="Greenly" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.333332061767578" width="353" height="98"/>
@@ -25,16 +26,16 @@
                                             <rect key="frame" x="20" y="11" width="294.66666666666669" height="76"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WTe-TW-tZK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="76"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="76"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-pM-mpP" userLabel="Order Id Lbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="33.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-pM-mpP" userLabel="Order Id Lbl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="33.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-86-xD3" userLabel="Date Stamp Lbl">
-                                                            <rect key="frame" x="0.0" y="40.333333333333336" width="41.333333333333336" height="14.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-86-xD3" userLabel="Date Stamp Lbl">
+                                                            <rect key="frame" x="0.0" y="40.333333333333336" width="87.333333333333329" height="14.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14.333333333333336" id="SdH-Us-xqd"/>
                                                             </constraints>
@@ -42,8 +43,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXO-O4-SwL" userLabel="Customer Name Lbl">
-                                                            <rect key="frame" x="0.0" y="61.666666666666679" width="41.333333333333336" height="14.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXO-O4-SwL" userLabel="Customer Name Lbl">
+                                                            <rect key="frame" x="0.0" y="61.666666666666679" width="87.333333333333329" height="14.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14.333333333333336" id="kTc-x9-2qu"/>
                                                             </constraints>
@@ -54,16 +55,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-wj-wYp">
-                                                    <rect key="frame" x="143.33333333333331" y="0.0" width="151.33333333333331" height="76"/>
+                                                    <rect key="frame" x="189.33333333333334" y="0.0" width="105.33333333333334" height="76"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejR-M2-hqi" userLabel="Order Status Lbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="151.33333333333334" height="41.666666666666664"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejR-M2-hqi" userLabel="Order Status Lbl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="41.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbC-jo-fnq" userLabel="Order Price Lbl">
-                                                            <rect key="frame" x="0.0" y="61.666666666666679" width="151.33333333333334" height="14.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbC-jo-fnq" userLabel="Order Price Lbl">
+                                                            <rect key="frame" x="0.0" y="61.666666666666679" width="105.33333333333333" height="14.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14.333333333333336" id="oUl-lh-oy5"/>
                                                             </constraints>

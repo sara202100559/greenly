@@ -188,7 +188,7 @@ extension AddressViewController: UITableViewDelegate, UITableViewDataSource {
 
                     self.saveAddress()
 
-                    let alert = UIAlertController(title: "", message: "Address has been saved!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Success!", message: "Address has been saved!", preferredStyle: .alert)
 
                     alert.addAction(UIAlertAction(title: "OK", style: .default))
 

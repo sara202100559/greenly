@@ -95,14 +95,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "savedAddressCell", for: indexPath) as! SavedAddressCell
                 cell.cellBackgroundView.cornerRadius = 4
-                //set the address
-//                let address = [
-//                    "name": addressDetails[0],
-//                    "area": addressDetails[1],
-//                    "buildingNumber": addressDetails[2],
-//                    "roadNumber": addressDetails[3],
-//                    "blockNumber": addressDetails[4]
-//                ]
+                
                 let address = savedAddresses[indexPath.row - 1]
                 cell.AddNameLabel.text = address["name"]
                 cell.areaLabel.text = address["area"]
@@ -128,7 +121,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.onDelete = {
                     if let index = self.savedAddresses.firstIndex(of: cell.cellAddress) {
                         self.savedAddresses.remove(at: index)
-                        UserDefaults.standard.removeObject(forKey: "savedAddress")
+                        UserDefaults.standard.set(self.savedAddresses, forKey: "savedAddresses")
                         self.tableview.reloadData()
                     }
                 }
@@ -142,12 +135,11 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SubCell", for: indexPath) as! SubCell
                 cell.cellBackgroundView.cornerRadius = 4
-//                let productCount = products?.count ?? 0
                 let productCount = products?.reduce(0, { partialResult, product in
                     return partialResult + (product.quantity ?? 1)
                 })
                 cell.checkButton.isHidden = true
-                cell.titleLabel.text = "(\(String(describing: productCount ?? 1))) Items"
+                cell.titleLabel.text = "(\(productCount ?? 1)) Items"
                 cell.totalPriceLabel.text = "Total :  \(totalPrice) BD"
                 cell.cellBackgroundView.backgroundColor = .white
                 cell.contentView.backgroundColor = .clear
@@ -163,7 +155,8 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             cell.CheckoutButton.setTitle(buttonTitle, for: .normal)
             cell.CheckoutButton.isEnabled = (selectedPaymentType != .none) && !selectedAddress.isEmpty
             cell.checkOutButtonTapped = {
-//                self.performSegue(withIdentifier: "checkOutNav", sender: nil)
+                // Process Order Logic Here
+                self.processOrder()
             }
             return cell
         
@@ -247,4 +240,38 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
         return 0.00001
     }
     
+    func processOrder() {
+        // Generate Order ID
+        let newOrderID = String(format: "%04d", (UserDefaults.standard.loadOrders().count + 1))
+        
+        // Format the current date and time
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy HH:mm"
+        let currentDate = formatter.string(from: Date())
+        
+        // Create new order
+        let newOrder = Order(
+            storeName: "Package Free",
+            date: currentDate,
+            orderID: newOrderID,
+            price: String(format: "%.2f BD", totalPrice),
+            status: "Pending"
+        )
+        
+        // Save the order
+        var orders = UserDefaults.standard.loadOrders()
+        orders.append(newOrder)
+        UserDefaults.standard.saveOrders(orders)
+        
+        // Show success alert
+        let alert = UIAlertController(
+            title: "Order Placed",
+            message: "Your order has been placed successfully!",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 }

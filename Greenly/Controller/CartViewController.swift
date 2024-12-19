@@ -106,10 +106,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             cell.onQuantityChange = { [weak self] newQuantity in
                 if newQuantity <= 0 {
                     self?.cartProducts.remove(at: indexPath.row)
+                    self?.calculateTotalPrice() // Recalculate total price after removing the item
                     self?.tableView.reloadData()
                 } else {
                     self?.cartProducts[indexPath.row].quantity = newQuantity
-                   // print("Item \(item.name) quantity updated to \(newQuantity)")
+                    //print("Item \(item.name) quantity updated to \(newQuantity)")
                     self?.calculateTotalPrice()
                     let totalPriceRowIndex = IndexPath(row: 0, section: 2)
                     tableView.reloadRows(at: [totalPriceRowIndex], with: .automatic)
