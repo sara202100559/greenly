@@ -43,6 +43,7 @@
 		D1EFD2692D12B6EB00EFEC20 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */; };
 		D1EFD26B2D12B70600EFEC20 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD26A2D12B70600EFEC20 /* Details.swift */; };
 		D1EFD26D2D12B72500EFEC20 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD26C2D12B72500EFEC20 /* helpers.swift */; };
+		D4241AA52D1427A300C94E3E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4241AA42D1427A300C94E3E /* Product.swift */; };
 		F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2074D6A2D085FA800C48B09 /* Feedback.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		D1EFD26A2D12B70600EFEC20 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		D1EFD26C2D12B72500EFEC20 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		D4241AA42D1427A300C94E3E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F2074D6A2D085FA800C48B09 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +243,7 @@
 				D1EFD2682D12B6EB00EFEC20 /* StoreTableViewCell.swift */,
 				D1EFD26A2D12B70600EFEC20 /* Details.swift */,
 				D1EFD26C2D12B72500EFEC20 /* helpers.swift */,
+				D4241AA42D1427A300C94E3E /* Product.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			files = (
 				D1EFD2572D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift in Sources */,
 				D1EFD2662D12B6B800EFEC20 /* StoresTableViewController.swift in Sources */,
+				D4241AA52D1427A300C94E3E /* Product.swift in Sources */,
 				C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */,
 				D1EFD2692D12B6EB00EFEC20 /* StoreTableViewCell.swift in Sources */,
 				CF6747702CF8BE6A00E9A704 /* SettingsTableViewController.swift in Sources */,
