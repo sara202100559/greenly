@@ -74,7 +74,7 @@
         <!--Stores-->
         <scene sceneID="FEb-Bw-T1Z">
             <objects>
-                <tableViewController storyboardIdentifier="CustomerHome" id="iQe-98-c4P" customClass="CustomerHomeTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CustomerHomeViewController" id="iQe-98-c4P" customClass="CustomerHomeViewController" customModule="Greenly" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="xNb-sP-RmT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +103,7 @@
                                 <connections>
                                     <outlet property="name" destination="m3u-dn-tCv" id="OmS-hf-iTB"/>
                                     <outlet property="photo" destination="F78-4z-Dwd" id="soW-Xk-Cp1"/>
+                                    <segue destination="76p-Ik-RuU" kind="show" identifier="showStoreDetails" id="yuB-0i-Mg3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,18 +116,103 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="5Gz-MS-6uq"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Stores" id="PFs-Kn-Aq4">
-                        <barButtonItem key="leftBarButtonItem" image="rectangle.portrait.and.arrow.forward" catalog="system" id="PRF-Bp-bg0">
-                            <connections>
-                                <action selector="Exit:" destination="iQe-98-c4P" id="17s-eL-mWk"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="rectangle.portrait.and.arrow.forward" catalog="system" id="PRF-Bp-bg0"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ul5-Qa-cR2"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLA-GZ-rfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="-764"/>
+            <point key="canvasLocation" x="-167" y="-764"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="YZK-sA-GGo">
+            <objects>
+                <tableViewController id="76p-Ik-RuU" customClass="StoreDetailViewController" customModule="Greenly" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="fqX-rM-xuW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.81122714279999997" green="0.83571141959999995" blue="0.80394107100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="176" id="mV6-tr-gcT" customClass="StoreDetailCell" customModule="Greenly">
+                                <rect key="frame" x="20" y="55.333332061767578" width="353" height="176"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mV6-tr-gcT" id="7XQ-OO-p76">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="176"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-qS-ozY" userLabel="store image">
+                                            <rect key="frame" x="9" y="17" width="71" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jou-NE-8ft">
+                                            <rect key="frame" x="104" y="28" width="194" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xt4-ea-rN2">
+                                            <rect key="frame" x="0.0" y="84" width="353" height="92"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVW-iY-BUd">
+                                                    <rect key="frame" x="8" y="16" width="66" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3g-nz-h7l">
+                                                    <rect key="frame" x="8" y="53" width="49" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-7p-fjA">
+                                                    <rect key="frame" x="195" y="16" width="41" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpO-If-bzh">
+                                                    <rect key="frame" x="195" y="53" width="62" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.80824321509999997" green="0.83588784930000004" blue="0.80392104389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </view>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="storeEmailLabel" destination="ICh-7p-fjA" id="uSg-rt-GHQ"/>
+                                    <outlet property="storeImageView" destination="Rtd-qS-ozY" id="Qbe-CL-uZc"/>
+                                    <outlet property="storeLocationLabel" destination="fVW-iY-BUd" id="hxX-UL-0ck"/>
+                                    <outlet property="storeNameLabel" destination="Jou-NE-8ft" id="7ym-fa-Ibk"/>
+                                    <outlet property="storePhoneLabel" destination="Z3g-nz-h7l" id="02h-8Q-0Mf"/>
+                                    <outlet property="storeWebsiteLabel" destination="KpO-If-bzh" id="dU0-AO-Sp8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="76p-Ik-RuU" id="zVj-bF-uZu"/>
+                            <outlet property="delegate" destination="76p-Ik-RuU" id="DWB-ME-aem"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="hXm-Fk-L5f"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nqb-EU-ohi"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7o-3M-VBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576.33587786259545" y="-764.08450704225356"/>
         </scene>
     </scenes>
     <resources>

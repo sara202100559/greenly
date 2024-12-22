@@ -15,7 +15,6 @@ class CustomerHomeViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Reload data in case stores were updated by the admin
         loadStores()
         tableView.reloadData()
     }
@@ -45,7 +44,7 @@ class CustomerHomeViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // One store per section
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,17 +59,14 @@ class CustomerHomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedStore = stores[indexPath.section]
-        showStoreDetails(store: selectedStore)
+        performSegue(withIdentifier: "showStoreDetails", sender: selectedStore)
     }
 
-    // MARK: - Helper Methods
-    private func showStoreDetails(store: Details) {
-        let alert = UIAlertController(
-            title: store.name,
-            message: "Location: \(store.location)\nEmail: \(store.email)\nPhone: \(store.num)",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showStoreDetails",
+           let destinationVC = segue.destination as? StoreDetailViewController,
+           let selectedStore = sender as? Details {
+            destinationVC.store = selectedStore
+        }
     }
 }

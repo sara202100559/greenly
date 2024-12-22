@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePQ-86-6mL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SvW-HO-mUT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -7,46 +7,46 @@
     </dependencies>
     <scenes>
         <!--Orders-->
-        <scene sceneID="X9c-uz-F6s">
+        <scene sceneID="keO-jW-UPw">
             <objects>
-                <tableViewController title="Orders" modalPresentationStyle="fullScreen" id="ePQ-86-6mL" userLabel="Orders" customClass="OrderHistoryTableViewController" customModule="Greenly" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="qXw-U6-jfj">
+                <tableViewController title="Orders" modalPresentationStyle="fullScreen" id="SvW-HO-mUT" userLabel="Orders" customClass="OrderHistoryTableViewController" customModule="Greenly" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="j9C-iv-frb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88586115840000001" green="0.91035825010000004" blue="0.8783934712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="labViewBookingcell" rowHeight="98" id="hD5-hY-SIs" userLabel="Ordercell" customClass="BookingsHospital_LabTableViewCell" customModule="Greenly" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OrderCell" rowHeight="98" id="8I6-iF-GKt" userLabel="Ordercell" customClass="OrderCell" customModule="Greenly">
                                 <rect key="frame" x="20" y="55.333332061767578" width="353" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hD5-hY-SIs" id="s36-t9-htT">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8I6-iF-GKt" id="flZ-K6-ALG">
                                     <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="102" translatesAutoresizingMaskIntoConstraints="NO" id="zT6-EF-Iee">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="102" translatesAutoresizingMaskIntoConstraints="NO" id="2O5-kM-SU8">
                                             <rect key="frame" x="20" y="11" width="294.66666666666669" height="76"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WTe-TW-tZK">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="GF2-Yg-W07">
                                                     <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="76"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-pM-mpP" userLabel="Order Id Lbl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlp-sY-EZk" userLabel="Order Id Lbl">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="33.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-86-xD3" userLabel="Date Stamp Lbl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-nP-NZi" userLabel="Date Stamp Lbl">
                                                             <rect key="frame" x="0.0" y="40.333333333333336" width="87.333333333333329" height="14.333333333333336"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="SdH-Us-xqd"/>
+                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="nwd-SX-VQL"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXO-O4-SwL" userLabel="Customer Name Lbl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTR-6M-63r" userLabel="Customer Name Lbl">
                                                             <rect key="frame" x="0.0" y="61.666666666666679" width="87.333333333333329" height="14.333333333333336"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="kTc-x9-2qu"/>
+                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="0fN-sh-wwW"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
@@ -54,19 +54,19 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-wj-wYp">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="guT-Kj-jLv">
                                                     <rect key="frame" x="189.33333333333334" y="0.0" width="105.33333333333334" height="76"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejR-M2-hqi" userLabel="Order Status Lbl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYn-aJ-MK8" userLabel="Order Status Lbl">
                                                             <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="41.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbC-jo-fnq" userLabel="Order Price Lbl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPa-Ec-BTb" userLabel="Order Price Lbl">
                                                             <rect key="frame" x="0.0" y="61.666666666666679" width="105.33333333333333" height="14.333333333333336"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="oUl-lh-oy5"/>
+                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="UPX-hb-AcT"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
@@ -78,31 +78,31 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="zT6-EF-Iee" secondAttribute="bottom" id="8aj-Sh-MXi"/>
-                                        <constraint firstItem="zT6-EF-Iee" firstAttribute="leading" secondItem="s36-t9-htT" secondAttribute="leadingMargin" id="JXC-oZ-OF7"/>
-                                        <constraint firstItem="zT6-EF-Iee" firstAttribute="top" secondItem="s36-t9-htT" secondAttribute="topMargin" id="pAI-FT-5VA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="zT6-EF-Iee" secondAttribute="trailing" id="sjq-zl-vLX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2O5-kM-SU8" secondAttribute="trailing" id="2i8-3g-NHR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2O5-kM-SU8" secondAttribute="bottom" id="Fmm-hV-S3N"/>
+                                        <constraint firstItem="2O5-kM-SU8" firstAttribute="leading" secondItem="flZ-K6-ALG" secondAttribute="leadingMargin" id="K3I-Wt-Ad5"/>
+                                        <constraint firstItem="2O5-kM-SU8" firstAttribute="top" secondItem="flZ-K6-ALG" secondAttribute="topMargin" id="cra-1X-b4x"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bookingPriceLbl" destination="kbC-jo-fnq" id="N4X-OH-TtR"/>
-                                    <outlet property="bookingStatusLbl" destination="ejR-M2-hqi" id="Ukb-0A-Q2J"/>
-                                    <outlet property="package_TestTitleLbl" destination="Nii-pM-mpP" id="yzD-SE-WRd"/>
-                                    <outlet property="patientCPRLbl" destination="KXO-O4-SwL" id="fXg-2c-a4z"/>
-                                    <outlet property="patientNameLbl" destination="nFo-86-xD3" id="OBp-gP-pli"/>
+                                    <outlet property="dateLabel" destination="aBT-nP-NZi" id="P6V-gg-tgv"/>
+                                    <outlet property="orderIDLabel" destination="kTR-6M-63r" id="Xx6-au-dcg"/>
+                                    <outlet property="priceLabel" destination="WYn-aJ-MK8" id="OnO-94-bwI"/>
+                                    <outlet property="statusLabel" destination="fPa-Ec-BTb" id="JJh-Ph-4Ma"/>
+                                    <outlet property="storeNameLabel" destination="wlp-sY-EZk" id="4j0-2n-QQ3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Order history" image="bookmark" catalog="system" selectedImage="bookmark" id="TH0-7v-TWS"/>
+                    <tabBarItem key="tabBarItem" title="Order history" image="bookmark" catalog="system" selectedImage="bookmark" id="cy5-b0-RRG"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Orders" id="hXj-9Y-u0Q" userLabel="Orders">
-                        <barButtonItem key="leftBarButtonItem" image="rectangle.portrait.and.arrow.forward" catalog="system" id="Hte-Vs-rkP"/>
+                    <navigationItem key="navigationItem" title="Orders" id="cdl-be-UTm" userLabel="Orders">
+                        <barButtonItem key="leftBarButtonItem" image="rectangle.portrait.and.arrow.forward" catalog="system" id="9KK-KY-Pds"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YF4-JV-Ay9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lrv-fr-gNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57.251908396946561" y="-220.42253521126761"/>
         </scene>

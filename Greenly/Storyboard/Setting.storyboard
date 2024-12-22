@@ -669,7 +669,11 @@ By continuing to access or use Our Service after those revisions become effectiv
                         <color key="backgroundColor" red="0.94504135850000004" green="0.97339230779999997" blue="0.93332821129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="sUS-F9-S87">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="xN1-kH-uK9"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="xN1-kH-uK9">
+                            <connections>
+                                <action selector="SaveProfile:" destination="0g6-vw-uWO" id="hma-xi-j5A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="wAT-d2-Uot" id="ax4-Dg-niS"/>

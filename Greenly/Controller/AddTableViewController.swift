@@ -92,12 +92,19 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
 
         // Dismiss the view controller
         dismiss(animated: true, completion: nil)
+        
+        
     }
 
     @IBAction func Logo(_ sender: Any) {
         showImageAlert()
     }
-
+    
+    //cancel
+        @IBAction func cancle(_ sender: UIBarButtonItem) {
+            dismiss(animated: true, completion: nil)
+        }
+    
     private func showImageAlert() {
         let alert = UIAlertController(title: "Take Photo From", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
