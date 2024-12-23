@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseFirestore
 
 class CustomerHomeViewController: UITableViewController {
 
@@ -10,13 +11,12 @@ class CustomerHomeViewController: UITableViewController {
         super.viewDidLoad()
         title = "Customer Home"
         setupTableView()
-        loadStores()
+        fetchStoresFromFirestore() // Fetch data from Firestore
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadStores()
-        tableView.reloadData()
+        fetchStoresFromFirestore()
     }
 
     // MARK: - Setup
@@ -26,15 +26,75 @@ class CustomerHomeViewController: UITableViewController {
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 
-    // MARK: - Load Stores
-    func loadStores() {
-        let decoder = PropertyListDecoder()
-        do {
-            let data = try Data(contentsOf: StoresTableViewController.storesArchiveURL)
-            stores = try decoder.decode([Details].self, from: data)
-            print("Customer: Stores loaded successfully.")
-        } catch {
-            print("Customer: Error loading stores: \(error)")
+    // MARK: - Fetch Stores from Firestore
+    private func fetchStoresFromFirestore() {
+        let db = Firestore.firestore()
+        db.collection("Stores").getDocuments { [weak self] (snapshot, error) in
+            guard let self = self else { return }
+            if let error = error {
+                print("Error fetching stores: \(error.localizedDescription)")
+                return
+            }
+
+            guard let documents = snapshot?.documents else {
+                print("No documents found")
+                return
+            }
+
+            // Parse documents into Details objects
+            self.stores = documents.compactMap { document -> Details? in
+                let data = document.data()
+                guard let name = data["name"] as? String,
+                      let email = data["email"] as? String,
+                      let num = data["number"] as? String,
+                      let pass = data["password"] as? String,
+                      let location = data["location"] as? String,
+                      let web = data["website"] as? String,
+                      let from = data["from"] as? String,
+                      let to = data["to"] as? String,
+                      let logoUrl = data["logoUrl"] as? String else { // Extract logoUrl here
+                    return nil
+                }
+
+                // Use a placeholder for the image until it's fetched
+                let placeholderImage = self.placeholderImage()
+
+                // Initialize the Details object with the Firestore document ID
+                return Details(
+                    id: document.documentID, // Save the document ID
+                    name: name,
+                    email: email,
+                    num: num,
+                    pass: pass,
+                    image: placeholderImage, // Placeholder for now
+                    location: location,
+                    web: web,
+                    from: from,
+                    to: to,
+                    logoUrl: logoUrl
+                )
+            }
+
+            print("Customer Home: Fetched \(self.stores.count) stores successfully")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Placeholder Image
+    private func placeholderImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
+        return renderer.image { context in
+            UIColor.white.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: 100, height: 100))
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 20),
+                .foregroundColor: UIColor.darkGray
+            ]
+            let text = "Image"
+            let textSize = text.size(withAttributes: attributes)
+            text.draw(at: CGPoint(x: (100 - textSize.width) / 2, y: (100 - textSize.height) / 2), withAttributes: attributes)
         }
     }
 
@@ -51,7 +111,24 @@ class CustomerHomeViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreTableViewCell
         let store = stores[indexPath.section]
         cell.name.text = store.name
-        cell.photo.image = store.image
+
+        // Dynamically load the image from logoUrl
+        if let url = URL(string: store.logoUrl) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        cell.photo.image = image
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        cell.photo.image = UIImage(named: "placeholder") // Default placeholder image
+                    }
+                }
+            }
+        } else {
+            cell.photo.image = UIImage(named: "placeholder") // Default placeholder image if URL is invalid
+        }
+
         return cell
     }
 

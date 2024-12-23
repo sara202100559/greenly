@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC5449142D0074C700763909 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = AC5449132D0074C700763909 /* Cloudinary */; };
+		C36398882D199A7300E40E25 /* CloudinarySetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36398872D199A7300E40E25 /* CloudinarySetup.swift */; };
 		C37991BC2D17EC0500F28754 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37991BB2D17EC0500F28754 /* OrderCell.swift */; };
 		C37991BE2D17ED7D00F28754 /* ImpactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37991BD2D17ED7D00F28754 /* ImpactData.swift */; };
 		C37991C02D17ED8400F28754 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37991BF2D17ED8400F28754 /* ManualViewController.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C36398872D199A7300E40E25 /* CloudinarySetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudinarySetup.swift; path = "../../../../Downloads/greenly-Maryam-Alsaffar 2/Greenly/Views/CloudinarySetup.swift"; sourceTree = "<group>"; };
 		C37991BB2D17EC0500F28754 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		C37991BD2D17ED7D00F28754 /* ImpactData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpactData.swift; sourceTree = "<group>"; };
 		C37991BF2D17ED8400F28754 /* ManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				C3ADB88D2D145E19008019F2 /* Order.swift */,
 				C37991BB2D17EC0500F28754 /* OrderCell.swift */,
 				C37991C72D181E4500F28754 /* StoreDetailCell.swift */,
+				C36398872D199A7300E40E25 /* CloudinarySetup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				C37991CA2D18333200F28754 /* StoreDetailViewController.swift in Sources */,
 				C3ADB87B2D140459008019F2 /* AddressViewController.swift in Sources */,
 				C3ADB8822D140E75008019F2 /* CustomerHomeTableViewController.swift in Sources */,
+				C36398882D199A7300E40E25 /* CloudinarySetup.swift in Sources */,
 				C3ADB87D2D140472008019F2 /* CartModel.swift in Sources */,
 				C3ADB8512D1403CB008019F2 /* ItemCell.swift in Sources */,
 				C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */,

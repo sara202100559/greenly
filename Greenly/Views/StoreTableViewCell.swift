@@ -25,10 +25,22 @@ class StoreTableViewCell: UITableViewCell {
     // Update the cell's content with store details
     func update(with store: Details) {
         name.text = store.name
-        if let imageData = store.imageData, let image = UIImage(data: imageData) {
-            photo.image = image
+
+        // Load the image from the logoUrl
+        if let url = URL(string: store.logoUrl) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.photo.image = image
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.photo.image = UIImage(named: "storefront") // Use a default placeholder image
+                    }
+                }
+            }
         } else {
-            photo.image = UIImage(named: "storefront") // Use a default placeholder image
+            photo.image = UIImage(named: "storefront") // Use a default placeholder image if URL is invalid
         }
     }
 }

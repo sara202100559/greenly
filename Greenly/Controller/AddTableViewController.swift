@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import Cloudinary
 
 protocol AddTableViewControllerDelegate: AnyObject {
     func didSaveStore(_ store: Details, editingIndex: IndexPath?)
@@ -17,6 +19,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     var details: Details?
     var editingIndex: IndexPath?
     weak var delegate: AddTableViewControllerDelegate?
+    let cloudinary = CloudinarySetup.cloudinarySetup()
 
     // MARK: - Outlets
     @IBOutlet weak var StoreLogo: UIImageView!
@@ -29,8 +32,6 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     @IBOutlet weak var StoreFrom: UITextField!
     @IBOutlet weak var StoreTo: UITextField!
 
-
-
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,19 +41,27 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     }
 
     private func setupUI() {
-        
-
         if let details = details {
             title = "Edit Store Details"
             StoreName.text = details.name
             StoreEmail.text = details.email
             StoreNumber.text = details.num
             StorePassword.text = details.pass
-            StoreLogo.image = details.image
             StoreLocation.text = details.location
             StoreWebsite.text = details.web
             StoreFrom.text = details.from
             StoreTo.text = details.to
+
+            // Dynamically load the logo image from the URL
+            if let url = URL(string: details.logoUrl) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self.StoreLogo.image = image
+                        }
+                    }
+                }
+            }
         } else {
             title = "Add New Store"
         }
@@ -68,10 +77,6 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     }
 
     @IBAction func SaveAdded(_ sender: UIBarButtonItem) {
-  
-      
-
-        // Validate input fields
         guard let name = StoreName.text, !name.isEmpty,
               let email = StoreEmail.text, !email.isEmpty,
               let num = StoreNumber.text, !num.isEmpty,
@@ -80,34 +85,129 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
               let web = StoreWebsite.text, !web.isEmpty,
               let from = StoreFrom.text, !from.isEmpty,
               let to = StoreTo.text, !to.isEmpty else {
-            AlertHelper.showAlert(on: self, title: "Error", message: "Fill all the fields")
+            AlertHelper.showAlert(on: self, title: "Error", message: "Please fill all the fields")
             return
         }
 
-        // Create the Details object
-        let store = Details(name: name, email: email, num: num, pass: pass, image: StoreLogo.image ?? UIImage(), location: location, web: web, from: from, to: to)
+        guard let logoImage = StoreLogo.image else {
+            AlertHelper.showAlert(on: self, title: "Error", message: "Please select a store logo")
+            return
+        }
 
-        // Call the delegate method
-        delegate?.didSaveStore(store, editingIndex: editingIndex)
+        uploadImageToCloudinary(image: logoImage) { [weak self] (imageUrl: String?) in
+            guard let self = self else { return }
+            guard let imageUrl = imageUrl else {
+                AlertHelper.showAlert(on: self, title: "Error", message: "Failed to upload the logo image")
+                return
+            }
 
-        // Dismiss the view controller
-        dismiss(animated: true, completion: nil)
-        
-        
+            let storeData: [String: Any] = [
+                "name": name,
+                "email": email,
+                "number": num,
+                "password": pass,
+                "location": location,
+                "website": web,
+                "from": from,
+                "to": to,
+                "logoUrl": imageUrl
+            ]
+
+            let db = Firestore.firestore()
+
+            // Check if editing an existing store
+            if let details = self.details, !details.id.isEmpty {
+                // Update the existing Firestore document
+                db.collection("Stores").document(details.id).updateData(storeData) { error in
+                    if let error = error {
+                        print("Error updating store: \(error.localizedDescription)")
+                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to update store details")
+                    } else {
+                        print("Store updated successfully!")
+                        let updatedStore = Details(
+                            id: details.id,
+                            name: name,
+                            email: email,
+                            num: num,
+                            pass: pass,
+                            image: logoImage,
+                            location: location,
+                            web: web,
+                            from: from,
+                            to: to,
+                            logoUrl: imageUrl
+                        )
+                        self.delegate?.didSaveStore(updatedStore, editingIndex: self.editingIndex)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            } else {
+                // Add a new Firestore document
+                db.collection("Stores").addDocument(data: storeData) { error in
+                    if let error = error {
+                        print("Error saving store: \(error.localizedDescription)")
+                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to save store details")
+                    } else {
+                        print("Store saved successfully!")
+                        let newStore = Details(
+                            id: "", // Firestore will generate an ID
+                            name: name,
+                            email: email,
+                            num: num,
+                            pass: pass,
+                            image: logoImage,
+                            location: location,
+                            web: web,
+                            from: from,
+                            to: to,
+                            logoUrl: imageUrl
+                        )
+                        self.delegate?.didSaveStore(newStore, editingIndex: nil)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
+    
+    
+    
+    private func uploadImageToCloudinary(image: UIImage, completion: @escaping (String?) -> Void) {
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+            print("Error converting image to data")
+            completion(nil)
+            return
+        }
 
+        let uniqueID = UUID().uuidString
+        let publicID = "images/stores/\(uniqueID)"
+        let uploadParams = CLDUploadRequestParams().setPublicId(publicID)
+
+        cloudinary.createUploader().upload(data: imageData, uploadPreset: CloudinarySetup.uploadPreset, params: uploadParams, completionHandler:  { response, error in
+            if let error = error {
+                print("Cloudinary upload error: \(error.localizedDescription)")
+                completion(nil)
+            } else if let secureUrl = response?.secureUrl {
+                print("Image uploaded successfully: \(secureUrl)")
+                completion(secureUrl)
+            } else {
+                print("Unknown error occurred during Cloudinary upload")
+                completion(nil)
+            }
+        })
+    }
+    
     @IBAction func Logo(_ sender: Any) {
         showImageAlert()
     }
-    
-    //cancel
-        @IBAction func cancle(_ sender: UIBarButtonItem) {
-            dismiss(animated: true, completion: nil)
-        }
-    
+
+    @IBAction func cancle(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+
     private func showImageAlert() {
         let alert = UIAlertController(title: "Take Photo From", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
             self.getPhoto(type: .photoLibrary)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

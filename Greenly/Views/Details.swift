@@ -6,34 +6,30 @@
 //
 import UIKit
 
-struct Details: Codable {
+class Details {
+    var id: String // Firestore document ID
     var name: String
     var email: String
     var num: String
     var pass: String
-    var imageData: Data?
+    var image: UIImage
     var location: String
     var web: String
     var from: String
     var to: String
+    var logoUrl: String
 
-    init(name: String, email: String, num: String, pass: String, image: UIImage, location: String, web: String, from: String, to: String) {
+    init(id: String, name: String, email: String, num: String, pass: String, image: UIImage, location: String, web: String, from: String, to: String, logoUrl: String) {
+        self.id = id
         self.name = name
         self.email = email
         self.num = num
         self.pass = pass
-        self.imageData = image.pngData()
+        self.image = image
         self.location = location
         self.web = web
         self.from = from
         self.to = to
-    }
-
-    var image: UIImage {
-        if let imageData = imageData {
-            return UIImage(data: imageData) ?? UIImage(named: "storefront")!
-        }
-        return UIImage(named: "storefront")!
+        self.logoUrl = logoUrl
     }
 }
-
