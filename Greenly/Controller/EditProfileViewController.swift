@@ -1,6 +1,9 @@
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class EditProfileViewController: UIViewController {
+    
     // MARK: - Outlets
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -16,60 +19,149 @@ class EditProfileViewController: UIViewController {
         loadUserData()
         setupUI()
     }
-
+    
     private func loadUserData() {
-        if let userData = UserDefaults.standard.dictionary(forKey: "userProfile") as? [String: String] {
-            print("Loaded User Data: \(userData)") // Debug print
-            firstName = userData["firstName"] ?? ""
-            lastName = userData["lastName"] ?? ""
-            email = userData["email"] ?? ""
-        } else {
-            print("No data found in UserDefaults.")
+        guard let user = Auth.auth().currentUser else {
+            print("No user is logged in.")
+            return
+        }
+        
+        let db = Firestore.firestore()
+        db.collection("Users").document(user.uid).getDocument { document, error in
+            if let error = error {
+                print("Error loading user data: \(error.localizedDescription)")
+                return
+            }
+            
+            if let data = document?.data() {
+                self.firstName = data["firstName"] as? String ?? ""
+                self.lastName = data["lastName"] as? String ?? ""
+                self.email = data["email"] as? String ?? ""
+                
+                self.setupUI()
+            }
         }
     }
-
+    
     private func setupUI() {
         firstNameTextField.text = firstName
         lastNameTextField.text = lastName
         emailTextField.text = email
-        emailTextField.isUserInteractionEnabled = false // Read-only
     }
     
-    @IBAction func editProfileTapped(_ sender: Any) {
-        // Retrieve user data from UserDefaults
-        if let userData = UserDefaults.standard.dictionary(forKey: "userProfile") as? [String: String],
-           let editProfileVC = storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as? EditProfileViewController {
+    @IBAction func saveProfileTapped(_ sender: UIBarButtonItem) {
+        guard let updatedFirstName = firstNameTextField.text, !updatedFirstName.isEmpty,
+              let updatedLastName = lastNameTextField.text, !updatedLastName.isEmpty,
+              let updatedEmail = emailTextField.text, !updatedEmail.isEmpty else {
+            showAlert(title: "Error", message: "All fields must be filled out.")
+            return
+        }
+        
+        guard let user = Auth.auth().currentUser else {
+            showAlert(title: "Error", message: "No user is logged in.")
+            return
+        }
+        
+        let db = Firestore.firestore()
+        
+        // Update Firestore first
+        db.collection("Users").document(user.uid).updateData([
+            "firstName": updatedFirstName,
+            "lastName": updatedLastName,
+            "email": updatedEmail
+        ]) { error in
+            if let error = error {
+                self.showAlert(title: "Error", message: "Failed to update user data: \(error.localizedDescription)")
+                return
+            }
             
-            // Pass the user data
-            editProfileVC.firstName = userData["firstName"] ?? ""
-            editProfileVC.lastName = userData["lastName"] ?? ""
-            editProfileVC.email = userData["email"] ?? ""
-            
-            navigationController?.pushViewController(editProfileVC, animated: true)
+            // Check if the email has changed
+            if self.email != updatedEmail {
+                // Reauthenticate the user before updating the email
+                self.reauthenticateUser { success in
+                    if success {
+                        self.sendVerificationForEmailUpdate(newEmail: updatedEmail) { success, message in
+                            if success {
+                                self.showAlert(title: "Email Updated", message: message ?? "A verification email has been sent. Please verify your new email.") {
+                                    self.navigationController?.popToRootViewController(animated: true)
+                                }
+                            } else {
+                                self.showAlert(title: "Error", message: message ?? "Unknown error occurred.")
+                            }
+                        }
+                    } else {
+                        self.showAlert(title: "Error", message: "Reauthentication failed. Please try again.")
+                    }
+                }
+            } else {
+                self.showAlert(title: "Success", message: "Profile updated successfully.") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
     
-    @IBAction func SaveProfile(_ sender: UIBarButtonItem) {
-        guard let updatedFirstName = firstNameTextField.text,
-              let updatedLastName = lastNameTextField.text else {
-            showAlert(title: "Error", message: "Fields cannot be empty.")
+    private func reauthenticateUser(completion: @escaping (Bool) -> Void) {
+        guard let user = Auth.auth().currentUser else {
+            completion(false)
             return
         }
 
-        // Update and save user data to UserDefaults
-        var userData = UserDefaults.standard.dictionary(forKey: "userProfile") as? [String: String] ?? [:]
-        userData["firstName"] = updatedFirstName
-        userData["lastName"] = updatedLastName
-        UserDefaults.standard.set(userData, forKey: "userProfile")
+        let alertController = UIAlertController(
+            title: "Reauthenticate",
+            message: "Please enter your password to confirm your identity.",
+            preferredStyle: .alert
+        )
 
-        // Show success alert and navigate back
-        showAlert(title: "Success", message: "Profile updated successfully.") {
-            self.navigationController?.popViewController(animated: true)
+        alertController.addTextField { passwordField in
+            passwordField.placeholder = "Password"
+            passwordField.isSecureTextEntry = true
+        }
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            completion(false)
+        })
+
+        alertController.addAction(UIAlertAction(title: "Reauthenticate", style: .default) { _ in
+            guard let password = alertController.textFields?.first?.text, !password.isEmpty else {
+                completion(false)
+                return
+            }
+
+            let credential = EmailAuthProvider.credential(withEmail: user.email ?? "", password: password)
+            user.reauthenticate(with: credential) { result, error in
+                if let error = error {
+                    print("Reauthentication failed: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+            }
+        })
+
+        self.present(alertController, animated: true)
+    }
+    
+    private func sendVerificationForEmailUpdate(newEmail: String, completion: @escaping (Bool, String?) -> Void) {
+        guard let user = Auth.auth().currentUser else {
+            completion(false, "No user is logged in.")
+            return
+        }
+
+        user.sendEmailVerification(beforeUpdatingEmail: newEmail) { error in
+            if let error = error {
+                completion(false, "Failed to send verification email: \(error.localizedDescription)")
+            } else {
+                do {
+                    try Auth.auth().signOut()
+                    completion(true, "A verification email has been sent to your new email address. Please verify it before logging in again.")
+                } catch let signOutError {
+                    completion(false, "Failed to log out: \(signOutError.localizedDescription)")
+                }
+            }
         }
     }
     
-
-    // Helper function to show alert
     private func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in

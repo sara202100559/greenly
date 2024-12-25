@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zK-E4-bit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ed3-FX-BbQ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -7,33 +7,148 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Process Payment View Controller-->
-        <scene sceneID="D7K-DK-GxY">
+        <!--Cart View Controller-->
+        <scene sceneID="jNc-kO-NTX">
             <objects>
-                <viewController title="Process Payment View Controller" id="cMi-rD-Taa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QlL-Hi-QbE">
+                <viewController title="Cart View Controller" id="ed3-FX-BbQ" customClass="CartViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oat-nh-0mA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FvF-lN-Grv">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ed3-FX-BbQ" id="jqo-PS-aXY"/>
+                                    <outlet property="delegate" destination="ed3-FX-BbQ" id="7AK-Rm-yEn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Aqg-l2-Ke5"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FvF-lN-Grv" firstAttribute="leading" secondItem="Aqg-l2-Ke5" secondAttribute="leading" id="CvO-6O-lC7"/>
+                            <constraint firstItem="FvF-lN-Grv" firstAttribute="trailing" secondItem="Aqg-l2-Ke5" secondAttribute="trailing" id="IgL-IM-Lxk"/>
+                            <constraint firstItem="FvF-lN-Grv" firstAttribute="top" secondItem="Aqg-l2-Ke5" secondAttribute="top" id="SGW-L6-Ya3"/>
+                            <constraint firstItem="FvF-lN-Grv" firstAttribute="bottom" secondItem="Aqg-l2-Ke5" secondAttribute="bottom" id="SMu-6h-qdA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="cart" id="l02-c1-vT5"/>
+                    <navigationItem key="navigationItem" title="My Cart" largeTitleDisplayMode="always" id="QBU-Rv-s7F"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="FvF-lN-Grv" id="cfo-dq-J4N"/>
+                        <segue destination="JcZ-J1-Ggn" kind="show" identifier="checkOutNav" id="fcf-xo-r6Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8R-Qk-LD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="3"/>
+        </scene>
+        <!--Add Address View Controller-->
+        <scene sceneID="NqN-kL-uaN">
+            <objects>
+                <viewController title="Add Address View Controller" id="bjR-L2-brn" customClass="AddressViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ltp-jJ-SJS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YK-QR-n3f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DrT-sM-Clk">
+                                <rect key="frame" x="0.0" y="5" width="393" height="837"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bjR-L2-brn" id="qDD-GQ-yGu"/>
+                                    <outlet property="delegate" destination="bjR-L2-brn" id="nt2-BL-T9y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BRC-Y0-0rE"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DrT-sM-Clk" firstAttribute="leading" secondItem="BRC-Y0-0rE" secondAttribute="leading" id="08A-eL-BQk"/>
+                            <constraint firstItem="DrT-sM-Clk" firstAttribute="top" secondItem="BRC-Y0-0rE" secondAttribute="top" constant="5" id="U8J-Ga-nfb"/>
+                            <constraint firstItem="BRC-Y0-0rE" firstAttribute="bottom" secondItem="DrT-sM-Clk" secondAttribute="bottom" id="XyM-3V-aSd"/>
+                            <constraint firstItem="DrT-sM-Clk" firstAttribute="trailing" secondItem="BRC-Y0-0rE" secondAttribute="trailing" id="e96-Fw-vv4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Address" largeTitleDisplayMode="always" id="UIu-gl-CYs"/>
+                    <connections>
+                        <outlet property="tableView" destination="DrT-sM-Clk" id="taX-DC-Zpe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T55-ZJ-T0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4085" y="-472"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="sCb-r1-Yml">
+            <objects>
+                <viewController title="Checkout View Controller" id="JcZ-J1-Ggn" customClass="CheckoutViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DFG-Tw-K6c">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="90P-34-6Zh">
+                                <rect key="frame" x="0.0" y="5" width="393" height="837"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JcZ-J1-Ggn" id="XbJ-qF-D8L"/>
+                                    <outlet property="delegate" destination="JcZ-J1-Ggn" id="yvo-6S-lME"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W0r-Il-onc"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="90P-34-6Zh" firstAttribute="leading" secondItem="W0r-Il-onc" secondAttribute="leading" id="2Bu-bC-dlb"/>
+                            <constraint firstItem="W0r-Il-onc" firstAttribute="bottom" secondItem="90P-34-6Zh" secondAttribute="bottom" id="5ug-Q8-1sk"/>
+                            <constraint firstAttribute="trailing" secondItem="90P-34-6Zh" secondAttribute="trailing" id="Iws-lw-dlD"/>
+                            <constraint firstItem="90P-34-6Zh" firstAttribute="top" secondItem="W0r-Il-onc" secondAttribute="top" constant="5" id="nJp-w0-0xm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order Confirmation" largeTitleDisplayMode="always" id="E7t-yy-xrk">
+                        <barButtonItem key="backBarButtonItem" title="Order Confirmation" id="lA3-Ei-RsZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="90P-34-6Zh" id="N1t-Dm-6ae"/>
+                        <segue destination="ITe-sT-aIR" kind="show" id="6AJ-bl-POD"/>
+                        <segue destination="bjR-L2-brn" kind="show" identifier="addressNav" id="vzY-mh-kN4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVx-1D-9pJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3109" y="-11"/>
+        </scene>
+        <!--Process Payment View Controller-->
+        <scene sceneID="Tmt-3q-0mj">
+            <objects>
+                <viewController title="Process Payment View Controller" id="ITe-sT-aIR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SBl-XP-0fn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fck-cz-0SZ">
                                 <rect key="frame" x="16" y="144" width="365" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration Data" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tzl-zo-oUR">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration Data" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEW-P7-6S1">
                                 <rect key="frame" x="16" y="204" width="365" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cvv" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bea-7A-yuI">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cvv" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-eh-EWa">
                                 <rect key="frame" x="16" y="263" width="365" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qu-lJ-QOo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igc-q7-ILE">
                                 <rect key="frame" x="90" y="352" width="217" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -43,130 +158,15 @@
                                 </buttonConfiguration>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="3Ni-66-NaQ"/>
+                        <viewLayoutGuide key="safeArea" id="yZq-5Y-Ar2"/>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Process Payment" id="8TA-C8-Ikt"/>
+                    <navigationItem key="navigationItem" title="Process Payment" id="gCq-4M-NGv"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A9G-Ow-a2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQm-NI-wZu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4044" y="270"/>
-        </scene>
-        <!--Checkout View Controller-->
-        <scene sceneID="tyD-PA-hit">
-            <objects>
-                <viewController title="Checkout View Controller" id="mOq-ox-OPZ" customClass="CheckoutViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="srg-lw-ke4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VTw-eM-pv8">
-                                <rect key="frame" x="0.0" y="5" width="393" height="837"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="mOq-ox-OPZ" id="DKw-x3-WUL"/>
-                                    <outlet property="delegate" destination="mOq-ox-OPZ" id="hfb-ri-OVf"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="xR0-Fj-wmY"/>
-                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="VTw-eM-pv8" firstAttribute="leading" secondItem="xR0-Fj-wmY" secondAttribute="leading" id="Azs-Pe-Eud"/>
-                            <constraint firstItem="xR0-Fj-wmY" firstAttribute="bottom" secondItem="VTw-eM-pv8" secondAttribute="bottom" id="EVc-Is-USc"/>
-                            <constraint firstItem="VTw-eM-pv8" firstAttribute="top" secondItem="xR0-Fj-wmY" secondAttribute="top" constant="5" id="KEl-IV-j8E"/>
-                            <constraint firstAttribute="trailing" secondItem="VTw-eM-pv8" secondAttribute="trailing" id="aK3-Bx-N5a"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Order Confirmation" largeTitleDisplayMode="always" id="sHj-Gw-jF1">
-                        <barButtonItem key="backBarButtonItem" title="Order Confirmation" id="wDc-Go-Fra"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableview" destination="VTw-eM-pv8" id="Rmi-qH-BXH"/>
-                        <segue destination="cMi-rD-Taa" kind="show" id="Dhs-yz-SdG"/>
-                        <segue destination="ez6-nC-M4x" kind="show" identifier="addressNav" id="Roi-2b-r6G"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GFa-R5-SMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3109" y="-11"/>
-        </scene>
-        <!--Add Address View Controller-->
-        <scene sceneID="Tt5-id-hJm">
-            <objects>
-                <viewController title="Add Address View Controller" id="ez6-nC-M4x" customClass="AddressViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="enY-xZ-b3i">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ed5-bP-Cai">
-                                <rect key="frame" x="0.0" y="5" width="393" height="837"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ez6-nC-M4x" id="qmo-1A-2DV"/>
-                                    <outlet property="delegate" destination="ez6-nC-M4x" id="RMQ-ek-7hq"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="5zv-nf-Q1Y"/>
-                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="5zv-nf-Q1Y" firstAttribute="bottom" secondItem="ed5-bP-Cai" secondAttribute="bottom" id="L9j-Ps-IWg"/>
-                            <constraint firstItem="ed5-bP-Cai" firstAttribute="trailing" secondItem="5zv-nf-Q1Y" secondAttribute="trailing" id="YhY-Z2-sBF"/>
-                            <constraint firstItem="ed5-bP-Cai" firstAttribute="top" secondItem="5zv-nf-Q1Y" secondAttribute="top" constant="5" id="jdL-Ey-Col"/>
-                            <constraint firstItem="ed5-bP-Cai" firstAttribute="leading" secondItem="5zv-nf-Q1Y" secondAttribute="leading" id="xK9-tM-44r"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add New Address" largeTitleDisplayMode="always" id="zYQ-JW-Ydc"/>
-                    <connections>
-                        <outlet property="tableView" destination="ed5-bP-Cai" id="jLV-r8-luy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nRm-pa-Ih3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4085" y="-472"/>
-        </scene>
-        <!--Cart View Controller-->
-        <scene sceneID="VPe-Yd-Yvy">
-            <objects>
-                <viewController title="Cart View Controller" id="2zK-E4-bit" customClass="CartViewController" customModule="MyProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="maY-HL-rMc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qpU-ff-tvu">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="2zK-E4-bit" id="l94-0r-yZF"/>
-                                    <outlet property="delegate" destination="2zK-E4-bit" id="LzK-oi-TlZ"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="IOR-PQ-qnQ"/>
-                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="qpU-ff-tvu" firstAttribute="trailing" secondItem="IOR-PQ-qnQ" secondAttribute="trailing" id="8s4-Ke-VCx"/>
-                            <constraint firstItem="qpU-ff-tvu" firstAttribute="leading" secondItem="IOR-PQ-qnQ" secondAttribute="leading" id="aCM-9y-PEI"/>
-                            <constraint firstItem="qpU-ff-tvu" firstAttribute="top" secondItem="IOR-PQ-qnQ" secondAttribute="top" id="raI-2H-m5y"/>
-                            <constraint firstItem="qpU-ff-tvu" firstAttribute="bottom" secondItem="IOR-PQ-qnQ" secondAttribute="bottom" id="zJ6-LO-U2T"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="cart" id="he9-fz-4i8"/>
-                    <navigationItem key="navigationItem" title="My Cart" largeTitleDisplayMode="always" id="QZa-Ni-EuB"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="tableView" destination="qpU-ff-tvu" id="o2q-7b-wJf"/>
-                        <segue destination="mOq-ox-OPZ" kind="show" identifier="checkOutNav" id="SkX-R1-l7D"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Mc-Lq-sfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2314" y="3"/>
         </scene>
     </scenes>
     <resources>

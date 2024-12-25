@@ -13,26 +13,17 @@ class OrderHistoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadOrders()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadOrders()
+    }
+    
+    private func loadOrders() {
         orders = UserDefaults.standard.loadOrders()
-        // Add header view with "My Order" label
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
-            headerView.backgroundColor = .clear
-            
-            let titleLabel = UILabel()
-            titleLabel.text = "My Order"
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-            titleLabel.textColor = .black
-            titleLabel.translatesAutoresizingMaskIntoConstraints = false
-            
-            headerView.addSubview(titleLabel)
-            
-            // Add constraints for left alignment
-            NSLayoutConstraint.activate([
-                titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16), // 16 points padding from the left
-                titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
-            ])
-            
-            tableView.tableHeaderView = headerView
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,24 +40,36 @@ class OrderHistoryTableViewController: UITableViewController {
         }
         
         let order = orders[indexPath.row]
-        cell.storeNameLabel.text = order.storeName
+        cell.storeNameLabel.text = order.ownerName
         cell.priceLabel.text = "\(order.price) BD"
         cell.dateLabel.text = "Date: \(order.date)"
-        cell.orderIDLabel.text = "Order ID: \(order.orderID)"
-        cell.statusLabel.text = order.status
+        cell.orderIDLabel.text = "Order ID: \(order.id)"
+        cell.statusLabel.text = order.status.rawValue
         
         return cell
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return 120 // Adjust height to allow for padding and spacing
-      }
-
-      override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-          return UIView() // Removes extra separators
-      }
-
-      override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-          return 0 // No footer spacing
-      }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedOrder = orders[indexPath.row]
+        
+        // Navigate to OrderDetailsVC
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let orderDetailsVC = storyboard.instantiateViewController(withIdentifier: "OrderDetailsVC") as? OrderDetailsVC {
+            orderDetailsVC.order = selectedOrder
+            orderDetailsVC.delegate = self
+            navigationController?.pushViewController(orderDetailsVC, animated: true)
+        }
+    }
 }
 
+// MARK: - OrderDetailsDelegate
+extension OrderHistoryTableViewController: OrderDetailsDelegate {
+    func didUpdateOrder(_ order: Order) {
+        if let index = orders.firstIndex(where: { $0.id == order.id }) {
+            orders[index] = order
+            UserDefaults.standard.saveOrders(orders)
+            tableView.reloadData()
+        }
+    }
+}

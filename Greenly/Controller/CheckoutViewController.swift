@@ -240,38 +240,40 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
         return 0.00001
     }
     
-    func processOrder() {
-        // Generate Order ID
-        let newOrderID = String(format: "%04d", (UserDefaults.standard.loadOrders().count + 1))
-        
-        // Format the current date and time
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM yyyy HH:mm"
-        let currentDate = formatter.string(from: Date())
-        
-        // Create new order
-        let newOrder = Order(
-            storeName: "Package Free",
-            date: currentDate,
-            orderID: newOrderID,
-            price: String(format: "%.2f BD", totalPrice),
-            status: "Pending"
-        )
-        
-        // Save the order
-        var orders = UserDefaults.standard.loadOrders()
-        orders.append(newOrder)
-        UserDefaults.standard.saveOrders(orders)
-        
-        // Show success alert
-        let alert = UIAlertController(
-            title: "Order Placed",
-            message: "Your order has been placed successfully!",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.navigationController?.popToRootViewController(animated: true)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
+    private func processOrder() {
+            // Generate Order ID
+            let newOrderID = UUID().uuidString
+
+            // Format the current date and time
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd MMMM yyyy HH:mm"
+            let currentDate = formatter.string(from: Date())
+
+            // Create a new order object
+            let newOrder = Order(
+                id: newOrderID,
+                status: .pending,
+                date: currentDate,
+                price: totalPrice,
+                ownerName: "Store Name Placeholder", // Replace with the actual store name
+                feedback: nil,
+                rating: nil
+            )
+
+            // Save the order
+            var orders = UserDefaults.standard.loadOrders()
+            orders.append(newOrder)
+            UserDefaults.standard.saveOrders(orders)
+
+            // Show success alert
+            let alert = UIAlertController(
+                title: "Order Placed",
+                message: "Your order has been placed successfully!",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
 }

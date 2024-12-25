@@ -94,6 +94,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             return
         }
 
+        // Upload image to Cloudinary
         uploadImageToCloudinary(image: logoImage) { [weak self] (imageUrl: String?) in
             guard let self = self else { return }
             guard let imageUrl = imageUrl else {
@@ -115,13 +116,13 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
 
             let db = Firestore.firestore()
 
-            // Check if editing an existing store
             if let details = self.details, !details.id.isEmpty {
-                // Update the existing Firestore document
+                // Update existing Firestore document
                 db.collection("Stores").document(details.id).updateData(storeData) { error in
                     if let error = error {
-                        print("Error updating store: \(error.localizedDescription)")
-                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to update store details")
+                        print("Firestore update error: \(error.localizedDescription)")
+                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to update store details: \(error.localizedDescription)")
+                        return
                     } else {
                         print("Store updated successfully!")
                         let updatedStore = Details(
@@ -145,12 +146,12 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
                 // Add a new Firestore document
                 db.collection("Stores").addDocument(data: storeData) { error in
                     if let error = error {
-                        print("Error saving store: \(error.localizedDescription)")
-                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to save store details")
+                        print("Firestore save error: \(error.localizedDescription)")
+                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to save store details: \(error.localizedDescription)")
                     } else {
                         print("Store saved successfully!")
                         let newStore = Details(
-                            id: "", // Firestore will generate an ID
+                            id: "", // Firestore generates the ID
                             name: name,
                             email: email,
                             num: num,
@@ -169,7 +170,6 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             }
         }
     }
-    
     
     
     private func uploadImageToCloudinary(image: UIImage, completion: @escaping (String?) -> Void) {

@@ -1,111 +1,142 @@
-//
-//  LoginViewController.swift
-//  Greenly
-//
-//  Created by BP-36-201-22 on 01/12/2024.
-//
-
 import UIKit
 import FirebaseAuth
-import FirebaseDatabaseInternal
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
-    // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var showPasswordButton: UIButton! // Button to toggle password visibility
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var showPasswordButton: UIButton!//11
 
-    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordTextField.isSecureTextEntry = true // Set initial password field state
-    }
-    
-    
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
-    
-    // MARK: - Actions
-    
-    
-        // Validate fields
-        guard let email = emailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty else {
-            showAlert(title: "Error", message: "Please enter both email and password.")
-            return
-        }
-        // Firebase Authentication
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let self = self else { return }
-            if let error = error {
-                self.showAlert(title: "Error", message: error.localizedDescription)
-                return
-            }
-
-            
-            if email.contains("admin".lowercased()){
-                self.performSegue(withIdentifier: "admin", sender: sender)
-            }
-            else if email.contains("store".lowercased()){
-                self.performSegue(withIdentifier: "Storeowner", sender: sender)
-            }
-            else {
-                self.performSegue(withIdentifier: "CustHome", sender: sender)
-            }
-        }
+        passwordTextField.isSecureTextEntry = true
+        loginButton.isEnabled = false
+        emailTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
 
+    @objc func textFieldChanged() {
+        loginButton.isEnabled = !(emailTextField.text?.isEmpty ?? true) && !(passwordTextField.text?.isEmpty ?? true)
+    }
+    
+    //11
     @IBAction func showPasswordTapped(_ sender: UIButton) {
-        // Toggle secure text entry
         passwordTextField.isSecureTextEntry.toggle()
-
-        // Change button appearance based on password visibility
         let buttonImage = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
         showPasswordButton.setImage(UIImage(systemName: buttonImage), for: .normal)
     }
-
+    //11
     @IBAction func createAccountTapped(_ sender: UIButton) {
-        // Navigate to the registration page
         performSegue(withIdentifier: "showRegisterPage", sender: self)
     }
 
-    // MARK: - Helper Functions
-    private func getUserRole(for email: String, completion: @escaping (String) -> Void) {
-        // Example method to get user role from Firebase database
-        let databaseRef = Database.database().reference()
-        let userUID = Auth.auth().currentUser?.uid ?? ""
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
 
-        databaseRef.child("users").child(userUID).observeSingleEvent(of: .value) { snapshot in
-            guard let userData = snapshot.value as? [String: Any],
-                  let role = userData["role"] as? String else {
-                completion("unknown")
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                self.showAlert(title: "Login Error", message: error.localizedDescription)
                 return
             }
-            completion(role)
+            guard let user = authResult?.user else { return }
+            
+            let db = Firestore.firestore()
+            db.collection("Users").document(user.uid).getDocument { document, error in
+                if let document = document, document.exists {
+                    let role = document.data()?["role"] as? String
+                    if role == "admin" {
+                        self.performSegue(withIdentifier: "adminSegue", sender: self)
+                    } else if role == "store owner" {
+                        self.performSegue(withIdentifier: "storeOwnerSegue", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "userSegue", sender: self)
+                    }
+                }
+            }
         }
     }
 
-    private func navigateToStoreOwnerHomePage() {
-        let storyboard = UIStoryboard(name: "StoreOwner", bundle: nil)
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "StoreOwnerHomeViewController") as? StoreOwnerHomeViewController {
-            navigationController?.pushViewController(viewController, animated: true)
-        } else {
-            print("Failed to instantiate StoreOwnerHomeViewController.")
-        }
-    }
-
-//    private func navigateToCustomerHomePage() {
-//        let storyboard = UIStoryboard(name: "CustomerHome", bundle: nil)
-//        if let viewController = storyboard.instantiateViewController(withIdentifier: "CustomerHomeViewController") {
-//            navigationController?.pushViewController(viewController, animated: true)
-//        } else {
-//            print("Failed to instantiate CustomerHomeViewController.")
-//        }
-//    }
-
-    private func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
 }
+
+
+
+//import UIKit
+//
+//class LoginViewController: UIViewController {
+//
+//    // MARK: - Outlets
+//    @IBOutlet weak var emailTextField: UITextField!
+//    @IBOutlet weak var passwordTextField: UITextField!
+//    @IBOutlet weak var loginButton: UIButton!
+//    @IBOutlet weak var showPasswordButton: UIButton!
+//
+//    // MARK: - Lifecycle Methods
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        passwordTextField.isSecureTextEntry = true
+//        updateLoginButtonState()
+//    }
+//
+//    // MARK: - Actions
+//    @IBAction func loginButtonTapped(_ sender: UIButton) {
+//        guard let email = emailTextField.text, !email.isEmpty,
+//              let password = passwordTextField.text, !password.isEmpty else {
+//            showAlert(title: "Error", message: "Please enter both email and password.")
+//            return
+//        }
+//
+//        // Authenticate user using sampleUsers
+//        if let user = sampleUsers.first(where: { $0.email == email && $0.password == password }) {
+//            switch user.role {
+//            case "admin":
+//                performSegue(withIdentifier: "adminSegue", sender: self)
+//            case "store owner":
+//                performSegue(withIdentifier: "storeOwnerSegue", sender: self)
+//            case "user":
+//                performSegue(withIdentifier: "userSegue", sender: self)
+//            default:
+//                showAlert(title: "Error", message: "Unknown user role.")
+//            }
+//        } else {
+//            showAlert(title: "Error", message: "Invalid email or password.")
+//        }
+//    }
+//
+//    @IBAction func emailField(_ sender: Any) {
+//        updateLoginButtonState()
+//    }
+//
+//    @IBAction func passwordField(_ sender: Any) {
+//        updateLoginButtonState()
+//    }
+//
+//    @IBAction func showPasswordTapped(_ sender: UIButton) {
+//        passwordTextField.isSecureTextEntry.toggle()
+//        let buttonImage = passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
+//        showPasswordButton.setImage(UIImage(systemName: buttonImage), for: .normal)
+//    }
+//
+//    @IBAction func createAccountTapped(_ sender: UIButton) {
+//        performSegue(withIdentifier: "showRegisterPage", sender: self)
+//    }
+//
+//    // MARK: - Helper Methods
+//    private func updateLoginButtonState() {
+//        let emailIsEmpty = emailTextField.text?.isEmpty ?? true
+//        let passwordIsEmpty = passwordTextField.text?.isEmpty ?? true
+//        loginButton.isEnabled = !emailIsEmpty && !passwordIsEmpty
+//    }
+//
+//    private func showAlert(title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(alert, animated: true)
+//    }
+//}
