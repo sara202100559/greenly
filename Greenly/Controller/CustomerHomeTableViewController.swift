@@ -1,17 +1,20 @@
 import UIKit
 import FirebaseFirestore
 
-class CustomerHomeViewController: UITableViewController {
+class CustomerHomeViewController: UITableViewController, UISearchResultsUpdating {
 
     // MARK: - Properties
     var stores: [Details] = []
+    var filteredStores: [Details] = []
+    var searchController: UISearchController?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Customer Home"
         setupTableView()
-        fetchStoresFromFirestore() // Fetch data from Firestore
+        setupSearchController()
+        fetchStoresFromFirestore()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +27,15 @@ class CustomerHomeViewController: UITableViewController {
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+
+    private func setupSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController?.searchResultsUpdater = self
+        searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.searchBar.placeholder = "Search Stores"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     // MARK: - Fetch Stores from Firestore
@@ -52,7 +64,7 @@ class CustomerHomeViewController: UITableViewController {
                       let web = data["website"] as? String,
                       let from = data["from"] as? String,
                       let to = data["to"] as? String,
-                      let logoUrl = data["logoUrl"] as? String else { // Extract logoUrl here
+                      let logoUrl = data["logoUrl"] as? String else {
                     return nil
                 }
 
@@ -98,9 +110,23 @@ class CustomerHomeViewController: UITableViewController {
         }
     }
 
+    // MARK: - UISearchResultsUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text?.lowercased(), !query.isEmpty else {
+            filteredStores = stores
+            tableView.reloadData()
+            return
+        }
+
+        filteredStores = stores.filter { store in
+            store.name.lowercased().contains(query) || store.location.lowercased().contains(query)
+        }
+        tableView.reloadData()
+    }
+
     // MARK: - TableView Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return stores.count
+        return (searchController?.isActive ?? false) ? filteredStores.count : stores.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,7 +135,7 @@ class CustomerHomeViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreTableViewCell
-        let store = stores[indexPath.section]
+        let store: Details = (searchController?.isActive ?? false) ? filteredStores[indexPath.section] : stores[indexPath.section]
         cell.name.text = store.name
 
         // Dynamically load the image from logoUrl
@@ -135,8 +161,8 @@ class CustomerHomeViewController: UITableViewController {
     // MARK: - TableView Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedStore = stores[indexPath.section]
-        performSegue(withIdentifier: "showStoreDetails", sender: selectedStore)
+        let selectedStore = (searchController?.isActive ?? false) ? filteredStores[indexPath.section] : stores[indexPath.section]
+//        performSegue(withIdentifier: "showStoreDetails", sender: selectedStore)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

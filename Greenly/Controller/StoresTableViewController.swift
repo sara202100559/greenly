@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 extension UITableViewController {
     // MARK: - Navigation Methods
@@ -34,62 +35,51 @@ extension UITableViewController {
     }
 }
 
-class StoresTableViewController: UITableViewController, UISearchResultsUpdating, AddTableViewControllerDelegate {
 
-    var selectedIndex: IndexPath?
-
+class StoresTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    @IBAction func Exit(_ sender: Any) {
+            logout()
+        }
+    
     // MARK: - Properties
     var stores: [Details] = [] // Array to store store details
     var filteredStores: [Details] = []
     var searchController: UISearchController?
-
-    // MARK: - Logout Action
-    @IBAction func Exit(_ sender: Any) {
-        logout()
-    }
-
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Stores"
         setupSearchController()
-
-        // Fetch data from Firestore in real-time
         fetchStoresFromFirestore()
-
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.reloadData()
-    }
-
+    
     // MARK: - Firebase Firestore Fetch
     private func fetchStoresFromFirestore() {
         let db = Firestore.firestore()
-        db.collection("Stores").addSnapshotListener { [weak self] (snapshot, error) in
+        db.collection("Stores").addSnapshotListener { [weak self] snapshot, error in
             guard let self = self else { return }
-
+            
             if let error = error {
                 print("Error fetching stores: \(error.localizedDescription)")
                 return
             }
-
+            
             guard let documents = snapshot?.documents else {
                 print("No documents found")
                 return
             }
 
-            self.stores = documents.compactMap { document -> Details? in
+            // Update the stores array with current Firestore data
+            self.stores = documents.compactMap { document in
                 let data = document.data()
                 guard let name = data["name"] as? String,
                       let email = data["email"] as? String,
                       let num = data["number"] as? String,
-                      let pass = data["password"] as? String,
                       let location = data["location"] as? String,
                       let web = data["website"] as? String,
                       let from = data["from"] as? String,
@@ -98,14 +88,16 @@ class StoresTableViewController: UITableViewController, UISearchResultsUpdating,
                     return nil
                 }
 
-                // Initialize the Details object with the document ID
+                // If the password exists in the document, set it; otherwise, leave it empty
+                let password = data["password"] as? String ?? ""
+
                 return Details(
-                    id: document.documentID, // Save Firestore document ID
+                    id: document.documentID,
                     name: name,
                     email: email,
                     num: num,
-                    pass: pass,
-                    image: UIImage(), // Placeholder for now
+                    pass: password,
+                    image: UIImage(),
                     location: location,
                     web: web,
                     from: from,
@@ -114,28 +106,14 @@ class StoresTableViewController: UITableViewController, UISearchResultsUpdating,
                 )
             }
 
+
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
 
-    // MARK: - Placeholder Image
-    private func placeholderImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 100, height: 100))
-        return renderer.image { context in
-            UIColor.white.setFill()
-            context.fill(CGRect(x: 0, y: 0, width: 100, height: 100))
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 20),
-                .foregroundColor: UIColor.darkGray
-            ]
-            let text = "Image"
-            let textSize = text.size(withAttributes: attributes)
-            text.draw(at: CGPoint(x: (100 - textSize.width) / 2, y: (100 - textSize.height) / 2), withAttributes: attributes)
-        }
-    }
-
+    
     // MARK: - Search Controller Setup
     func setupSearchController() {
         searchController = UISearchController(searchResultsController: nil)
@@ -143,9 +121,8 @@ class StoresTableViewController: UITableViewController, UISearchResultsUpdating,
         searchController?.obscuresBackgroundDuringPresentation = false
         searchController?.searchBar.placeholder = "Search Stores"
         navigationItem.searchController = searchController
-        definesPresentationContext = true
     }
-
+    
     // MARK: - Search Results Updating
     func updateSearchResults(for searchController: UISearchController) {
         guard let query = searchController.searchBar.text?.lowercased(), !query.isEmpty else {
@@ -153,107 +130,91 @@ class StoresTableViewController: UITableViewController, UISearchResultsUpdating,
             tableView.reloadData()
             return
         }
-        filteredStores = stores.filter { store in
-            store.name.lowercased().contains(query) || store.location.lowercased().contains(query)
-        }
+        filteredStores = stores.filter { $0.name.lowercased().contains(query) || $0.location.lowercased().contains(query) }
         tableView.reloadData()
     }
-
+    
     // MARK: - TableView DataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return (searchController?.isActive ?? false) ? 1 : stores.count
+        return searchController?.isActive ?? false ? 1 : stores.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (searchController?.isActive ?? false) ? filteredStores.count : 1
+        return searchController?.isActive ?? false ? filteredStores.count : 1
     }
-
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
-    }
-
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if searchController?.isActive ?? false { return nil }
-        let headerView = UIView()
-        headerView.backgroundColor = .clear
-        return headerView
-    }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreTableViewCell
-        let store: Details
-        if searchController?.isActive ?? false {
-            store = filteredStores[indexPath.row]
-        } else {
-            store = stores[indexPath.section]
-        }
-
-        // Set store name
+        let store = searchController?.isActive ?? false ? filteredStores[indexPath.row] : stores[indexPath.section]
         cell.name.text = store.name
-
-        // Dynamically load the image from logoUrl
+        
         if let url = URL(string: store.logoUrl) {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         cell.photo.image = image
                     }
-                } else {
-                    DispatchQueue.main.async {
-                        cell.photo.image = UIImage(named: "storefront") // Default placeholder image
-                    }
                 }
             }
-        } else {
-            cell.photo.image = UIImage(named: "storefront") // Default placeholder image if URL is invalid
         }
-
         return cell
     }
     
+    func checkAdminStatus(completion: @escaping (Bool) -> Void) {
+        Auth.auth().currentUser?.getIDTokenResult { (result, error) in
+            if let error = error {
+                print("Error fetching token result: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            let isAdmin = result?.claims["admin"] as? Bool ?? false
+            print("Is admin: \(isAdmin)")
+            completion(isAdmin)
+        }
+    }
+
+    
+    // MARK: - Swipe to Delete
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        // Get the store to delete
         let storeToDelete = stores[indexPath.section]
 
-        // Create the delete action
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, view, completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, completionHandler in
             guard let self = self else { return }
 
-            // Show confirmation alert before deleting
-            let alert = UIAlertController(title: "Delete Store", message: "Are you sure you want to delete \"\(storeToDelete.name)\"?", preferredStyle: .alert)
+            let alert = UIAlertController(
+                title: "Delete Store",
+                message: "Are you sure you want to delete \"\(storeToDelete.name)\"?",
+                preferredStyle: .alert
+            )
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-                completionHandler(false) // Cancel deletion
+                completionHandler(false)
             }))
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-                // Delete the document from Firestore
                 let db = Firestore.firestore()
                 db.collection("Stores").document(storeToDelete.id).delete { error in
                     if let error = error {
                         print("Error deleting store: \(error.localizedDescription)")
+                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to delete store: \(error.localizedDescription)")
                         completionHandler(false)
                     } else {
-                        print("Store deleted successfully from Firestore")
-
-                        // Remove the store from the local array
+                        print("Store deleted successfully!")
                         self.stores.remove(at: indexPath.section)
-
-                        // Reload the table view
-                        tableView.deleteSections([indexPath.section], with: .automatic)
-                        completionHandler(true)
+                        DispatchQueue.main.async {
+                            tableView.deleteSections([indexPath.section], with: .automatic)
+                            completionHandler(true)
+                        }
                     }
                 }
             }))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true)
         }
 
-        deleteAction.backgroundColor = .red
-
-        // Return the swipe actions configuration
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-        configuration.performsFirstActionWithFullSwipe = true
-        return configuration
+        // Wrap the delete action in UISwipeActionsConfiguration
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 
+
+    
     // MARK: - AddTableViewControllerDelegate
     func didSaveStore(_ store: Details, editingIndex: IndexPath?) {
         if let editingIndex = editingIndex {
@@ -264,17 +225,13 @@ class StoresTableViewController: UITableViewController, UISearchResultsUpdating,
         tableView.reloadData()
     }
 
+    
     @IBSegueAction func addEditStoreSegue(_ coder: NSCoder, sender: Any?) -> AddTableViewController? {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-            let storeToEdit = searchController?.isActive ?? false ? filteredStores[indexPath.row] : stores[indexPath.section]
-            let viewController = AddTableViewController(coder: coder, store: storeToEdit)
-            viewController?.editingIndex = indexPath
-            viewController?.delegate = self
-            return viewController
+            let storeToEdit = stores[indexPath.section]
+            return AddTableViewController(coder: coder, store: storeToEdit)
         } else {
-            let viewController = AddTableViewController(coder: coder, store: nil)
-            viewController?.delegate = self
-            return viewController
+            return AddTableViewController(coder: coder, store: nil)
         }
     }
 }

@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chart View Controller-->
+        <!--Tracker-->
         <scene sceneID="z9y-z0-dnf">
             <objects>
-                <viewController id="bTf-gV-nvg" customClass="ChartViewController" customModule="tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bTf-gV-nvg" customClass="ChartViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YGx-oX-PD4" customClass="ViewController">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,50 +29,50 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plastic Waste Reduced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzl-g2-xcQ">
-                                <rect key="frame" x="87.333333333333329" y="560" width="158.66666666666669" height="18"/>
+                                <rect key="frame" x="87.333333333333329" y="511" width="158.66666666666669" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="CO2 Emissions Reduced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-V1-9nz">
-                                <rect key="frame" x="81.666666666666686" y="618" width="168" height="18"/>
+                                <rect key="frame" x="81.666666666666686" y="569" width="168" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water Conservation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngm-oR-zHZ">
-                                <rect key="frame" x="94" y="676" width="136" height="18"/>
+                                <rect key="frame" x="94" y="627" width="136" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plasticicon" translatesAutoresizingMaskIntoConstraints="NO" id="ITy-qu-tp6">
-                                <rect key="frame" x="15.999999999999996" y="549" width="46.666666666666657" height="48"/>
+                                <rect key="frame" x="15.999999999999996" y="500" width="46.666666666666657" height="48"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c2oicon" translatesAutoresizingMaskIntoConstraints="NO" id="a3U-Bq-Y4q">
-                                <rect key="frame" x="15.999999999999996" y="603.66666666666663" width="46.666666666666657" height="48"/>
+                                <rect key="frame" x="15.999999999999996" y="554.66666666666663" width="46.666666666666657" height="48"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watericon" translatesAutoresizingMaskIntoConstraints="NO" id="244-1L-Ej8">
-                                <rect key="frame" x="16" y="661.66666666666663" width="48" height="48"/>
+                                <rect key="frame" x="16" y="612.66666666666663" width="48" height="48"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-7N-yaa" customClass="PieChartView" customModule="DGCharts">
-                                <rect key="frame" x="27" y="219" width="328" height="264"/>
+                                <rect key="frame" x="27" y="219" width="328" height="215"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-oU-PeG">
-                                <rect key="frame" x="316.66666666666669" y="559" width="51.333333333333314" height="20.333333333333371"/>
+                                <rect key="frame" x="316.66666666666669" y="509.99999999999994" width="51.333333333333314" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Labelc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be1-WQ-d4J">
-                                <rect key="frame" x="318" y="617" width="59" height="21"/>
+                                <rect key="frame" x="318" y="568" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msS-4U-zoK">
-                                <rect key="frame" x="322.66666666666669" y="676" width="54.333333333333314" height="21"/>
+                                <rect key="frame" x="322.66666666666669" y="627" width="54.333333333333314" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                 <connections>
-                                    <segue destination="04s-gu-E0K" kind="show" id="XSC-RW-FUe"/>
+                                    <segue destination="04s-gu-E0K" kind="show" id="cF3-3V-vRh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,9 +138,10 @@
                             <constraint firstItem="x4g-V1-9nz" firstAttribute="top" secondItem="Lzl-g2-xcQ" secondAttribute="bottom" constant="40" id="xJC-nR-rPi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="q10-WC-DQB"/>
+                    <tabBarItem key="tabBarItem" title="Tracker" image="chart.pie.fill" catalog="system" badgeValue="Tracker" selectedImage="chart.pie.fill" id="h0S-41-UHt"/>
+                    <navigationItem key="navigationItem" title="Tracker" id="q10-WC-DQB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="button" destination="IRp-fb-Jw3" id="Mow-zh-vxz"/>
                         <outlet property="lblC2" destination="be1-WQ-d4J" id="HZ2-DG-IP6"/>
                         <outlet property="lblPlastic" destination="YGn-oU-PeG" id="BfW-yo-FOi"/>
                         <outlet property="lblWater" destination="msS-4U-zoK" id="7rj-cD-6G2"/>
@@ -149,12 +150,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fb-qG-jN2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095.419847328244" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="3022.1374045801526" y="3.5211267605633805"/>
         </scene>
         <!--Manual View Controller-->
         <scene sceneID="OLv-ow-W7B">
             <objects>
-                <viewController id="04s-gu-E0K" customClass="ManualViewController" customModule="tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="04s-gu-E0K" customClass="ManualViewController" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KoO-AA-Jsi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -319,17 +320,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJZ-lU-fvZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3139.6946564885493" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="4066.4122137404579" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
         <image name="c2oicon" width="48" height="48"/>
+        <image name="chart.pie.fill" catalog="system" width="128" height="123"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="plasticicon" width="48" height="48"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="watericon" width="48" height="48"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

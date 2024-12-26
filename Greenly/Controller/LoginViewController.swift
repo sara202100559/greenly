@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     }
     //11
     @IBAction func createAccountTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "showRegisterPage", sender: self)
+//        performSegue(withIdentifier: "showRegisterPage", sender: self)
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {

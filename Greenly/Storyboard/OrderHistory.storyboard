@@ -22,74 +22,53 @@
                                     <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="102" translatesAutoresizingMaskIntoConstraints="NO" id="bcP-Y5-eWr">
-                                            <rect key="frame" x="20" y="11" width="294.66666666666669" height="76"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="hfA-i3-5UG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="76"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve9-Ob-OyV" userLabel="Order Id Lbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="33.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PV-tj-dCY" userLabel="Date Stamp Lbl">
-                                                            <rect key="frame" x="0.0" y="40.333333333333336" width="87.333333333333329" height="14.333333333333336"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="mLY-Fo-SYI"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM6-NE-Izz" userLabel="Customer Name Lbl">
-                                                            <rect key="frame" x="0.0" y="61.666666666666679" width="87.333333333333329" height="14.333333333333336"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="s83-Z8-yw6"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aVM-8W-8HC">
-                                                    <rect key="frame" x="189.33333333333334" y="0.0" width="105.33333333333334" height="76"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoI-0c-NSB" userLabel="Order Status Lbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105.33333333333333" height="41.666666666666664"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-JV-rUK" userLabel="Order Price Lbl">
-                                                            <rect key="frame" x="0.0" y="61.666666666666679" width="105.33333333333333" height="14.333333333333336"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="14.333333333333336" id="skj-af-ohC"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMf-bl-2TT">
+                                            <rect key="frame" x="20" y="11" width="88" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date and time " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Am3-r1-Sem">
+                                            <rect key="frame" x="20" y="40" width="77" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeT-0P-fSt">
+                                            <rect key="frame" x="20" y="66" width="43" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-Od-Ix0">
+                                            <rect key="frame" x="238" y="11" width="37" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCs-6I-J3t">
+                                            <rect key="frame" x="238" y="57" width="42" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bcP-Y5-eWr" firstAttribute="leading" secondItem="K95-Pg-rjH" secondAttribute="leadingMargin" id="0Cf-db-e5u"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="bcP-Y5-eWr" secondAttribute="trailing" id="gpF-oM-b9V"/>
-                                        <constraint firstItem="bcP-Y5-eWr" firstAttribute="top" secondItem="K95-Pg-rjH" secondAttribute="topMargin" id="prS-eP-QtV"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bcP-Y5-eWr" secondAttribute="bottom" id="qvN-bB-SyT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uCs-6I-J3t" secondAttribute="bottom" constant="13" id="9mY-Xr-vlU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JV7-Od-Ix0" secondAttribute="trailing" constant="39.670000000000002" id="t7q-DR-gbH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uCs-6I-J3t" secondAttribute="trailing" constant="34.670000000000002" id="ws1-Wb-M8d"/>
+                                        <constraint firstItem="uCs-6I-J3t" firstAttribute="top" secondItem="JV7-Od-Ix0" secondAttribute="bottom" constant="26" id="zjU-if-BDh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dateLabel" destination="0PV-tj-dCY" id="T2Q-fm-9IS"/>
-                                    <outlet property="orderIDLabel" destination="nM6-NE-Izz" id="Oq0-Fi-Hng"/>
-                                    <outlet property="priceLabel" destination="GoI-0c-NSB" id="Yhr-VX-VFx"/>
-                                    <outlet property="statusLabel" destination="IQZ-JV-rUK" id="ErJ-pb-fhK"/>
-                                    <outlet property="storeNameLabel" destination="ve9-Ob-OyV" id="bLy-Zy-LHu"/>
+                                    <outlet property="dateLabel" destination="Am3-r1-Sem" id="GtO-C1-yAn"/>
+                                    <outlet property="orderIDLabel" destination="AeT-0P-fSt" id="Kov-PG-5mg"/>
+                                    <outlet property="priceLabel" destination="JV7-Od-Ix0" id="wqL-Z8-Aum"/>
+                                    <outlet property="statusLabel" destination="uCs-6I-J3t" id="IU2-B9-GBl"/>
+                                    <outlet property="storeNameLabel" destination="CMf-bl-2TT" id="wXB-48-uaq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,9 +76,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Order history" image="bookmark" catalog="system" selectedImage="bookmark" id="w8m-1T-1TI"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Orders" id="8Ka-8q-U8N" userLabel="Orders">
-                        <barButtonItem key="leftBarButtonItem" image="rectangle.portrait.and.arrow.forward" catalog="system" id="OTo-4z-x9v"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Orders" id="8Ka-8q-U8N" userLabel="Orders"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XuB-WE-Q9a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,6 +86,5 @@
     </scenes>
     <resources>
         <image name="bookmark" catalog="system" width="110" height="128"/>
-        <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="128" height="108"/>
     </resources>
 </document>

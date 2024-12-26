@@ -66,7 +66,6 @@
 		CF6747642CF8BC3E00E9A704 /* OrderHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747632CF8BC3E00E9A704 /* OrderHistory.storyboard */; };
 		CF6747682CF8BC7F00E9A704 /* ImpactTracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */; };
 		CF67476A2CF8BC8C00E9A704 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF6747692CF8BC8C00E9A704 /* Cart.storyboard */; };
-		CF67476C2CF8BCA100E9A704 /* StoreOrders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */; };
 		CF67476E2CF8BCAE00E9A704 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */; };
 		CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */; };
 		CF8D78702CF5ED6400A59136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8D786F2CF5ED6400A59136 /* SceneDelegate.swift */; };
@@ -84,6 +83,15 @@
 		D1EFD26B2D12B70600EFEC20 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD26A2D12B70600EFEC20 /* Details.swift */; };
 		D1EFD26D2D12B72500EFEC20 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EFD26C2D12B72500EFEC20 /* helpers.swift */; };
 		F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2074D6A2D085FA800C48B09 /* Feedback.storyboard */; };
+		F82E49F62D1D7D4500B3BC3B /* subTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82E49F52D1D7D4500B3BC3B /* subTitleCell.xib */; };
+		F82E49FB2D1D7DBA00B3BC3B /* subTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E49FA2D1D7DBA00B3BC3B /* subTitleCell.swift */; };
+		F82E49FD2D1D7DDE00B3BC3B /* TrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82E49FC2D1D7DDE00B3BC3B /* TrackerCell.xib */; };
+		F82E49FF2D1D7E0400B3BC3B /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E49FE2D1D7E0400B3BC3B /* TrackerCell.swift */; };
+		F82E4A012D1D7E2D00B3BC3B /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82E4A002D1D7E2D00B3BC3B /* MyOrderCell.xib */; };
+		F82E4A032D1D7E4B00B3BC3B /* MyOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E4A022D1D7E4B00B3BC3B /* MyOrderCell.swift */; };
+		F82E4A052D1D7EAC00B3BC3B /* TotalAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82E4A042D1D7EAC00B3BC3B /* TotalAmountCell.xib */; };
+		F82E4A072D1D7ED500B3BC3B /* TotalAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E4A062D1D7ED500B3BC3B /* TotalAmountCell.swift */; };
+		F82E4A092D1D7F2400B3BC3B /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E4A082D1D7F2400B3BC3B /* OrderStatusViewController.swift */; };
 		F83104732D1C08AE0019596B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83104722D1C08AE0019596B /* Product.swift */; };
 		F83104752D1C08BE0019596B /* ProductTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83104742D1C08BE0019596B /* ProductTVC.swift */; };
 		F83104772D1C08C80019596B /* AddProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83104762D1C08C80019596B /* AddProductTableViewController.swift */; };
@@ -172,7 +180,6 @@
 		CF6747632CF8BC3E00E9A704 /* OrderHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderHistory.storyboard; sourceTree = "<group>"; };
 		CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImpactTracker.storyboard; sourceTree = "<group>"; };
 		CF6747692CF8BC8C00E9A704 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
-		CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreOrders.storyboard; sourceTree = "<group>"; };
 		CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
 		CF8D786A2CF5ED6400A59136 /* Greenly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D786D2CF5ED6400A59136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +201,16 @@
 		D1EFD26A2D12B70600EFEC20 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		D1EFD26C2D12B72500EFEC20 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		F2074D6A2D085FA800C48B09 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
+		F82E49EC2D1D7B2F00B3BC3B /* OrderStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderStatus.storyboard; sourceTree = "<group>"; };
+		F82E49F52D1D7D4500B3BC3B /* subTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = subTitleCell.xib; sourceTree = "<group>"; };
+		F82E49FA2D1D7DBA00B3BC3B /* subTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subTitleCell.swift; sourceTree = "<group>"; };
+		F82E49FC2D1D7DDE00B3BC3B /* TrackerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackerCell.xib; sourceTree = "<group>"; };
+		F82E49FE2D1D7E0400B3BC3B /* TrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
+		F82E4A002D1D7E2D00B3BC3B /* MyOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
+		F82E4A022D1D7E4B00B3BC3B /* MyOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderCell.swift; sourceTree = "<group>"; };
+		F82E4A042D1D7EAC00B3BC3B /* TotalAmountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalAmountCell.xib; sourceTree = "<group>"; };
+		F82E4A062D1D7ED500B3BC3B /* TotalAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmountCell.swift; sourceTree = "<group>"; };
+		F82E4A082D1D7F2400B3BC3B /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		F83104722D1C08AE0019596B /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = "../../../../Downloads/greenlyMaryam-Alsaffar Sumaya (Authentication)/Greenly/SUMAYA/Product.swift"; sourceTree = "<group>"; };
 		F83104742D1C08BE0019596B /* ProductTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTVC.swift; path = "../../../../Downloads/greenlyMaryam-Alsaffar Sumaya (Authentication)/Greenly/SUMAYA/ProductTVC.swift"; sourceTree = "<group>"; };
 		F83104762D1C08C80019596B /* AddProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProductTableViewController.swift; path = "../../../../Downloads/greenlyMaryam-Alsaffar Sumaya (Authentication)/Greenly/SUMAYA/AddProductTableViewController.swift"; sourceTree = "<group>"; };
@@ -269,6 +286,14 @@
 				C3ADB86E2D140438008019F2 /* InputTableViewCell.xib */,
 				C3ADB8702D14043C008019F2 /* SavedAddressCell.xib */,
 				C3ADB8722D140440008019F2 /* SavedAddressCell.swift */,
+				F82E49F52D1D7D4500B3BC3B /* subTitleCell.xib */,
+				F82E49FA2D1D7DBA00B3BC3B /* subTitleCell.swift */,
+				F82E49FC2D1D7DDE00B3BC3B /* TrackerCell.xib */,
+				F82E49FE2D1D7E0400B3BC3B /* TrackerCell.swift */,
+				F82E4A002D1D7E2D00B3BC3B /* MyOrderCell.xib */,
+				F82E4A022D1D7E4B00B3BC3B /* MyOrderCell.swift */,
+				F82E4A042D1D7EAC00B3BC3B /* TotalAmountCell.xib */,
+				F82E4A062D1D7ED500B3BC3B /* TotalAmountCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -306,6 +331,7 @@
 				C37991BF2D17ED8400F28754 /* ManualViewController.swift */,
 				C37991C52D18192600F28754 /* StoreListTableViewController.swift */,
 				C37991C92D18333200F28754 /* StoreDetailViewController.swift */,
+				F82E4A082D1D7F2400B3BC3B /* OrderStatusViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +347,7 @@
 		CF6747422CF89F9300E9A704 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				F82E49EC2D1D7B2F00B3BC3B /* OrderStatus.storyboard */,
 				F83104862D1C09420019596B /* StoreOwner.storyboard */,
 				CF67474A2CF8A3FC00E9A704 /* Admin.storyboard */,
 				CF8D78732CF5ED6400A59136 /* Main.storyboard */,
@@ -331,7 +358,6 @@
 				CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */,
 				F83104882D1C0E390019596B /* OrderTableViewCell.xib */,
 				CF6747692CF8BC8C00E9A704 /* Cart.storyboard */,
-				CF67476B2CF8BCA100E9A704 /* StoreOrders.storyboard */,
 				CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */,
 				F2074D6A2D085FA800C48B09 /* Feedback.storyboard */,
 			);
@@ -505,6 +531,7 @@
 				TargetAttributes = {
 					CF8D78692CF5ED6400A59136 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 					CF8D787F2CF5ED6600A59136 = {
 						CreatedOnToolsVersion = 15.2;
@@ -553,7 +580,6 @@
 				C3ADB8712D14043C008019F2 /* SavedAddressCell.xib in Resources */,
 				C3ADB8532D1403CF008019F2 /* SubCell.xib in Resources */,
 				F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */,
-				CF67476C2CF8BCA100E9A704 /* StoreOrders.storyboard in Resources */,
 				CF6747622CF8BC2600E9A704 /* CustomerHome.storyboard in Resources */,
 				C3ADB84F2D1403C2008019F2 /* ItemCell.xib in Resources */,
 				C3ADB86B2D140430008019F2 /* ProductDescriptionCell.xib in Resources */,
@@ -564,12 +590,16 @@
 				CF67476A2CF8BC8C00E9A704 /* Cart.storyboard in Resources */,
 				CF6747682CF8BC7F00E9A704 /* ImpactTracker.storyboard in Resources */,
 				F83104852D1C09060019596B /* ProductTVC.xib in Resources */,
+				F82E49F62D1D7D4500B3BC3B /* subTitleCell.xib in Resources */,
 				CF6747602CF8B61000E9A704 /* Setting.storyboard in Resources */,
 				CF8D78752CF5ED6400A59136 /* Main.storyboard in Resources */,
 				C3ADB8572D1403D9008019F2 /* CheckoutCell.xib in Resources */,
+				F82E49FD2D1D7DDE00B3BC3B /* TrackerCell.xib in Resources */,
 				CF67474C2CF8A3FC00E9A704 /* Admin.storyboard in Resources */,
+				F82E4A012D1D7E2D00B3BC3B /* MyOrderCell.xib in Resources */,
 				C3ADB8672D140427008019F2 /* ProductCell.xib in Resources */,
 				CF67475E2CF8B0A700E9A704 /* GoogleService-Info.plist in Resources */,
+				F82E4A052D1D7EAC00B3BC3B /* TotalAmountCell.xib in Resources */,
 				C3ADB8472D14030C008019F2 /* CheckoutTableViewCell.xib in Resources */,
 				CF6747642CF8BC3E00E9A704 /* OrderHistory.storyboard in Resources */,
 				C3ADB8612D140405008019F2 /* ProductImgCell.xib in Resources */,
@@ -598,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37991C82D181E4500F28754 /* StoreDetailCell.swift in Sources */,
+				F82E49FB2D1D7DBA00B3BC3B /* subTitleCell.swift in Sources */,
 				C3ADB8792D140454008019F2 /* ProductInfoViewController.swift in Sources */,
 				D1EFD2572D12A35C00EFEC20 /* StoreOwnerHomeViewController.swift in Sources */,
 				C3ADB88A2D145ABB008019F2 /* ProcessPaymentViewController.swift in Sources */,
@@ -611,6 +642,7 @@
 				F83104752D1C08BE0019596B /* ProductTVC.swift in Sources */,
 				F8EC1EF92D1C075A0091DBC0 /* CloudinarySetup.swift in Sources */,
 				C3ADB87D2D140472008019F2 /* CartModel.swift in Sources */,
+				F82E4A092D1D7F2400B3BC3B /* OrderStatusViewController.swift in Sources */,
 				F83104772D1C08C80019596B /* AddProductTableViewController.swift in Sources */,
 				F831047F2D1C08EE0019596B /* OrderDetailsVC.swift in Sources */,
 				C3ADB8512D1403CB008019F2 /* ItemCell.swift in Sources */,
@@ -618,6 +650,7 @@
 				C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */,
 				C3ADB84D2D1403BD008019F2 /* CheckoutTableViewCell.swift in Sources */,
 				C3ADB86D2D140435008019F2 /* InputTableViewCell.swift in Sources */,
+				F82E4A072D1D7ED500B3BC3B /* TotalAmountCell.swift in Sources */,
 				D1EFD2692D12B6EB00EFEC20 /* StoreTableViewCell.swift in Sources */,
 				F831047B2D1C08D60019596B /* FeedbackViewController.swift in Sources */,
 				C37991C02D17ED8400F28754 /* ManualViewController.swift in Sources */,
@@ -626,12 +659,14 @@
 				C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */,
 				CF8D78722CF5ED6400A59136 /* ViewController.swift in Sources */,
 				D1EFD26D2D12B72500EFEC20 /* helpers.swift in Sources */,
+				F82E4A032D1D7E4B00B3BC3B /* MyOrderCell.swift in Sources */,
 				C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */,
 				C3ADB8592D1403DD008019F2 /* CheckoutCell.swift in Sources */,
 				C37991BC2D17EC0500F28754 /* OrderCell.swift in Sources */,
 				D1EFD26B2D12B70600EFEC20 /* Details.swift in Sources */,
 				C3ADB88C2D145D09008019F2 /* OrderHistoryTableViewController.swift in Sources */,
 				C3ADB8802D1404B2008019F2 /* UIView+Extension.swift in Sources */,
+				F82E49FF2D1D7E0400B3BC3B /* TrackerCell.swift in Sources */,
 				CF8D786E2CF5ED6400A59136 /* AppDelegate.swift in Sources */,
 				C3ADB8552D1403D5008019F2 /* SubCell.swift in Sources */,
 				C3ADB8442D13EFDB008019F2 /* SettingsTableViewController.swift in Sources */,
@@ -830,6 +865,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -847,6 +883,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bp.polytechnic.Greenly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -857,6 +894,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

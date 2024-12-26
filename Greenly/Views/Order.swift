@@ -13,8 +13,17 @@ struct Order: Codable {
     var ownerName: String
     var feedback: String?
     var rating: Int?
+    
+    //Extra
+    var storeName: String
+    var items: [OrderItem]
+    var paymentMethod: String
 }
-
+struct OrderItem: Codable {
+    let name: String
+    let price: String
+    let quantity: String
+}
 enum OrderStatus: String, Codable {
     case pending = "Pending"
     case delivering = "Delivering"

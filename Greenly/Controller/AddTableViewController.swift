@@ -1,13 +1,7 @@
-//
-//  AddTableViewController.swift
-//  Greenly
-//
-//  Created by BP-36-201-16N on 27/11/2024.
-//
-
 import UIKit
 import FirebaseFirestore
 import Cloudinary
+import FirebaseAuth
 
 protocol AddTableViewControllerDelegate: AnyObject {
     func didSaveStore(_ store: Details, editingIndex: IndexPath?)
@@ -75,7 +69,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     @IBAction func SaveAdded(_ sender: UIBarButtonItem) {
         guard let name = StoreName.text, !name.isEmpty,
               let email = StoreEmail.text, !email.isEmpty,
@@ -85,96 +79,83 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
               let web = StoreWebsite.text, !web.isEmpty,
               let from = StoreFrom.text, !from.isEmpty,
               let to = StoreTo.text, !to.isEmpty else {
-            AlertHelper.showAlert(on: self, title: "Error", message: "Please fill all the fields")
+            AlertHelper.showAlert(on: self, title: "Error", message: "Please fill all the fields.")
             return
         }
 
         guard let logoImage = StoreLogo.image else {
-            AlertHelper.showAlert(on: self, title: "Error", message: "Please select a store logo")
+            AlertHelper.showAlert(on: self, title: "Error", message: "Please provide a logo image.")
             return
         }
 
         // Upload image to Cloudinary
-        uploadImageToCloudinary(image: logoImage) { [weak self] (imageUrl: String?) in
-            guard let self = self else { return }
-            guard let imageUrl = imageUrl else {
-                AlertHelper.showAlert(on: self, title: "Error", message: "Failed to upload the logo image")
+        uploadImageToCloudinary(image: logoImage) { [weak self] logoUrl in
+            guard let self = self, let logoUrl = logoUrl else {
+                AlertHelper.showAlert(on: self!, title: "Error", message: "Failed to upload logo.")
                 return
             }
 
-            let storeData: [String: Any] = [
-                "name": name,
-                "email": email,
-                "number": num,
-                "password": pass,
-                "location": location,
-                "website": web,
-                "from": from,
-                "to": to,
-                "logoUrl": imageUrl
-            ]
-
-            let db = Firestore.firestore()
-
-            if let details = self.details, !details.id.isEmpty {
-                // Update existing Firestore document
-                db.collection("Stores").document(details.id).updateData(storeData) { error in
-                    if let error = error {
-                        print("Firestore update error: \(error.localizedDescription)")
-                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to update store details: \(error.localizedDescription)")
-                        return
-                    } else {
-                        print("Store updated successfully!")
-                        let updatedStore = Details(
-                            id: details.id,
-                            name: name,
-                            email: email,
-                            num: num,
-                            pass: pass,
-                            image: logoImage,
-                            location: location,
-                            web: web,
-                            from: from,
-                            to: to,
-                            logoUrl: imageUrl
-                        )
-                        self.delegate?.didSaveStore(updatedStore, editingIndex: self.editingIndex)
-                        self.dismiss(animated: true, completion: nil)
-                    }
+            // Create Firebase Auth user
+            Auth.auth().createUser(withEmail: email, password: pass) { authResult, error in
+                if let error = error {
+                    print("Error creating user: \(error.localizedDescription)")
+                    AlertHelper.showAlert(on: self, title: "Error", message: "Failed to create user account.")
+                    return
                 }
-            } else {
-                // Add a new Firestore document
+
+                guard let userId = authResult?.user.uid else {
+                    AlertHelper.showAlert(on: self, title: "Error", message: "Failed to retrieve user ID.")
+                    return
+                }
+
+                // Store data in Firestore
+                let db = Firestore.firestore()
+                let storeData: [String: Any] = [
+                    "userId": userId,
+                    "name": name,
+                    "email": email,
+                    "number": num,
+                    "location": location,
+                    "website": web,
+                    "from": from,
+                    "to": to,
+                    "logoUrl": logoUrl
+                ]
+
                 db.collection("Stores").addDocument(data: storeData) { error in
                     if let error = error {
-                        print("Firestore save error: \(error.localizedDescription)")
-                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to save store details: \(error.localizedDescription)")
-                    } else {
-                        print("Store saved successfully!")
-                        let newStore = Details(
-                            id: "", // Firestore generates the ID
-                            name: name,
-                            email: email,
-                            num: num,
-                            pass: pass,
-                            image: logoImage,
-                            location: location,
-                            web: web,
-                            from: from,
-                            to: to,
-                            logoUrl: imageUrl
-                        )
-                        self.delegate?.didSaveStore(newStore, editingIndex: nil)
-                        self.dismiss(animated: true, completion: nil)
+                        print("Error saving store: \(error.localizedDescription)")
+                        AlertHelper.showAlert(on: self, title: "Error", message: "Failed to save store details.")
+                        return
+                    }
+
+                    print("Store saved successfully!")
+
+                    // Save user data
+                    let userData: [String: Any] = [
+                        "userId": userId,
+                        "email": email,
+                        "role": "store owner"
+                    ]
+
+                    db.collection("Users").document(userId).setData(userData) { error in
+                        if let error = error {
+                            print("Error saving user: \(error.localizedDescription)")
+                            AlertHelper.showAlert(on: self, title: "Error", message: "Failed to save user details.")
+                        } else {
+                            print("User saved successfully!")
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
             }
         }
     }
     
-    
     private func uploadImageToCloudinary(image: UIImage, completion: @escaping (String?) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             print("Error converting image to data")
+            AlertHelper.showAlert(on: self, title: "Error", message: "Failed to process the image.")
             completion(nil)
             return
         }
@@ -186,17 +167,20 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         cloudinary.createUploader().upload(data: imageData, uploadPreset: CloudinarySetup.uploadPreset, params: uploadParams, completionHandler:  { response, error in
             if let error = error {
                 print("Cloudinary upload error: \(error.localizedDescription)")
+                AlertHelper.showAlert(on: self, title: "Error", message: "Failed to upload logo. Error: \(error.localizedDescription)")
                 completion(nil)
             } else if let secureUrl = response?.secureUrl {
-                print("Image uploaded successfully: \(secureUrl)")
+                print("Image uploaded successfully. URL: \(secureUrl)")
                 completion(secureUrl)
             } else {
-                print("Unknown error occurred during Cloudinary upload")
+                print("Unexpected error during Cloudinary upload")
+                AlertHelper.showAlert(on: self, title: "Error", message: "Unexpected error during upload. Please try again.")
                 completion(nil)
             }
         })
     }
     
+
     @IBAction func Logo(_ sender: Any) {
         showImageAlert()
     }
@@ -246,10 +230,5 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
 
     private func isValidURL(_ url: String) -> Bool {
         return URL(string: url) != nil
-    }
-
-    private func isValidTime(_ time: String) -> Bool {
-        let timeRegEx = "^(0?[1-9]|1[0-2]):[0-5][0-9]\\s?(AM|PM)$"
-        return NSPredicate(format: "SELF MATCHES %@", timeRegEx).evaluate(with: time)
     }
 }
