@@ -39,6 +39,8 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         setupUI()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
     }
 
     private func setupUI() {

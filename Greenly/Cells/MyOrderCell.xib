@@ -25,31 +25,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyR-F3-cDp">
-                                <rect key="frame" x="222" y="6" width="31" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.58079281729999999" green="0.58079281729999999" blue="0.58079281729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP9-Fd-KH1">
-                                <rect key="frame" x="222" y="22" width="31" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.58079281729999999" green="0.58079281729999999" blue="0.58079281729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="adA-IR-N3J" secondAttribute="bottom" constant="13" id="IH5-qk-1Ng"/>
                             <constraint firstItem="adA-IR-N3J" firstAttribute="top" secondItem="atF-Eh-Bqc" secondAttribute="top" constant="13" id="NeZ-91-zgu"/>
-                            <constraint firstItem="kyR-F3-cDp" firstAttribute="top" secondItem="atF-Eh-Bqc" secondAttribute="top" constant="6" id="Nn6-Qq-IPl"/>
                             <constraint firstItem="adA-IR-N3J" firstAttribute="leading" secondItem="atF-Eh-Bqc" secondAttribute="leading" constant="14" id="Xrf-PY-8x2"/>
-                            <constraint firstAttribute="bottom" secondItem="GP9-Fd-KH1" secondAttribute="bottom" constant="6" id="ZAO-mT-tOc"/>
-                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kyR-F3-cDp" secondAttribute="trailing" constant="77" id="e5n-Mo-2mo"/>
-                            <constraint firstItem="kyR-F3-cDp" firstAttribute="leading" secondItem="adA-IR-N3J" secondAttribute="trailing" constant="172.66666666666666" id="gZf-Ts-ziw"/>
-                            <constraint firstItem="GP9-Fd-KH1" firstAttribute="leading" secondItem="adA-IR-N3J" secondAttribute="trailing" constant="172.66666666666666" id="ihN-M7-xm8"/>
-                            <constraint firstItem="GP9-Fd-KH1" firstAttribute="top" secondItem="kyR-F3-cDp" secondAttribute="bottom" constant="1" id="mUo-Lc-iOf"/>
-                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="GP9-Fd-KH1" secondAttribute="trailing" constant="77" id="tvd-7E-Px3"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nj6-0b-ekx">
@@ -72,8 +53,6 @@
             <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="ItemName" destination="adA-IR-N3J" id="Q91-pB-mMO"/>
-                <outlet property="Price" destination="kyR-F3-cDp" id="JWq-My-E7L"/>
-                <outlet property="Quantity" destination="GP9-Fd-KH1" id="NlV-Sz-Ftw"/>
                 <outlet property="titleLabel" destination="Nj6-0b-ekx" id="DqZ-fM-UaN"/>
                 <outlet property="viewUI" destination="atF-Eh-Bqc" id="Bz4-sp-s7K"/>
             </connections>

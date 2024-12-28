@@ -492,6 +492,7 @@
         <!--Orders-->
         <scene sceneID="ai9-mF-5fC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQa-Ak-ejp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="agN-za-Obo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Orders" image="bookmark.fill" catalog="system" selectedImage="bookmark.fill" id="D9C-Pe-x27"/>
                     <toolbarItems/>
@@ -504,7 +505,6 @@
                         <segue destination="c3N-YN-yNM" kind="relationship" relationship="rootViewController" id="1cu-gP-Lth"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jQa-Ak-ejp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1770.2290076335878" y="-12.67605633802817"/>
         </scene>
@@ -757,6 +757,7 @@
         <!--Inventory-->
         <scene sceneID="wCQ-W3-hCt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byu-OS-AWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TFi-Fi-Yd7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inventory" image="storefront.fill" catalog="system" selectedImage="storefront.fill" id="s5B-y7-XlM"/>
                     <toolbarItems/>
@@ -769,7 +770,6 @@
                         <segue destination="ynk-z2-d1S" kind="relationship" relationship="rootViewController" id="nw2-ay-gRc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="byu-OS-AWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1869.4656488549617" y="-804.22535211267609"/>
         </scene>

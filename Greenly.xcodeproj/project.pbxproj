@@ -105,6 +105,7 @@
 		D7B700B12D1FDE3E00342828 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B700B02D1FDE3E00342828 /* OrderStatusViewController.swift */; };
 		D7B700B32D1FDE5E00342828 /* StoreProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B700B22D1FDE5E00342828 /* StoreProductsTableViewController.swift */; };
 		D7B700B52D1FE66D00342828 /* ProductTVCcust.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B700B42D1FE66D00342828 /* ProductTVCcust.xib */; };
+		D7B700B92D2049B200342828 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B700B82D2049B200342828 /* CartManager.swift */; };
 		F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2074D6A2D085FA800C48B09 /* Feedback.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -222,6 +223,7 @@
 		D7B700B02D1FDE3E00342828 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		D7B700B22D1FDE5E00342828 /* StoreProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductsTableViewController.swift; sourceTree = "<group>"; };
 		D7B700B42D1FE66D00342828 /* ProductTVCcust.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTVCcust.xib; sourceTree = "<group>"; };
+		D7B700B82D2049B200342828 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		F2074D6A2D085FA800C48B09 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -396,6 +398,7 @@
 				D7B700862D1FD99F00342828 /* OrderCell.swift */,
 				D7B700882D1FD9B600342828 /* StoreDetailCell.swift */,
 				D7B7008A2D1FD9CB00342828 /* ProductTVCcust.swift */,
+				D7B700B82D2049B200342828 /* CartManager.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				D1EFD2692D12B6EB00EFEC20 /* StoreTableViewCell.swift in Sources */,
 				D7B700382D1FD52800342828 /* UserDefaults+Order.swift in Sources */,
 				D7B700792D1FD8CC00342828 /* Order.swift in Sources */,
+				D7B700B92D2049B200342828 /* CartManager.swift in Sources */,
 				CF6747702CF8BE6A00E9A704 /* SettingsTableViewController.swift in Sources */,
 				D7B7007B2D1FD8E100342828 /* CloudinarySetup.swift in Sources */,
 				C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */,

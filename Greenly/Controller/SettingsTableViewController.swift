@@ -18,13 +18,15 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHeaderView()
 
-        let titleLabel = UILabel()
-        titleLabel.text = "Settings"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.textColor = .black
-        titleLabel.textAlignment = .left
-        self.navigationItem.titleView = titleLabel
+//        let titleLabel = UILabel()
+//        titleLabel.text = "Settings"
+//        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+//        titleLabel.textColor = .black
+//        titleLabel.textAlignment = .left
+//        self.navigationItem.titleView = titleLabel
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,33 +34,19 @@ class SettingsTableViewController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+    private func setupHeaderView() {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        headerView.backgroundColor = .clear // Adjust the color if needed
 
-        // Customize the cell's appearance
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
+        let titleLabel = UILabel()
+        titleLabel.text = "Settings"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        titleLabel.textColor = .black
+        titleLabel.textAlignment = .left
+        titleLabel.frame = CGRect(x: 16, y: 10, width: headerView.frame.width - 32, height: 30)
 
-        // Add optional border
-        cell.layer.borderWidth = 0.5
-        cell.layer.borderColor = UIColor.lightGray.cgColor
-
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50 // Adjust height as needed
-    }
-
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.contentView.layer.cornerRadius = 15
-        cell.contentView.layer.masksToBounds = true
-        cell.contentView.layer.borderWidth = 1
-        cell.contentView.layer.borderColor = UIColor.lightGray.cgColor
-        cell.contentView.backgroundColor = UIColor.white // Optional: Set a different color
-
-        // Add spacing by setting insets
-        cell.contentView.layoutMargins = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        headerView.addSubview(titleLabel)
+        self.tableView.tableHeaderView = headerView
     }
     
     

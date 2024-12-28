@@ -10,6 +10,8 @@ import UIKit
 class ProductTVCcust: UITableViewCell {
     
     @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    
     @IBOutlet weak var prodcutImgView: UIImageView!
     
     override func awakeFromNib() {
@@ -19,6 +21,7 @@ class ProductTVCcust: UITableViewCell {
     
     func configure(with product: Product) {
         productName.text = product.name
+        productPrice.text = product.price
         if let imageUrlString = product.imageUrl, // Ensure the string is not nil
            let url = URL(string: imageUrlString) { // Convert the string to a URL
             DispatchQueue.global().async {
@@ -39,5 +42,3 @@ class ProductTVCcust: UITableViewCell {
     }
     
 }
-
-

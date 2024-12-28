@@ -75,7 +75,7 @@ class CheckoutViewController: UIViewController {
         guard let selectedProducts = products else { return }
 
         // Generate order details
-        let orderId = UUID().uuidString // Generate a unique ID
+        let orderId = generateOrderID() // Use the new generateOrderID() method
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy HH:mm"
@@ -93,13 +93,13 @@ class CheckoutViewController: UIViewController {
         // Create a new order
         let newOrder = Order(
             id: orderId,
-            status: .pending, // Default status
+            status: .pending,
             date: dateTime,
             price: totalPrice,
-            ownerName: "Store Name", // Replace with actual store name
+            ownerName: "Store Name", // Replace with actual store name if available
             feedback: nil,
             rating: nil,
-            storeName: selectedAddress["name"] ?? "N/A", // Example: Store name from address
+            storeName: selectedAddress["name"] ?? "N/A", // Ensure correct store name is populated
             items: orderItems,
             paymentMethod: selectedPaymentType.rawValue
         )
@@ -116,12 +116,18 @@ class CheckoutViewController: UIViewController {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            // Navigate back to the main screen or reset the cart
-            self.navigationController?.popToRootViewController(animated: true)
+           // self.navigationController?.popToRootViewController(animated: true)
         }))
         self.present(alert, animated: true)
     }
 
+}
+private func generateOrderID() -> String {
+    let orderCountKey = "orderCountKey"
+    let currentCount = UserDefaults.standard.integer(forKey: orderCountKey) // Default is 0
+    let newCount = currentCount + 1
+    UserDefaults.standard.set(newCount, forKey: orderCountKey)
+    return String(newCount)
 }
 
 extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {

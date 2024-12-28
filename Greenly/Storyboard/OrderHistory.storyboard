@@ -45,7 +45,7 @@
         <!--Orders-->
         <scene sceneID="NWA-59-aTD">
             <objects>
-                <tableViewController title="Orders" modalPresentationStyle="fullScreen" id="E6P-Kl-BG2" userLabel="Orders" customClass="OrderHistoryTableViewController" customModule="Greenly" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="OrderStatusViewController" title="Orders" modalPresentationStyle="fullScreen" id="E6P-Kl-BG2" userLabel="Orders" customClass="OrderHistoryTableViewController" customModule="Greenly" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="wFJ-VL-15i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,76 +58,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="98"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxK-bb-mTc">
-                                            <rect key="frame" x="20" y="11" width="88" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="88" id="5Jm-vf-NiE"/>
-                                                <constraint firstAttribute="height" constant="21" id="crX-ne-hXF"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and time " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoE-hd-P9y">
-                                            <rect key="frame" x="20" y="41" width="77" height="14"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="14" id="Fok-Lx-v26"/>
-                                                <constraint firstAttribute="width" constant="77" id="dxk-hM-6FN"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugD-sA-7v5">
-                                            <rect key="frame" x="20" y="67" width="43" height="14"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="14" id="WLe-Ka-jTF"/>
-                                                <constraint firstAttribute="width" constant="43" id="sHf-1B-2TC"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Date and time " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoE-hd-P9y">
+                                            <rect key="frame" x="10" y="57" width="176" height="13.333333333333332"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b6-lk-A1U">
-                                            <rect key="frame" x="238" y="11" width="37" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="37" id="89b-93-Arl"/>
-                                                <constraint firstAttribute="height" constant="20" id="r0d-ht-wnR"/>
-                                            </constraints>
+                                            <rect key="frame" x="263" y="11.999999999999998" width="37" height="19.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-Kz-OPU">
-                                            <rect key="frame" x="238" y="57" width="42" height="17"/>
+                                            <rect key="frame" x="258.33333333333331" y="57" width="41.666666666666686" height="17"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="DSb-Rq-dZt"/>
-                                                <constraint firstAttribute="height" constant="17" id="moa-UU-jiv"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="ooy-Ob-Srf"/>
+                                                <constraint firstAttribute="height" constant="17" id="Tbk-Eo-Qvz"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Store ID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugD-sA-7v5">
+                                            <rect key="frame" x="10" y="20" width="64.666666666666671" height="21.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="LoE-hd-P9y" secondAttribute="trailing" constant="217.66999999999999" id="0UY-dx-27o"/>
-                                        <constraint firstItem="cxK-bb-mTc" firstAttribute="leading" secondItem="RCt-dX-IHH" secondAttribute="leading" constant="20" symbolic="YES" id="6Pc-21-QN1"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="tvH-Kz-OPU" secondAttribute="bottom" constant="13" id="7fy-v5-xXy"/>
-                                        <constraint firstItem="2b6-lk-A1U" firstAttribute="leading" secondItem="cxK-bb-mTc" secondAttribute="trailing" constant="130" id="8Lz-Uj-0Ap"/>
-                                        <constraint firstItem="LoE-hd-P9y" firstAttribute="leading" secondItem="RCt-dX-IHH" secondAttribute="leadingMargin" id="CQT-KY-XFz"/>
-                                        <constraint firstItem="ugD-sA-7v5" firstAttribute="top" secondItem="LoE-hd-P9y" secondAttribute="bottom" constant="12" id="Cmn-zF-jKd"/>
-                                        <constraint firstItem="ugD-sA-7v5" firstAttribute="leading" secondItem="RCt-dX-IHH" secondAttribute="leadingMargin" id="Jvt-YE-Y05"/>
-                                        <constraint firstItem="LoE-hd-P9y" firstAttribute="top" secondItem="cxK-bb-mTc" secondAttribute="bottom" constant="8" symbolic="YES" id="Lbv-aF-CBi"/>
-                                        <constraint firstItem="cxK-bb-mTc" firstAttribute="top" secondItem="RCt-dX-IHH" secondAttribute="top" constant="11" id="MDy-bY-TU2"/>
-                                        <constraint firstItem="ugD-sA-7v5" firstAttribute="top" secondItem="LoE-hd-P9y" secondAttribute="bottom" constant="12" id="UiX-w9-1J6"/>
-                                        <constraint firstItem="tvH-Kz-OPU" firstAttribute="leading" secondItem="ugD-sA-7v5" secondAttribute="trailing" constant="175" id="fAY-F3-d7L"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2b6-lk-A1U" secondAttribute="trailing" constant="39.670000000000002" id="fNk-L6-VSz"/>
-                                        <constraint firstItem="LoE-hd-P9y" firstAttribute="top" secondItem="cxK-bb-mTc" secondAttribute="bottom" constant="8" symbolic="YES" id="hMA-Nl-LUK"/>
-                                        <constraint firstItem="tvH-Kz-OPU" firstAttribute="leading" secondItem="2b6-lk-A1U" secondAttribute="leading" id="kSt-NA-fkn"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tvH-Kz-OPU" secondAttribute="trailing" constant="34.670000000000002" id="o5a-78-pkZ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ugD-sA-7v5" secondAttribute="bottom" constant="6" id="ogb-zr-gjt"/>
-                                        <constraint firstItem="tvH-Kz-OPU" firstAttribute="top" secondItem="2b6-lk-A1U" secondAttribute="bottom" constant="26" id="zGM-L2-7RR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tvH-Kz-OPU" secondAttribute="trailing" constant="14.67" id="6YP-d6-VB1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2b6-lk-A1U" secondAttribute="trailing" constant="14.67" id="Eqh-e4-brj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tvH-Kz-OPU" secondAttribute="bottom" constant="13" id="LDp-co-OTI"/>
+                                        <constraint firstItem="tvH-Kz-OPU" firstAttribute="top" secondItem="2b6-lk-A1U" secondAttribute="bottom" constant="25.670000000000002" id="XaT-Xa-YCp"/>
+                                        <constraint firstItem="LoE-hd-P9y" firstAttribute="leading" secondItem="RCt-dX-IHH" secondAttribute="leadingMargin" id="d6d-bb-lYQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="LoE-hd-P9y" secondAttribute="trailing" constant="118.67" id="lcK-eH-G3A"/>
+                                        <constraint firstItem="2b6-lk-A1U" firstAttribute="top" secondItem="RCt-dX-IHH" secondAttribute="topMargin" constant="1" id="nm0-jg-XO7"/>
+                                        <constraint firstItem="ugD-sA-7v5" firstAttribute="top" secondItem="LoE-hd-P9y" secondAttribute="bottom" constant="15" id="oTM-od-GaM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ugD-sA-7v5" secondAttribute="bottom" constant="6" id="vP9-6z-3kP"/>
+                                        <constraint firstItem="ugD-sA-7v5" firstAttribute="leading" secondItem="RCt-dX-IHH" secondAttribute="leadingMargin" id="wV8-yX-mcO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -135,7 +104,6 @@
                                     <outlet property="orderIDLabel" destination="ugD-sA-7v5" id="wFO-Bl-LwE"/>
                                     <outlet property="priceLabel" destination="2b6-lk-A1U" id="UUS-5v-FCY"/>
                                     <outlet property="statusLabel" destination="tvH-Kz-OPU" id="tN6-5v-m9i"/>
-                                    <outlet property="storeNameLabel" destination="cxK-bb-mTc" id="54j-5w-sH6"/>
                                     <segue destination="3Iv-RG-C9K" kind="show" identifier="showOrderStatus" id="tk7-Vg-JW5"/>
                                 </connections>
                             </tableViewCell>

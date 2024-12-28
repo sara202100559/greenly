@@ -206,16 +206,71 @@ class StoresTableViewController: UITableViewController, UISearchResultsUpdating,
 
     
     // MARK: - AddTableViewControllerDelegate
+//    func didSaveStore(_ store: Details, editingIndex: IndexPath?) {
+//        if let editingIndex = editingIndex {
+//            // Update the existing store in the local array
+//            stores[editingIndex.section] = store
+//        } else {
+//            // Add a new store to the local array
+//            stores.append(store)
+//        }
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+//    }
+    
+    // AddTableViewControllerDelegate
     func didSaveStore(_ store: Details, editingIndex: IndexPath?) {
         if let editingIndex = editingIndex {
-            // Update the existing store in the local array
+            // Update the existing store locally
             stores[editingIndex.section] = store
         } else {
-            // Add a new store to the local array
+            // Add a new store to the list if no editingIndex is provided
             stores.append(store)
         }
+
+        // Filter and reload data
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+
+        // Save the edited or new store to Firestore
+        saveStoreToFirestore(store: store, editingIndex: editingIndex)
+    }
+
+    // Save or update the store in Firestore
+    private func saveStoreToFirestore(store: Details, editingIndex: IndexPath?) {
+        let db = Firestore.firestore()
+        let storeData: [String: Any] = [
+            "name": store.name,
+            "email": store.email,
+            "number": store.num,
+            "password": store.pass,
+            "location": store.location,
+            "website": store.web,
+            "from": store.from,
+            "to": store.to,
+            "logoUrl": store.logoUrl
+        ]
+
+        if let editingIndex = editingIndex, let storeId = stores[editingIndex.section].id {
+            // Update existing store in Firestore
+            db.collection("Stores").document(storeId).updateData(storeData) { error in
+                if let error = error {
+                    print("Failed to update store: \(error.localizedDescription)")
+                } else {
+                    print("Store updated successfully in Firestore.")
+                }
+            }
+        } else {
+            // Add new store to Firestore
+            db.collection("Stores").addDocument(data: storeData) { error in
+                if let error = error {
+                    print("Failed to save new store: \(error.localizedDescription)")
+                } else {
+                    print("New store saved successfully in Firestore.")
+                }
+            }
         }
     }
 

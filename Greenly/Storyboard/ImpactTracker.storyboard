@@ -138,7 +138,7 @@
                             <constraint firstItem="2ZP-0c-rDA" firstAttribute="bottom" secondItem="Ffn-0u-lcv" secondAttribute="bottom" constant="335" id="zTS-jv-Gfz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tracker" image="chart.pie.fill" catalog="system" badgeValue="Tracker" selectedImage="chart.pie.fill" id="tyz-8e-oyL"/>
+                    <tabBarItem key="tabBarItem" title="Tracker" image="chart.pie.fill" catalog="system" selectedImage="chart.pie.fill" id="tyz-8e-oyL"/>
                     <navigationItem key="navigationItem" title="Tracker" id="Bll-TL-43H"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

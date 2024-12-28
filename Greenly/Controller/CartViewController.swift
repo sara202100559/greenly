@@ -10,19 +10,22 @@ class CartViewController: UIViewController {
     var storeName = "Package Free"
 
     
-    // Array to hold cart items.
-    let cartItems: [CartProduct] = [
-        CartProduct(productId: 1, name: "Item 1", price: 10.0, image: "checkbox.png", quantity: 1, isChecked: false),
-        CartProduct(productId: 2, name: "Item 2", price: 20.0, image: "checkbox.png", quantity: 1, isChecked: false),
-    ]
     
     var cartProducts: [CartProduct] = []
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        registerCells() // Register custom cells with the table view.
+//        cartProducts.append(contentsOf: cartItems)
+//        calculateTotalPrice()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells() // Register custom cells with the table view.
-        cartProducts.append(contentsOf: cartItems)
+        registerCells()
+        cartProducts = CartManager.shared.getCartProducts() // Load products from CartManager
         calculateTotalPrice()
     }
+
     
     // Function to register custom cell nibs.
     func registerCells() {
