@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="productImgCell" rowHeight="298" id="Xyc-WB-Jgu" customClass="ProductImgCell" customModule="Greenly" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="298"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xyc-WB-Jgu" id="hQW-VU-cVa">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="298"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="Xj6-bX-iLW">
+                        <rect key="frame" x="0.0" y="7" width="449" height="307"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="307" id="RC7-bx-IfV"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Xj6-bX-iLW" secondAttribute="bottom" constant="7" id="Bli-Ud-phR"/>
+                    <constraint firstItem="Xj6-bX-iLW" firstAttribute="top" secondItem="hQW-VU-cVa" secondAttribute="top" constant="7" id="N7l-Va-wdY"/>
+                    <constraint firstItem="Xj6-bX-iLW" firstAttribute="leading" secondItem="hQW-VU-cVa" secondAttribute="leading" id="VbA-2c-8l1"/>
+                    <constraint firstAttribute="trailing" secondItem="Xj6-bX-iLW" secondAttribute="trailing" id="yFP-l3-9wr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="imgCell"/>
+            <connections>
+                <outlet property="productImg" destination="Xj6-bX-iLW" id="wfd-pO-PyX"/>
+            </connections>
+            <point key="canvasLocation" x="159.54198473282443" y="-67.605633802816911"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="checkbox" width="225" height="225"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedAddressCell" rowHeight="149" id="urn-bV-2fr" customClass="SavedAddressCell" customModule="Greenly" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="596" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="urn-bV-2fr" id="jCE-LV-isa">
+                <rect key="frame" x="0.0" y="0.0" width="596" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GsZ-c9-O0Q">
+                        <rect key="frame" x="32" y="5" width="532" height="139"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G68-sj-33i">
+                                <rect key="frame" x="491" y="18" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Szg-OC-a5O"/>
+                                    <constraint firstAttribute="width" constant="24" id="lAe-l6-z12"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="urn-bV-2fr" eventType="touchUpInside" id="Bty-Mx-b16"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Area" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcu-Gx-NMp">
+                                <rect key="frame" x="56" y="34" width="32" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="build no." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVr-hZ-Pqk">
+                                <rect key="frame" x="56" y="67" width="63" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="road no." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBD-eD-Ztv">
+                                <rect key="frame" x="56" y="89" width="60" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="block no." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRv-ar-PYg">
+                                <rect key="frame" x="56" y="111" width="67" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ci-P2-Kzm">
+                                <rect key="frame" x="18" y="8" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="N5F-py-sr2"/>
+                                    <constraint firstAttribute="width" constant="24" id="eBx-HH-Jke"/>
+                                </constraints>
+                                <color key="tintColor" red="0.34509803919999998" green="0.41594718110000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square" catalog="system"/>
+                                <connections>
+                                    <action selector="checkboxButtonTapped:" destination="urn-bV-2fr" eventType="touchUpInside" id="Tku-Mj-DV7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add's nsme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol2-ek-nCJ">
+                                <rect key="frame" x="56" y="8" width="104" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ol2-ek-nCJ" firstAttribute="leading" secondItem="1Ci-P2-Kzm" secondAttribute="trailing" constant="14" id="0Hw-tB-Ms6"/>
+                            <constraint firstItem="WRv-ar-PYg" firstAttribute="leading" secondItem="IBD-eD-Ztv" secondAttribute="leading" id="0P9-vZ-Fn6"/>
+                            <constraint firstItem="nVr-hZ-Pqk" firstAttribute="leading" secondItem="bcu-Gx-NMp" secondAttribute="leading" id="2Lj-8z-Nzj"/>
+                            <constraint firstItem="bcu-Gx-NMp" firstAttribute="leading" secondItem="Ol2-ek-nCJ" secondAttribute="leading" id="6Uf-Ms-ANv"/>
+                            <constraint firstItem="G68-sj-33i" firstAttribute="top" secondItem="GsZ-c9-O0Q" secondAttribute="top" constant="18" id="6zm-0j-U7h"/>
+                            <constraint firstItem="IBD-eD-Ztv" firstAttribute="leading" secondItem="nVr-hZ-Pqk" secondAttribute="leading" id="GVe-Yq-IhS"/>
+                            <constraint firstItem="WRv-ar-PYg" firstAttribute="top" secondItem="IBD-eD-Ztv" secondAttribute="bottom" constant="2" id="Ie6-2T-Nal"/>
+                            <constraint firstItem="bcu-Gx-NMp" firstAttribute="top" secondItem="Ol2-ek-nCJ" secondAttribute="bottom" constant="2" id="Kcc-KM-hpu"/>
+                            <constraint firstItem="IBD-eD-Ztv" firstAttribute="top" secondItem="nVr-hZ-Pqk" secondAttribute="bottom" constant="2" id="PAZ-CI-pYW"/>
+                            <constraint firstItem="1Ci-P2-Kzm" firstAttribute="leading" secondItem="GsZ-c9-O0Q" secondAttribute="leading" constant="18" id="SD3-UJ-Mk3"/>
+                            <constraint firstAttribute="bottom" secondItem="WRv-ar-PYg" secondAttribute="bottom" constant="8" id="SIB-Gy-1bL"/>
+                            <constraint firstItem="nVr-hZ-Pqk" firstAttribute="top" secondItem="bcu-Gx-NMp" secondAttribute="bottom" constant="15" id="Vln-tQ-NjW"/>
+                            <constraint firstAttribute="trailing" secondItem="G68-sj-33i" secondAttribute="trailing" constant="17" id="d14-9O-jRI"/>
+                            <constraint firstItem="1Ci-P2-Kzm" firstAttribute="top" secondItem="GsZ-c9-O0Q" secondAttribute="top" constant="8" id="kDg-X4-EHV"/>
+                            <constraint firstItem="Ol2-ek-nCJ" firstAttribute="centerY" secondItem="1Ci-P2-Kzm" secondAttribute="centerY" id="pQk-Vf-vlB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GsZ-c9-O0Q" secondAttribute="trailing" constant="32" id="31g-lm-7Mc"/>
+                    <constraint firstItem="GsZ-c9-O0Q" firstAttribute="leading" secondItem="jCE-LV-isa" secondAttribute="leading" constant="32" id="NbM-Ru-89K"/>
+                    <constraint firstAttribute="bottom" secondItem="GsZ-c9-O0Q" secondAttribute="bottom" constant="5" id="O1S-BA-ZmX"/>
+                    <constraint firstItem="GsZ-c9-O0Q" firstAttribute="top" secondItem="jCE-LV-isa" secondAttribute="top" constant="5" id="P5K-e7-cWR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="AddNameLabel" destination="Ol2-ek-nCJ" id="Arr-Ct-uOx"/>
+                <outlet property="areaLabel" destination="bcu-Gx-NMp" id="M5h-eA-DCH"/>
+                <outlet property="blockLabel" destination="WRv-ar-PYg" id="8Em-rf-Rzb"/>
+                <outlet property="buildLabel" destination="nVr-hZ-Pqk" id="Gjg-GF-zQa"/>
+                <outlet property="cellBackgroundView" destination="GsZ-c9-O0Q" id="wzy-0S-wVj"/>
+                <outlet property="checkBoxButton" destination="1Ci-P2-Kzm" id="N9h-NY-o6V"/>
+                <outlet property="removeButton" destination="G68-sj-33i" id="tHX-DT-Z3Q"/>
+                <outlet property="roadLabel" destination="IBD-eD-Ztv" id="7hT-Il-9gw"/>
+            </connections>
+            <point key="canvasLocation" x="120.61068702290076" y="45.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

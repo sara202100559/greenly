@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="productDescriptionCell" rowHeight="96" id="hG1-xy-OIC" customClass="ProductDescriptionCell" customModule="Greenly" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="309" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hG1-xy-OIC" id="YKP-jg-l3u">
+                <rect key="frame" x="0.0" y="0.0" width="309" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="A durable, sustainable container for food storage. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G4-rr-7VC">
+                        <rect key="frame" x="18" y="36" width="273" height="53"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIH-Jp-Ui4">
+                        <rect key="frame" x="17.999999999999993" y="7" width="100.33333333333331" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1G4-rr-7VC" firstAttribute="leading" secondItem="YKP-jg-l3u" secondAttribute="leading" constant="18" id="LTv-da-kis"/>
+                    <constraint firstAttribute="bottom" secondItem="1G4-rr-7VC" secondAttribute="bottom" constant="7" id="XBX-RT-OfX"/>
+                    <constraint firstAttribute="trailing" secondItem="1G4-rr-7VC" secondAttribute="trailing" constant="18" id="ZeU-GN-kTG"/>
+                    <constraint firstItem="JIH-Jp-Ui4" firstAttribute="top" secondItem="YKP-jg-l3u" secondAttribute="top" constant="7" id="bxf-kI-8dx"/>
+                    <constraint firstItem="1G4-rr-7VC" firstAttribute="top" secondItem="JIH-Jp-Ui4" secondAttribute="bottom" constant="5" id="sve-oa-RhV"/>
+                    <constraint firstItem="JIH-Jp-Ui4" firstAttribute="leading" secondItem="YKP-jg-l3u" secondAttribute="leading" constant="18" id="vaK-dR-mAP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="co2Cell"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="1G4-rr-7VC" id="2qh-XR-jJY"/>
+                <outlet property="titleLabel" destination="JIH-Jp-Ui4" id="3Qp-BG-MeQ"/>
+                <outlet property="titleLableLeadingConstraint" destination="vaK-dR-mAP" id="SQZ-aP-dut"/>
+            </connections>
+            <point key="canvasLocation" x="75.572519083969468" y="41.549295774647888"/>
+        </tableViewCell>
+    </objects>
+</document>

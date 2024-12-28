@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="waH-dU-i7y" customClass="CheckoutTableViewCell" customModule="Greenly" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="54"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="waH-dU-i7y" id="7t2-gX-SFF">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhG-4R-h39">
+                        <rect key="frame" x="32" y="5" width="334" height="43"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZQ-j6-qUT">
+                                <rect key="frame" x="38" y="13" width="115" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbJ-es-bko">
+                                <rect key="frame" x="8" y="9.6666666666666643" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="igr-Ox-CBj"/>
+                                    <constraint firstAttribute="height" constant="24" id="s97-Zx-xhg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                    <color key="baseForegroundColor" red="0.34509803919999998" green="0.41594718110000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="leftButtonAction:" destination="waH-dU-i7y" eventType="touchUpInside" id="77L-ja-ctn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DbJ-es-bko" firstAttribute="leading" secondItem="XhG-4R-h39" secondAttribute="leading" constant="8" id="RO8-0T-HQp"/>
+                            <constraint firstItem="DbJ-es-bko" firstAttribute="centerY" secondItem="XhG-4R-h39" secondAttribute="centerY" id="TMp-Vx-t42"/>
+                            <constraint firstItem="nZQ-j6-qUT" firstAttribute="centerY" secondItem="XhG-4R-h39" secondAttribute="centerY" id="Y9t-3i-ggG"/>
+                            <constraint firstAttribute="height" constant="43" id="ebB-dO-xOH"/>
+                            <constraint firstItem="nZQ-j6-qUT" firstAttribute="leading" secondItem="DbJ-es-bko" secondAttribute="trailing" constant="6" id="kTo-Z5-VX2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XhG-4R-h39" secondAttribute="trailing" constant="32" id="Nnm-s1-FNc"/>
+                    <constraint firstAttribute="bottom" secondItem="XhG-4R-h39" secondAttribute="bottom" constant="5" id="RvL-27-C0f"/>
+                    <constraint firstItem="XhG-4R-h39" firstAttribute="top" secondItem="7t2-gX-SFF" secondAttribute="top" constant="5" id="i9s-6h-lTt"/>
+                    <constraint firstItem="XhG-4R-h39" firstAttribute="leading" secondItem="7t2-gX-SFF" secondAttribute="leading" constant="32" id="xp8-Na-luz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="cellBackgroundView" destination="XhG-4R-h39" id="6Xh-mH-Xzc"/>
+                <outlet property="leftButton" destination="DbJ-es-bko" id="hYU-k6-5zQ"/>
+                <outlet property="titleLabel" destination="nZQ-j6-qUT" id="nTW-dr-Sft"/>
+            </connections>
+            <point key="canvasLocation" x="-108" y="-9"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
