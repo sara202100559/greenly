@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC5449142D0074C700763909 /* Cloudinary in Frameworks */ = {isa = PBXBuildFile; productRef = AC5449132D0074C700763909 /* Cloudinary */; };
+		C3299CDD2D229EED0072729F /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3299CDC2D229EED0072729F /* DGCharts */; };
 		C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BA2CFC723400C1B4CE /* User.swift */; };
 		C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */; };
 		C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */; };
@@ -237,6 +238,7 @@
 				AC5449142D0074C700763909 /* Cloudinary in Frameworks */,
 				CF6747552CF8A8BB00E9A704 /* FirebaseCore in Frameworks */,
 				CF67475C2CF8AE2500E9A704 /* FirebaseFirestore in Frameworks */,
+				C3299CDD2D229EED0072729F /* DGCharts in Frameworks */,
 				CF6747532CF8A8BB00E9A704 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +475,7 @@
 				CF6747582CF8A8BB00E9A704 /* FirebaseStorage */,
 				CF67475B2CF8AE2500E9A704 /* FirebaseFirestore */,
 				AC5449132D0074C700763909 /* Cloudinary */,
+				C3299CDC2D229EED0072729F /* DGCharts */,
 			);
 			productName = Greenly;
 			productReference = CF8D786A2CF5ED6400A59136 /* Greenly.app */;
@@ -549,6 +552,7 @@
 			packageReferences = (
 				CF6747512CF8A8BB00E9A704 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AC5449122D0074C700763909 /* XCRemoteSwiftPackageReference "cloudinary_ios" */,
+				C3299CDB2D229EED0072729F /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = CF8D786B2CF5ED6400A59136 /* Products */;
 			projectDirPath = "";
@@ -1031,6 +1035,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		C3299CDB2D229EED0072729F /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		CF6747512CF8A8BB00E9A704 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1046,6 +1058,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC5449122D0074C700763909 /* XCRemoteSwiftPackageReference "cloudinary_ios" */;
 			productName = Cloudinary;
+		};
+		C3299CDC2D229EED0072729F /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3299CDB2D229EED0072729F /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 		CF6747522CF8A8BB00E9A704 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
