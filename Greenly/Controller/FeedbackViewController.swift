@@ -126,7 +126,7 @@ class FeedbackViewController: UIViewController, UITextViewDelegate {
         starFive.setImage(UIImage(systemName: selectedRating >= 5 ? "star.fill" : "star"), for: .normal)
         
         // Optional: Set the color for the stars
-        let starColor = UIColor.yellow
+        let starColor = UIColor.init(hex: "728F41")
         starOne.tintColor = starColor
         starTwo.tintColor = starColor
         starThree.tintColor = starColor
