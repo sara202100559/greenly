@@ -182,4 +182,3 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         // checkOutVC.data = data //data ->> content need to be passed
     }
 }
-

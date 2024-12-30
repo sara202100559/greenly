@@ -171,7 +171,7 @@ class ManageInventoryVC: UIViewController {
             "waterSaved": product.waterSaved,
             "quantity": product.quantity,
             "storeId": storeId, // Use the authenticated user's UID
-            "imageUrl": product.imageUrl
+            "imageUrl": product.imageUrl!
         ]
 
         db.collection("Products").addDocument(data: productData) { error in
