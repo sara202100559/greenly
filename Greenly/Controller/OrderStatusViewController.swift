@@ -181,6 +181,8 @@ class OrderStatusViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var addFeedbackBtnOutlet: UIButton!
+    
     var order: Order? {
         didSet {
             self.orderItems = order?.items
@@ -216,7 +218,22 @@ class OrderStatusViewController: UIViewController {
     private func updateUI() {
         guard order != nil else { return }
         title = "Order Status"
+        // Show or hide the feedback button based on the order's status
+        addFeedbackBtnOutlet.isHidden = order?.status != .delivered
     }
+    @IBAction func addFeedBackBtnPressed(_ sender: UIButton) {
+        // Present FeedbackViewController for customer to add feedback
+             guard let order = order else { return }
+
+             let feedbackVC = UIStoryboard(name: "StoreOwner", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+             feedbackVC.order = order
+             feedbackVC.delegate = self
+
+             feedbackVC.modalPresentationStyle = .overCurrentContext
+             feedbackVC.modalTransitionStyle = .crossDissolve
+             present(feedbackVC, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - UITableViewDelegate and UITableViewDataSource
@@ -259,6 +276,15 @@ extension OrderStatusViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: "TotalAmountCell", for: indexPath) as! TotalAmountCell
             cell.TotalTitleLabel.text = "Total Amount"
             cell.totalPriceLabel.text = String(format: "%.2f BD", totalPrice)
+            
+//            // Add "Leave Feedback" button for delivered status
+//            if let status = order?.status, status == .delivered {
+//                let feedbackButton = UIButton(type: .system)
+//                feedbackButton.setTitle("Leave Feedback", for: .normal)
+//                feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped), for: .touchUpInside)
+//                cell.contentView.addSubview(feedbackButton)
+//            }
+
             return cell
 
         default:
@@ -288,5 +314,26 @@ extension OrderStatusViewController: UITableViewDelegate, UITableViewDataSource 
         default:
             break
         }
+    }
+    
+    @objc func feedbackButtonTapped() {
+          guard let order = self.order else { return }
+          
+          let feedbackFormVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+          feedbackFormVC.order = order
+          navigationController?.pushViewController(feedbackFormVC, animated: true)
+      }
+}
+
+extension OrderStatusViewController: FeedbackDelegate {
+    func didSubmitFeedback(for order: Order) {
+        self.order = order
+        updateUI()
+    }
+
+    func didDeleteFeedback(for order: Order) {
+        self.order?.feedback = nil
+        self.order?.rating = 0
+        updateUI()
     }
 }

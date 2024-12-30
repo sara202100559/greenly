@@ -12,7 +12,7 @@ protocol FeedbackDelegate: AnyObject {
     func didDeleteFeedback(for order: Order)
 }
 
-class FeedbackViewController: UIViewController {
+class FeedbackViewController: UIViewController, UITextViewDelegate {
     
     
     @IBOutlet weak var feedbackTextView: UITextView!
@@ -36,6 +36,7 @@ class FeedbackViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedbackTextView.delegate = self
 
         // Set up the initial state of the feedback UI
         feedbackTextView.text = "Enter your feedback here..."
@@ -91,24 +92,46 @@ class FeedbackViewController: UIViewController {
                // Save the feedback and rating to the order
                order?.feedback = feedback
                order?.rating = selectedRating
-               
+        
+        // Save the order back to UserDefaults
+        var orders = UserDefaults.standard.loadOrders()
+        if let index = orders.firstIndex(where: { $0.id == order?.id }) {
+            orders[index] = order!
+            UserDefaults.standard.saveOrders(orders)
+        }
                // Notify the delegate that feedback has been submitted
                if let updatedOrder = order {
                    delegate?.didSubmitFeedback(for: updatedOrder)
                }
-               
+        showSuccessAlert()
                // Pop the view controller (dismiss the pop-up)
-        self.dismiss(animated: true)
+//        self.dismiss(animated: true)
     }
     
+    func showSuccessAlert() {
+        let alert = UIAlertController(title: "Success", message: "Thank you for your feedback!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            // Dismiss the feedback view controller when "OK" is pressed
+            self.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
   
     func updateStarButtons() {
-          // Update the star buttons' images based on the selected rating
-        starOne.setImage(UIImage(named: selectedRating >= 1 ? "star.fill" : "star"), for: .normal)
-        starTwo.setImage(UIImage(named: selectedRating >= 2 ? "star.fill" : "star"), for: .normal)
-        starThree.setImage(UIImage(named: selectedRating >= 3 ? "star.fill" : "star"), for: .normal)
-        starFour.setImage(UIImage(named: selectedRating >= 4 ? "star.fill" : "star"), for: .normal)
-        starFive.setImage(UIImage(named: selectedRating >= 5 ? "star.fill" : "star"), for: .normal)
-      }
-
+        // Update the star buttons' images based on the selected rating
+        starOne.setImage(UIImage(systemName: selectedRating >= 1 ? "star.fill" : "star"), for: .normal)
+        starTwo.setImage(UIImage(systemName: selectedRating >= 2 ? "star.fill" : "star"), for: .normal)
+        starThree.setImage(UIImage(systemName: selectedRating >= 3 ? "star.fill" : "star"), for: .normal)
+        starFour.setImage(UIImage(systemName: selectedRating >= 4 ? "star.fill" : "star"), for: .normal)
+        starFive.setImage(UIImage(systemName: selectedRating >= 5 ? "star.fill" : "star"), for: .normal)
+        
+        // Optional: Set the color for the stars
+        let starColor = UIColor.yellow
+        starOne.tintColor = starColor
+        starTwo.tintColor = starColor
+        starThree.tintColor = starColor
+        starFour.tintColor = starColor
+        starFive.tintColor = starColor
+    }
+    
 }
