@@ -7,52 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Process Payment View Controller-->
-        <scene sceneID="rJA-Rq-ezG">
-            <objects>
-                <viewController title="Process Payment View Controller" id="uNd-yd-chn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vQ2-r9-yZX">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0P-0l-tD9">
-                                <rect key="frame" x="16" y="144" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration Data" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWA-HC-EiK">
-                                <rect key="frame" x="16" y="204" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cvv" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pl-9I-kgV">
-                                <rect key="frame" x="16" y="263" width="365" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mi-bu-QRO">
-                                <rect key="frame" x="90" y="352" width="217" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Pay Now">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50196078430000002" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8Ss-NE-OYV"/>
-                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Process Payment" id="lz0-wg-HA1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhk-wa-srt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4044" y="270"/>
-        </scene>
         <!--Add Address View Controller-->
         <scene sceneID="XIZ-fK-38b">
             <objects>
@@ -160,13 +114,49 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="peU-LW-r0f" id="e4T-mP-Npg"/>
-                        <segue destination="uNd-yd-chn" kind="show" identifier="processPaymentSegue" id="SnB-2N-MmW"/>
                         <segue destination="7Vk-8k-Swe" kind="show" identifier="addressNav" id="CsZ-qD-Ejs"/>
+                        <segue destination="Qaz-Zx-jdg" kind="show" identifier="processPaymentSegue" id="PKW-SB-686"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Es7-qr-TqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3109" y="-11"/>
+        </scene>
+        <!--Process Payment View Controller-->
+        <scene sceneID="OdM-Ny-xTa">
+            <objects>
+                <viewController title="Process Payment View Controller" id="Qaz-Zx-jdg" customClass="ProcessPaymentViewController" customModule="Greenly" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S6d-gs-soa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8fX-6t-ow8">
+                                <rect key="frame" x="0.0" y="5" width="393" height="837"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qaz-Zx-jdg" id="67o-xB-3Ns"/>
+                                    <outlet property="delegate" destination="Qaz-Zx-jdg" id="jNz-FA-hAO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q2g-SU-Etm"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8fX-6t-ow8" firstAttribute="top" secondItem="Q2g-SU-Etm" secondAttribute="top" constant="5" id="4bc-ry-ayA"/>
+                            <constraint firstItem="8fX-6t-ow8" firstAttribute="centerX" secondItem="S6d-gs-soa" secondAttribute="centerX" id="Huc-ZK-8Sc"/>
+                            <constraint firstItem="8fX-6t-ow8" firstAttribute="leading" secondItem="Q2g-SU-Etm" secondAttribute="leading" id="Rcb-Xb-qrm"/>
+                            <constraint firstItem="8fX-6t-ow8" firstAttribute="bottom" secondItem="Q2g-SU-Etm" secondAttribute="bottom" id="uMe-LJ-l39"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Process Payment" id="FYe-bv-I1O"/>
+                    <connections>
+                        <outlet property="tableView" destination="8fX-6t-ow8" id="K9r-Kn-1Fz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ce-GP-EGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4043.5114503816794" y="269.71830985915494"/>
         </scene>
     </scenes>
     <resources>

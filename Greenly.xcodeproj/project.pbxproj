@@ -114,7 +114,6 @@
 		D7B700B32D1FDE5E00342828 /* StoreProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B700B22D1FDE5E00342828 /* StoreProductsTableViewController.swift */; };
 		D7B700B52D1FE66D00342828 /* ProductTVCcust.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B700B42D1FE66D00342828 /* ProductTVCcust.xib */; };
 		D7B700B92D2049B200342828 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B700B82D2049B200342828 /* CartManager.swift */; };
-		F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2074D6A2D085FA800C48B09 /* Feedback.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,7 +238,6 @@
 		D7B700B22D1FDE5E00342828 /* StoreProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductsTableViewController.swift; sourceTree = "<group>"; };
 		D7B700B42D1FE66D00342828 /* ProductTVCcust.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTVCcust.xib; sourceTree = "<group>"; };
 		D7B700B82D2049B200342828 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
-		F2074D6A2D085FA800C48B09 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,7 +328,6 @@
 				CF6747672CF8BC7F00E9A704 /* ImpactTracker.storyboard */,
 				CF6747692CF8BC8C00E9A704 /* Cart.storyboard */,
 				CF67476D2CF8BCAE00E9A704 /* ProductDetails.storyboard */,
-				F2074D6A2D085FA800C48B09 /* Feedback.storyboard */,
 				D7B7008C2D1FDA1900342828 /* OrderTableViewCell.xib */,
 				D7B7008E2D1FDA6B00342828 /* ProductTVC.xib */,
 				C34AC62C2D22EFF1002997AA /* SuggestedProducts.xib */,
@@ -593,7 +590,6 @@
 			files = (
 				CF8D787A2CF5ED6600A59136 /* LaunchScreen.storyboard in Resources */,
 				D7B700B52D1FE66D00342828 /* ProductTVCcust.xib in Resources */,
-				F2074D6B2D085FA800C48B09 /* Feedback.storyboard in Resources */,
 				D7B700652D1FD78C00342828 /* SavedAddressCell.xib in Resources */,
 				D7B700472D1FD60A00342828 /* SubCell.xib in Resources */,
 				C34AC62D2D22EFF1002997AA /* SuggestedProducts.xib in Resources */,
