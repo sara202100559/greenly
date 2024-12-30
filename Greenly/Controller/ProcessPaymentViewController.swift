@@ -31,9 +31,10 @@ class ProcessPaymentViewController: UIViewController {
         )
         successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             // Invoke the completion handler after the alert is dismissed
+
             completion()
         }))
-        
+        updateImpactTracker()//qamareen
         self.present(successAlert, animated: true, completion: nil)
     }
     
@@ -85,7 +86,23 @@ class ProcessPaymentViewController: UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }))
         self.present(alert, animated: true)
+        //updateImpactTracker()//qamareen
+    
+        
     }
+    
+    private func updateImpactTracker() {
+           // Reset the impact data to default values
+           ImpactData.shared.resetToDefaultValues()
+
+           // Refresh the chart in ChartViewController
+           if let chartVC = self.navigationController?.viewControllers.compactMap({ $0 as? ChartViewController }).first {
+               chartVC.refreshChart()
+           }
+       }
+    
+    
+    
 
     
     private func generateOrderID() -> String {
