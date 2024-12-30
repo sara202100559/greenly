@@ -261,6 +261,7 @@
 		CF6747402CF89F6E00E9A704 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7B7007E2D1FD92500342828 /* OrderListViewController.swift */,
 				CF6747492CF8A3FC00E9A704 /* AddTableViewController.swift */,
 				CF8D78712CF5ED6400A59136 /* ViewController.swift */,
 				CF67476F2CF8BE6A00E9A704 /* SettingsTableViewController.swift */,
@@ -391,7 +392,6 @@
 				D7B700782D1FD8CC00342828 /* Order.swift */,
 				D7B7007A2D1FD8E100342828 /* CloudinarySetup.swift */,
 				D7B7007C2D1FD8FF00342828 /* OrderTableViewCell.swift */,
-				D7B7007E2D1FD92500342828 /* OrderListViewController.swift */,
 				D7B700802D1FD94900342828 /* ProductTVC.swift */,
 				D7B700822D1FD96100342828 /* UserManager.swift */,
 				D7B700842D1FD97E00342828 /* OrderDetailsVC.swift */,
