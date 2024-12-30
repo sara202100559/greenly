@@ -7,7 +7,7 @@
 import UIKit
 
 class CheckoutViewController: UIViewController {
-   
+    
     enum PaymentMethod: String {
         case cash
         case card
@@ -21,7 +21,7 @@ class CheckoutViewController: UIViewController {
     var selectedPaymentType: PaymentMethod = .none
     
     var selectedAddress = [String: String]()
-
+    
     var savedAddresses = [[String: String]]() {
         didSet {
             if savedAddresses.count == 1 {
@@ -30,7 +30,6 @@ class CheckoutViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.register()
@@ -38,7 +37,7 @@ class CheckoutViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         if let allAddresses = UserDefaults.standard.array(forKey: "savedAddresses") as? [[String: String]] {
             savedAddresses.removeAll()
             savedAddresses.append(contentsOf: allAddresses)
@@ -46,7 +45,6 @@ class CheckoutViewController: UIViewController {
             updateCheckoutButtonState() // Ensure button state is updated
         }
     }
-    
     
     func register() {
         tableview.register(UINib(nibName: "CheckoutTableViewCell", bundle: .main), forCellReuseIdentifier: "CheckoutTableViewCell")
@@ -56,40 +54,25 @@ class CheckoutViewController: UIViewController {
         tableview.register(UINib(nibName: "SavedAddressCell", bundle: .main), forCellReuseIdentifier: "savedAddressCell")
     }
     
-//    func processOrder() {
-//        // Simulate order processing
-//        let alert = UIAlertController(
-//            title: "Order Placed",
-//            message: "Your order has been placed successfully!",
-//            preferredStyle: .alert
-//        )
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            // Navigate back to the main screen or reset the cart if needed
-//            self.navigationController?.popToRootViewController(animated: true)
-//        }))
-//
-//        self.present(alert, animated: true, completion: nil)
-//    }
-    
     func processOrder() {
         guard let selectedProducts = products else { return }
-
+        
         // Generate order details
         let orderId = generateOrderID() // Use the new generateOrderID() method
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy HH:mm"
         let dateTime = formatter.string(from: currentDate)
-
+        
         // Prepare order items
-        let orderItems = selectedProducts.map { product in
+        let orderItems = selectedProducts.map { (product) in
             return OrderItem(
-                name: product.name!,
+                name: product.name ?? "Unnamed Product", // Use a default value if name is nil
                 price: "\(String(describing: product.price))",
                 quantity: "\(product.quantity ?? 1)"
             )
         }
-
+        
         // Create a new order
         let newOrder = Order(
             id: orderId,
@@ -103,12 +86,12 @@ class CheckoutViewController: UIViewController {
             items: orderItems,
             paymentMethod: selectedPaymentType.rawValue
         )
-
+        
         // Save the order to UserDefaults
         var orders = UserDefaults.standard.loadOrders()
         orders.append(newOrder)
         UserDefaults.standard.saveOrders(orders)
-
+        
         // Show confirmation alert
         let alert = UIAlertController(
             title: "Order Placed",
@@ -116,18 +99,30 @@ class CheckoutViewController: UIViewController {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-           // self.navigationController?.popToRootViewController(animated: true)
+            // self.navigationController?.popToRootViewController(animated: true)
         }))
         self.present(alert, animated: true)
+        updateImpactTracker()
     }
-
-}
-private func generateOrderID() -> String {
-    let orderCountKey = "orderCountKey"
-    let currentCount = UserDefaults.standard.integer(forKey: orderCountKey) // Default is 0
-    let newCount = currentCount + 1
-    UserDefaults.standard.set(newCount, forKey: orderCountKey)
-    return String(newCount)
+    
+    private func updateImpactTracker() {
+        // Reset the impact data to default values
+        ImpactData.shared.resetToDefaultValues()
+        
+        // Refresh the chart in ChartViewController
+        if let chartVC = self.navigationController?.viewControllers.compactMap({ $0 as? ChartViewController }).first {
+            chartVC.refreshChart()
+        }
+    }
+    
+    private func generateOrderID() -> String {
+        let orderCountKey = "orderCountKey"
+        let currentCount = UserDefaults.standard.integer(forKey: orderCountKey) // Default is 0
+        let newCount = currentCount + 1
+        UserDefaults.standard.set(newCount, forKey: orderCountKey)
+        return String(newCount)
+    }
+    
 }
 
 extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
@@ -150,10 +145,8 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         switch indexPath.section {
         case 0:
             if indexPath.row == 0 {
@@ -170,10 +163,10 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "savedAddressCell", for: indexPath) as! SavedAddressCell
                 cell.cellBackgroundView.cornerRadius = 4
-
+                
                 // Titles mapping for each field
                 let titles = ["Building Number", "Road Number", "Block Number"]
-
+                
                 // Reset cell content to avoid duplication
                 cell.AddNameLabel.text = nil
                 cell.areaLabel.text = nil
@@ -181,7 +174,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.roadLabel.text = nil
                 cell.blockLabel.text = nil
                 cell.isChecked = false
-
+                
                 // Set the address
                 let address = savedAddresses[indexPath.row - 1]
                 cell.AddNameLabel.text = address["name"]
@@ -191,7 +184,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.blockLabel.text = "\(titles[2]): \(address["blockNumber"] ?? "")"
                 cell.cellAddress = address
                 cell.isChecked = address["name"] == selectedAddress["name"]
-
+                
                 cell.onCheckboxToggle = { status in
                     if status {
                         self.selectedAddress = cell.cellAddress
@@ -200,17 +193,17 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                     self.tableview.reloadData()
                 }
-
+                
                 cell.onDelete = {
                     if let index = self.savedAddresses.firstIndex(of: cell.cellAddress) {
                         self.savedAddresses.remove(at: index)
                         UserDefaults.standard.set(self.savedAddresses, forKey: "savedAddresses")
-
+                        
                         // Clear selectedAddress if the deleted address was selected
                         if self.selectedAddress == cell.cellAddress {
                             self.selectedAddress = [:]
                         }
-
+                        
                         // Show a confirmation alert
                         let alert = UIAlertController(
                             title: "Deleted",
@@ -224,25 +217,21 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
                         self.present(alert, animated: true, completion: nil)
                     }
                 }
-
+                
                 return cell
             }
-
-
+            
         case 1:
             return createPaymentMethodSection(tableView, cellForRowAt: indexPath)
         case 2:
             if indexPath.row == 0 {
-                return createTitleCell(tableView, cellForRowAt: indexPath, title: "Order Summery")
+                return createTitleCell(tableView, cellForRowAt: indexPath, title: "Order Summary")
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SubCell", for: indexPath) as! SubCell
                 cell.cellBackgroundView.cornerRadius = 4
-//                let productCount = products?.count ?? 0
-                let productCount = products?.reduce(0, { partialResult, product in
-                    return partialResult + (product.quantity ?? 1)
-                })
+                let productCount = products?.reduce(0, { $0 + ($1.quantity ?? 1) }) ?? 0 // Fixed here
                 cell.checkButton.isHidden = true
-                cell.titleLabel.text = "(\(String(describing: productCount ?? 1))) Items"
+                cell.titleLabel.text = "(\(productCount)) Items"
                 cell.totalPriceLabel.text = "Total :  \(totalPrice) BD"
                 cell.cellBackgroundView.backgroundColor = .white
                 cell.contentView.backgroundColor = .clear
@@ -254,15 +243,14 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutCell", for: indexPath) as! CheckoutCell
             cell.CheckoutButton.layer.cornerRadius = 10
             cell.CheckoutButton.layer.borderWidth = 1
-
+            
             // Update the button title dynamically based on payment type
             let buttonTitle = self.selectedPaymentType == .card ? "Confirm & Pay" : "Place Order"
             cell.CheckoutButton.setTitle(buttonTitle, for: .normal)
-
+            
             // Enable the button only if a payment type is selected and an address is chosen
             cell.CheckoutButton.isEnabled = (self.selectedPaymentType != .none) && !self.selectedAddress.isEmpty
-
-
+            
             cell.checkOutButtonTapped = {
                 if self.selectedPaymentType == .card {
                     // Navigate to ProcessPaymentViewController
@@ -283,9 +271,9 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-
+            
             return cell
-        
+            
         default:
             return UITableViewCell()
         }
@@ -351,7 +339,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension // Adjust as needed for your cell layout.
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         return view
@@ -373,6 +361,4 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.00001
     }
-    
 }
-
