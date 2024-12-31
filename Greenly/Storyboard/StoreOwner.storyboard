@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2YM-Ld-Cue">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2YM-Ld-Cue">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -751,7 +751,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="showFeedBackBtnPressed:" destination="031-OU-uo9" eventType="touchUpInside" id="Sdx-HX-xvM"/>
+                                    <action selector="feedBackBtnPressed:" destination="031-OU-uo9" eventType="touchUpInside" id="T7S-Jm-buq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -791,11 +791,11 @@
                     <connections>
                         <outlet property="changeStatusButton" destination="atE-4b-GBT" id="2WW-fg-J3M"/>
                         <outlet property="dateLabel" destination="gPQ-TA-hEU" id="ZQJ-V6-qGe"/>
+                        <outlet property="feedbackButton" destination="a03-to-Usj" id="eOh-FW-92x"/>
                         <outlet property="nameLabel" destination="h8u-X5-TjZ" id="rYS-05-pK3"/>
                         <outlet property="orderIDLabel" destination="aDO-CK-ZOU" id="NZV-oG-Vs4"/>
                         <outlet property="orderStatusLabel" destination="8Wp-6D-Fmq" id="VaB-cu-2N5"/>
                         <outlet property="priceLabel" destination="jCr-jq-KNP" id="2AR-su-Ydd"/>
-                        <outlet property="showFeedBackBtn" destination="a03-to-Usj" id="Tgg-L8-Nef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lne-1N-92Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -814,10 +814,10 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
