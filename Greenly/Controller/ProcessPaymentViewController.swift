@@ -1,8 +1,13 @@
 import UIKit
 
+protocol ProcessPaymentDelegate: AnyObject {
+    func didCompletePayment()
+}
+
 class ProcessPaymentViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    weak var delegate: ProcessPaymentDelegate?
     
     var paymentDetails: [String] = ["", "", ""] // Card Number, Expiration Date, CVV
     var validationStatus: [Bool] = [false, false, false] // Validation status for each field
@@ -83,7 +88,7 @@ class ProcessPaymentViewController: UIViewController {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popToViewController(self, animated: true)
         }))
         self.present(alert, animated: true)
         //updateImpactTracker()//qamareen
@@ -91,6 +96,7 @@ class ProcessPaymentViewController: UIViewController {
         
     }
     
+    //qamareen
     private func updateImpactTracker() {
            // Reset the impact data to default values
            ImpactData.shared.resetToDefaultValues()

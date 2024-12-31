@@ -361,4 +361,13 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.00001
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "processPaymentSegue",
+               let paymentVC = segue.destination as? ProcessPaymentViewController {
+                paymentVC.totalPrice = totalPrice
+                paymentVC.products = products
+                paymentVC.selectedAddress = selectedAddress
+            }
+        }
 }
