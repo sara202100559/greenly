@@ -7,7 +7,7 @@ class CartViewController: UIViewController {
     
     var totalPrice = 0.0
     var isAllProductSelected = true
-    var storeName = "Package Free"
+    var storeName = "My Cart"
 
     
     
