@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JLY-rI-x2u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JLY-rI-x2u">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -573,20 +573,20 @@ If you have any questions or suggestions about our privacy policy, please contac
                             <tableViewSection id="L6W-h2-al9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mMT-SZ-V41">
-                                        <rect key="frame" x="0.0" y="18" width="393" height="45.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="18" width="393" height="47.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mMT-SZ-V41" id="arx-jI-tJb">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="45.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvr-5H-ure">
-                                                    <rect key="frame" x="19.666666666666671" y="13.999999999999998" width="82" height="21.333333333333329"/>
+                                                    <rect key="frame" x="19.666666666666671" y="15" width="82" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVl-b9-0Th">
-                                                    <rect key="frame" x="346" y="6" width="47" height="37.333333333333336"/>
+                                                    <rect key="frame" x="346.33333333333331" y="7" width="46.666666666666686" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CVl-b9-0Th" secondAttribute="height" multiplier="44:35" id="L5E-cp-4Uf"/>
                                                     </constraints>
@@ -610,13 +610,13 @@ If you have any questions or suggestions about our privacy policy, please contac
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutCell" id="iqR-Dp-QvR">
-                                        <rect key="frame" x="0.0" y="63.666667938232422" width="393" height="45.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="65.333332061767578" width="393" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iqR-Dp-QvR" id="OwA-EB-bU2">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwH-S4-frR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="About us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwH-S4-frR">
                                                     <rect key="frame" x="20" y="5" width="376.66666666666669" height="35.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="cwH-S4-frR" secondAttribute="height" multiplier="113:10" constant="-22.5" id="3xq-Kk-mIR"/>
@@ -651,7 +651,7 @@ If you have any questions or suggestions about our privacy policy, please contac
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TermsAndConditionsCell" id="fP1-sl-nMt">
-                                        <rect key="frame" x="0.0" y="109" width="393" height="45.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="110.66666412353516" width="393" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fP1-sl-nMt" id="uUv-b9-TrA">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
@@ -692,7 +692,7 @@ If you have any questions or suggestions about our privacy policy, please contac
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrivacyPolicyCell" id="Zlz-GH-ePN">
-                                        <rect key="frame" x="0.0" y="154.33333206176758" width="393" height="45.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="155.99999618530273" width="393" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zlz-GH-ePN" id="yhv-P5-96J">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
@@ -733,14 +733,14 @@ If you have any questions or suggestions about our privacy policy, please contac
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogOutCell" id="q1f-qv-tTk">
-                                        <rect key="frame" x="0.0" y="199.66666412353516" width="393" height="43.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="201.33332824707031" width="393" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q1f-qv-tTk" id="lOB-U6-Jaj">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="45.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-ux-bzX">
-                                                    <rect key="frame" x="348.66666666666669" y="4" width="44.333333333333314" height="35.333333333333336"/>
+                                                    <rect key="frame" x="348.66666666666669" y="5" width="44.333333333333314" height="35.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Kju-ux-bzX" secondAttribute="height" multiplier="44:35" id="T3N-MS-b9h"/>
                                                     </constraints>
@@ -767,10 +767,10 @@ If you have any questions or suggestions about our privacy policy, please contac
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="P1O-Tt-r87">
-                                        <rect key="frame" x="0.0" y="242.99999618530273" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="246.66666030883789" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P1O-Tt-r87" id="gve-5J-aXC">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delete account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O93-U3-1FL">
@@ -781,7 +781,7 @@ If you have any questions or suggestions about our privacy policy, please contac
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbp-g6-3KA">
-                                                    <rect key="frame" x="349" y="7" width="44" height="35"/>
+                                                    <rect key="frame" x="349" y="8" width="44" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Sbp-g6-3KA" secondAttribute="height" multiplier="44:35" id="bEU-lW-SRV"/>
                                                     </constraints>

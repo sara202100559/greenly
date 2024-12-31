@@ -12,12 +12,7 @@ class CartViewController: UIViewController {
     
     
     var cartProducts: [CartProduct] = []
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        registerCells() // Register custom cells with the table view.
-//        cartProducts.append(contentsOf: cartItems)
-//        calculateTotalPrice()
-//    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,7 +173,5 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let checkOutVC = segue.destination as? CheckoutViewController
         checkOutVC?.totalPrice = totalPrice
         checkOutVC?.products = self.cartProducts.filter({$0.isChecked ?? false})
-        // To pass the data from CartViewController to CheckoutViewController
-        // checkOutVC.data = data //data ->> content need to be passed
     }
 }
