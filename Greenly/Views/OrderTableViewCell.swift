@@ -28,7 +28,7 @@ class OrderTableViewCell: UITableViewCell {
         orderID.text = "Order ID: \(order.id)"
         orderStatus.text = "Status: \(order.status.rawValue)"
         orderDate.text = order.date
-        orderOwner.text = order.ownerName
+        //orderOwner.text = order.ownerName
         orderPrice.text = "\(order.price) BD"
        }
     

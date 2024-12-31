@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
 //        if let appDomain = Bundle.main.bundleIdentifier {
 //            UserDefaults.standard.removePersistentDomain(forName: appDomain)
 //            UserDefaults.standard.synchronize()
-//            print("UserDefaults data cleared on logout.")
+//            print("UserDefaults data cleared on login.")
 //        }
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
 
