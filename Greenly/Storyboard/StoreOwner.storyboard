@@ -551,37 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgJ-41-0EC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="-13"/>
-        </scene>
-        <!--Feedback ListVC-->
-        <scene sceneID="ceU-sW-NFy">
-            <objects>
-                <viewController storyboardIdentifier="FeedbackListVC" id="adI-r6-QW2" customClass="FeedbackListVC" customModule="Greenly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IDg-B0-Elw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eoA-fb-P7F">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Swo-cC-sMP"/>
-                        <color key="backgroundColor" red="0.81122249359999998" green="0.83564442400000005" blue="0.80390924220000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="eoA-fb-P7F" firstAttribute="top" secondItem="Swo-cC-sMP" secondAttribute="top" id="7dj-Yr-zeO"/>
-                            <constraint firstItem="Swo-cC-sMP" firstAttribute="trailing" secondItem="eoA-fb-P7F" secondAttribute="trailing" id="UaR-cc-jl5"/>
-                            <constraint firstItem="eoA-fb-P7F" firstAttribute="leading" secondItem="Swo-cC-sMP" secondAttribute="leading" id="gnR-Iq-9xG"/>
-                            <constraint firstItem="Swo-cC-sMP" firstAttribute="bottom" secondItem="eoA-fb-P7F" secondAttribute="bottom" id="nKN-Qg-AW5"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="eoA-fb-P7F" id="275-uy-PVo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yk1-e2-Rm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="901" y="-11"/>
+            <point key="canvasLocation" x="958" y="-23"/>
         </scene>
         <!--Inventory-->
         <scene sceneID="pI4-jC-vc9">

@@ -15,7 +15,6 @@
 		C34AC62D2D22EFF1002997AA /* SuggestedProducts.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34AC62C2D22EFF1002997AA /* SuggestedProducts.xib */; };
 		C34AC62F2D22FA5B002997AA /* FeedbackListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34AC62E2D22FA5B002997AA /* FeedbackListVC.swift */; };
 		C34AC6312D22FB12002997AA /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34AC6302D22FB12002997AA /* FeedbackCell.swift */; };
-		C34AC6332D22FF8E002997AA /* FeedbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34AC6322D22FF8E002997AA /* FeedbackCell.xib */; };
 		C3DAC6BB2CFC723400C1B4CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BA2CFC723400C1B4CE /* User.swift */; };
 		C3DAC6BD2CFC724500C1B4CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */; };
 		C3DAC6BF2CFC725300C1B4CE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */; };
@@ -140,7 +139,6 @@
 		C34AC62C2D22EFF1002997AA /* SuggestedProducts.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedProducts.xib; sourceTree = "<group>"; };
 		C34AC62E2D22FA5B002997AA /* FeedbackListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackListVC.swift; sourceTree = "<group>"; };
 		C34AC6302D22FB12002997AA /* FeedbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
-		C34AC6322D22FF8E002997AA /* FeedbackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackCell.xib; sourceTree = "<group>"; };
 		C3DAC6BA2CFC723400C1B4CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3DAC6BC2CFC724500C1B4CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3DAC6BE2CFC725300C1B4CE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -331,7 +329,6 @@
 				D7B7008C2D1FDA1900342828 /* OrderTableViewCell.xib */,
 				D7B7008E2D1FDA6B00342828 /* ProductTVC.xib */,
 				C34AC62C2D22EFF1002997AA /* SuggestedProducts.xib */,
-				C34AC6322D22FF8E002997AA /* FeedbackCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -602,7 +599,6 @@
 				D7B7005D2D1FD73C00342828 /* ProductDescriptionCell.xib in Resources */,
 				D7B7008F2D1FDA6B00342828 /* ProductTVC.xib in Resources */,
 				D7B7004F2D1FD66E00342828 /* AddCartCell.xib in Resources */,
-				C34AC6332D22FF8E002997AA /* FeedbackCell.xib in Resources */,
 				CF67476E2CF8BCAE00E9A704 /* ProductDetails.storyboard in Resources */,
 				D7B700632D1FD77A00342828 /* InputTableViewCell.xib in Resources */,
 				CF8D78772CF5ED6600A59136 /* Assets.xcassets in Resources */,
