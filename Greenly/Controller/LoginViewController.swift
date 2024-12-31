@@ -40,6 +40,11 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+//        if let appDomain = Bundle.main.bundleIdentifier {
+//            UserDefaults.standard.removePersistentDomain(forName: appDomain)
+//            UserDefaults.standard.synchronize()
+//            print("UserDefaults data cleared on logout.")
+//        }
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
 
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
