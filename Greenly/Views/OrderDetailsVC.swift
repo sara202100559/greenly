@@ -32,18 +32,36 @@ class OrderDetailsVC: UIViewController {
         feedbackButton.isHidden = order?.status != .delivered
     }
     
+    //11
     @IBAction func feedBackBtnPressed(_ sender: UIButton) {
         guard let order = order else { return }
             
         let feedbackVC = UIStoryboard(name: "StoreOwner", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
-               feedbackVC.order = order
-               feedbackVC.delegate = self // Set the delegate
+        feedbackVC.order = order
+        feedbackVC.isStoreOwnerView = true // Pass the flag
+        feedbackVC.delegate = self // Set the delegate
                
-               // Present the feedback view controller modally (as a pop-up)
-               feedbackVC.modalPresentationStyle = .overCurrentContext
-               feedbackVC.modalTransitionStyle = .crossDissolve
-               present(feedbackVC, animated: true, completion: nil)
+        // Present the feedback view controller modally (as a pop-up)
+        feedbackVC.modalPresentationStyle = .overCurrentContext
+        feedbackVC.modalTransitionStyle = .crossDissolve
+        present(feedbackVC, animated: true, completion: nil)
     }
+
+    //11
+    
+    
+//    @IBAction func feedBackBtnPressed(_ sender: UIButton) {
+//        guard let order = order else { return }
+//            
+//        let feedbackVC = UIStoryboard(name: "StoreOwner", bundle: nil).instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+//               feedbackVC.order = order
+//               feedbackVC.delegate = self // Set the delegate
+//               
+//               // Present the feedback view controller modally (as a pop-up)
+//               feedbackVC.modalPresentationStyle = .overCurrentContext
+//               feedbackVC.modalTransitionStyle = .crossDissolve
+//               present(feedbackVC, animated: true, completion: nil)
+//    }
     
     @IBAction func changeStatusButtonTapped(_ sender: UIButton) {
         guard let order = order else { return }
